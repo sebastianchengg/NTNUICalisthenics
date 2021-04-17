@@ -1,14 +1,11 @@
 import React from "react";
-import "./css/mainpage.css";
-import image from "../images/training.jpg";
+import { MainPicture } from "../components/MainPicture";
 
 export const MainPage = () => {
   return (
     <>
-    <body></body>
-
-    <div>hello</div>
-      
+      <MainPicture />
+      <h1>test</h1>
     </>
   );
 };
