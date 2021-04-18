@@ -1,0 +1,30 @@
+.footer-container {
+  background-color: #000;
+  height: 80px;
+  width: 100%;
+  position: relative;
+}
+
+.social-container {
+  color: #fff;
+  text-align: right;
+  font-size: 30px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+i + i {
+  margin-left: 30px;
+}
+
+.creator-container {
+    color: #fff;
+    text-align: left;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}

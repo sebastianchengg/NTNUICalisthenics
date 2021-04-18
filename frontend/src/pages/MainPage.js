@@ -1,11 +1,12 @@
 import React from "react";
 import { MainPicture } from "../components/MainPicture";
+import { Footer } from "../components/Footer";
 
 export const MainPage = () => {
   return (
     <>
-      <MainPicture />
-      <h1>test</h1>
+      <MainPicture photographer="Foto: Nils Dittrich/NTNUI"/>
+      <Footer/>
     </>
   );
 };
