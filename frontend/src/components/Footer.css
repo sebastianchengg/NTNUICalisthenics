@@ -16,7 +16,13 @@
   padding: 20px;
 }
 
-i + i {
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+a + a {
   margin-left: 30px;
 }
 
