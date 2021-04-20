@@ -1,0 +1,92 @@
+.main-text {
+  font-family: "Archivo", sans-serif;
+  font-weight: 500;
+  color: #fff;
+  font-size: 8vh;
+  z-index: 9;
+  position: absolute;
+  top: 35%;
+  margin: 0 20%;
+  width: 60%;
+}
+
+.apply-text {
+    font-weight: 500;
+  }
+
+@media screen and (max-width: 960px) {
+  .main-text {
+    text-align: center;
+    margin: 0 10%;
+    width: 80%;
+  }
+}
+
+/* css to fade in text when loading page*/
+.fade-in {
+  -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1.5s; /* Firefox < 16 */
+  -ms-animation: fadein 1.5s; /* Internet Explorer */
+  -o-animation: fadein 1.5s; /* Opera < 12.1 */
+  animation: fadein 1.5s;
+  transition: linear;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    left: -5%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+    left: -5%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+    left: -5%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+    left: -5%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+    left: -5%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
