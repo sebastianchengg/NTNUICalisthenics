@@ -51,6 +51,10 @@ align-items: hvordan de plasseres vertikalt
   transition: all 0.2s ease-out;
 }
 
+.selected {
+  border-bottom: 4px solid #fff;
+}
+
 .menu-icon {
   display: none;
   z-index: 999;
@@ -61,25 +65,40 @@ align-items: hvordan de plasseres vertikalt
     flex-direction: column;
     width: 100%;
     top: 0px;
-    left: -110%;
+    left: -100%;
     transition: all 0.5s ease;
     position: absolute;
   }
 
-  .nav-menu.active {
-    background-color: rgba(14, 14, 14, 0.9);
+  .nav-menu-active {
+    flex-direction: column;
+    width: 100%;
+    top: 0px;
     left: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    display: flex;
+    background-color: rgba(14, 14, 14, 0.9);
     transition: all 0.5s ease;
   }
 
-  .nav-links {
+  .nav-links-mobile {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 80px;
     text-align: center;
-    width: 100%;
+    text-decoration: none;
   }
 
-  .nav-links:hover {
+  .nav-links-mobile:hover {
     background-color: #fff;
     color: #242424;
+  }
+
+  .selected-mobile {
+    color: #242424;
+    background-color: #fff;
   }
 
   .menu-icon {

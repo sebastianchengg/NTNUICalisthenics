@@ -16,15 +16,16 @@
   padding: 20px;
 }
 
-a:link,
-a:visited {
+.url:link,
+.url:visited {
   text-decoration: none;
   color: #fff;
 }
 
-a + a {
-  margin-left: 30px;
+.spacing{
+  margin-right: 30px;
 }
+
 
 .creator-container {
   color: #fff;

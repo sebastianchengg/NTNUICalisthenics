@@ -1,5 +1,5 @@
 import React from "react";
-import { MainPicture } from "../components/MainPicture";
+import { MainPicture } from "../components/BackgroundPicture";
 
 export const MainPage = () => {
   return (

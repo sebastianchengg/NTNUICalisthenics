@@ -5,6 +5,11 @@
   font-family: "Barlow Condensed", sans-serif;
 }
 
+/* Always shows scrollbar on all pages */
+body {
+  overflow-y: scroll;
+}
+
 .about {
   display: flex;
   height: 90vh;

@@ -1,56 +1,86 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../images/logo.png";
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [mobile, setMobile] = useState();
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
-  const showButton = () => {
+  const showMobile = () => {
     if (window.innerWidth <= 960) {
-      setButton(false);
+      setMobile(true);
     } else {
-      setButton(true);
+      setMobile(false);
     }
   };
 
   useEffect(() => {
-    showButton();
+    showMobile();
   }, []);
 
-  window.addEventListener("resize", showButton);
+  window.addEventListener("resize", showMobile);
 
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
+        <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img className="logo" src={logo} />
-        </Link>
+        </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
 
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+        <ul className={click ? "nav-menu-active" : "nav-menu"}>
+          <NavLink
+            to="/about"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
             About
-          </Link>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+          </NavLink>
+          <NavLink
+            to="/apply"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
             Apply
-          </Link>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+          </NavLink>
+          <NavLink
+            to="/faq"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
             FAQ
-          </Link>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
             Contact
-          </Link>
-          <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
+          </NavLink>
+          <NavLink
+            to="/leaderboard"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
             Leaderboard
-          </Link>
+          </NavLink>
         </ul>
       </nav>
     </>

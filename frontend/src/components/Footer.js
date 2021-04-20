@@ -10,12 +10,14 @@ export const Footer = () => {
           <a
             href="https://www.instagram.com/ntnuicalisthenics/"
             target="_blank"
-            class="fab fa-instagram"
+            rel="noreferrer"
+            className="fab fa-instagram spacing url"
           ></a>
           <a
             href="https://www.facebook.com/ntnuicalisthenics"
             target="_blank"
-            class="fab fa-facebook"
+            rel="noreferrer"
+            className="fab fa-facebook url"
           ></a>
         </div>
       </div>
