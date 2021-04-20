@@ -1,5 +1,4 @@
-.main-picture-container {
-  background: url("../images/training.jpg") center center/cover;
+.picture-container {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -7,14 +6,38 @@
   align-items: center;
   box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
   z-index: 0;
+  position: relative;
+}
+
+.half {
+  height: 70vh;
+}
+
+.title {
+  color: #fff;
+  font-size: 10vmin;
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 42%;
 }
 
 .photographer {
   position: absolute;
   bottom: 5px;
-  margin-left: 5px;
+  left: 5px;
   z-index: 999;
   color: rgb(170, 170, 170);
   font-weight: 400;
   font-size: 13px;
+}
+
+/* URLs for the pictures used */
+.url-1 {
+  background: url("../images/training.jpg") center center/cover;
+}
+
+.url-2 {
+  background: url("../images/handstand.jpg") center center/cover;
 }
