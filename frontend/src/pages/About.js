@@ -1,12 +1,11 @@
 import React from "react";
+import { HalfPicture } from "../components/BackgroundPicture";
 
 export const About = () => {
   return (
     <>
       <div>
-        <h1>About</h1>
-        <h1>About</h1>
-        <h1>About</h1>
+        <HalfPicture url="url-2" photographer="Foto: Nils Dittrich/NTNUI" titleText="About"/>
       </div>
     </>
   );
