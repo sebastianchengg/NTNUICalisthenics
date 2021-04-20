@@ -12,7 +12,7 @@ align-items: hvordan de plasseres vertikalt
   position: absolute;
   top: 0;
   z-index: 999;
-  padding: 20px 40px 0px 40px;
+  padding: 0 40px;
 }
 
 .navbar-logo {
@@ -26,7 +26,6 @@ align-items: hvordan de plasseres vertikalt
 .logo {
   max-height: 70px;
   width: auto;
-  margin-top: 10px;
 }
 
 .nav-menu {
