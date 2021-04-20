@@ -15,6 +15,11 @@ align-items: hvordan de plasseres vertikalt
   padding: 0 40px;
 }
 
+.not-home {
+  background: #000;
+  position: static;
+}
+
 .navbar-logo {
   position: absolute;
   justify-self: left;
@@ -60,6 +65,12 @@ align-items: hvordan de plasseres vertikalt
 }
 
 @media screen and (max-width: 960px) {
+  .logo {
+    max-height: 70px;
+    height: 20vw;
+    width: auto;
+  }
+
   .nav-menu {
     flex-direction: column;
     width: 100%;
@@ -67,6 +78,7 @@ align-items: hvordan de plasseres vertikalt
     left: -100%;
     transition: all 0.5s ease;
     position: absolute;
+    z-index: 9999;
   }
 
   .nav-menu-active {
@@ -77,8 +89,9 @@ align-items: hvordan de plasseres vertikalt
     transition: all 0.5s ease;
     position: absolute;
     display: flex;
-    background-color: rgba(14, 14, 14, 0.9);
+    background-color: rgba(14, 14, 14, 0.95);
     transition: all 0.5s ease;
+    z-index: 9999;
   }
 
   .nav-links-mobile {
@@ -91,23 +104,24 @@ align-items: hvordan de plasseres vertikalt
   }
 
   .nav-links-mobile:hover {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85);
     color: #242424;
   }
 
   .selected-mobile {
     color: #242424;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.85);
   }
 
   .menu-icon {
     display: block;
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     transform: translate(-100%, 60%);
     font-size: 30px;
     cursor: pointer;
+    z-index: 999999;
   }
 
   .fa-bars {

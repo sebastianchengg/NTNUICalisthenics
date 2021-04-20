@@ -6,10 +6,12 @@ import logo from "../images/logo.png";
 export const Navbar = () => {
   const [click, setClick] = useState(false);
   const [mobile, setMobile] = useState();
+  const [homePage, setHomePage] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
+  //sets variable to define if mobile-layout is needed
   const showMobile = () => {
     if (window.innerWidth <= 960) {
       setMobile(true);
@@ -18,15 +20,27 @@ export const Navbar = () => {
     }
   };
 
+  //sets variable to define backgroundcolor transparent/black
+  const isHomePage = () => {
+    if (window.location.pathname === "/") {
+      setHomePage(true);
+    } else {
+      setHomePage(false);
+    }
+  };
+
   useEffect(() => {
     showMobile();
+    isHomePage();
   }, []);
 
+  //Checks every time the mouse is clicked to apply changes to navbar
+  window.addEventListener("click", isHomePage);
   window.addEventListener("resize", showMobile);
 
   return (
     <>
-      <nav className="navbar">
+      <nav className={homePage ? "navbar" : "navbar not-home"}>
         <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
           <img className="logo" src={logo} />
         </NavLink>
