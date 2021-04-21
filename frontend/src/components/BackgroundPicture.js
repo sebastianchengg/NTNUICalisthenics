@@ -15,7 +15,7 @@ export const HalfPicture = ({ url, photographer, titleText }) => {
   return (
     <>
       <div className={`picture-container half ${url}`}>
-        {titleText ? <div className="title">{titleText}</div> : null}
+        {titleText ? <div className="title title-fade-in">{titleText}</div> : null}
         <div className="photographer">{photographer}</div>
       </div>
     </>
