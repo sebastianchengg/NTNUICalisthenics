@@ -55,7 +55,7 @@
 @keyframes fadein {
   from {
     opacity: 0;
-    left: -%;
+    left: -5%;
   }
   to {
     opacity: 1;
