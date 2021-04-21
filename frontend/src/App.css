@@ -3,11 +3,13 @@
   margin: 0;
   padding: 0;
   font-family: "Barlow Condensed", sans-serif;
+  color: #fff;
 }
 
 /* Always shows scrollbar on all pages */
 body {
   overflow-y: scroll;
+  background-color: #000;
 }
 
 .about {
