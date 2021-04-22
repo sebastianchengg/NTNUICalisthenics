@@ -22,6 +22,12 @@
   }
 }
 
+.js-loading *,
+.js-loading *:before,
+.js-loading *:after {
+  animation-play-state: paused !important;
+}
+
 /* css to fade in text when loading page*/
 .fade-in {
   -webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
