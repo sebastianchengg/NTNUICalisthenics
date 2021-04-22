@@ -41,6 +41,7 @@ align-items: hvordan de plasseres vertikalt
 }
 
 .nav-links {
+  font-family: "Barlow Condensed";
   margin: 0 0 20px 0;
   font-weight: 600;
   text-transform: uppercase;
@@ -95,6 +96,8 @@ align-items: hvordan de plasseres vertikalt
   }
 
   .nav-links-mobile {
+    background-color: rgba(14, 14, 14, 0.95);
+    font-family: "Barlow Condensed";
     font-weight: 600;
     text-transform: uppercase;
     color: #fff;
