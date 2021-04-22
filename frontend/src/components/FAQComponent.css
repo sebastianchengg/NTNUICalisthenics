@@ -1,0 +1,7 @@
+.FAQ-container {
+  position: relative;
+  padding: 5vw 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 80vw;
+}
