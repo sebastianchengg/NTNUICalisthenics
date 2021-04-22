@@ -12,13 +12,13 @@ const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={MainPage} />
-          <Route path="/about" exact component={About} />
-          <Route path="/apply" exact component={Apply} />
-          <Route path="/faq" exact component={FAQ} />
-        </Switch>
+          <Navbar />
+          <Switch>
+            <Route path="/" exact component={MainPage} />
+            <Route path="/about" exact component={About} />
+            <Route path="/apply" exact component={Apply} />
+            <Route path="/faq" exact component={FAQ} />
+          </Switch>
         <Footer />
       </Router>
     </>
