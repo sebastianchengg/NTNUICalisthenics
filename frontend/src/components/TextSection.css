@@ -1,17 +1,19 @@
 .text-section-container {
-    padding: 3vw 6vw 3vw 6vw;
+    padding: 3vw 0;
+    position: static;
 }
 
 .text-section-title {
     display: inline-block;
     position: static;
     text-align: left;
-    font-size: min(50px, 7vh);
-    font-weight: 350;
+    font-size: min(35px, 4.5vh);
+    font-weight: 200;
     border-bottom: 2px solid #00843d;
     margin-bottom: 1vw;
 }
 
 .text-section-text {
-    font-size: min(23px, 3.5vh);
+    font-size: min(16px, 2.5vh);
 }
+
