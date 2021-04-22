@@ -1,13 +1,16 @@
 import React from "react";
+import { FAQComponent } from "../components/FAQComponent";
+import { HalfPicture } from "../components/BackgroundPicture";
 
 export const FAQ = () => {
   return (
     <>
-      <div>
-        <h1>FAQ</h1>
-        <h1>FAQ</h1>
-        <h1>FAQ</h1>
-      </div>
+      <HalfPicture
+        url="url-3"
+        photographer="Foto: Nils Dittrich/NTNUI"
+        titleText="FAQ"
+      />
+      <FAQComponent />
     </>
   );
 };
