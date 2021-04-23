@@ -10,6 +10,7 @@ export const SmoothAnimation = () => {
     document.body.classList.remove("js-loading");
   }
 
+  //All eventlisteners needed to aviod all bugs
   window.addEventListener("load", show);
   window.addEventListener("click", show);
   window.addEventListener("popstate", show);
