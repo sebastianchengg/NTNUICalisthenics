@@ -1,16 +1,20 @@
 import React from "react";
 import "./BackgroundPicture.css";
 
-export const MainPicture = ({ url, photographer }) => {
-  document.body.classList.add("js-loading");
-
+export const smoothAnimation = () => {
   function show() {
     document.body.classList.add("js-loading");
     document.body.classList.remove("js-loading");
   }
 
+  document.body.classList.add("js-loading");
+
   window.addEventListener("click", show);
   window.addEventListener("load", show);
+};
+
+export const MainPicture = ({ url, photographer }) => {
+  smoothAnimation();
 
   return (
     <>
@@ -22,15 +26,7 @@ export const MainPicture = ({ url, photographer }) => {
 };
 
 export const HalfPicture = ({ url, photographer, titleText }) => {
-  document.body.classList.add("js-loading");
-
-  function show() {
-    document.body.classList.add("js-loading");
-    document.body.classList.remove("js-loading");
-  }
-
-  window.addEventListener("click", show);
-  window.addEventListener("load", show);
+  smoothAnimation();
 
   return (
     <>
