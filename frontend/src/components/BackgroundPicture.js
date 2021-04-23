@@ -1,8 +1,17 @@
 import React from "react";
 import "./BackgroundPicture.css";
 
-
 export const MainPicture = ({ url, photographer }) => {
+  document.body.classList.add("js-loading");
+
+  function show() {
+    document.body.classList.add("js-loading");
+    document.body.classList.remove("js-loading");
+  }
+
+  window.addEventListener("click", show);
+  window.addEventListener("load", show);
+
   return (
     <>
       <div className={`picture-container ${url}`}>
