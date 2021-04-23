@@ -31,6 +31,7 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
+    showMobile();
     isHomePage();
   }, [useLocation().pathname]);
 
