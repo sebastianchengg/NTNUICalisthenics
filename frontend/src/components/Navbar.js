@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import "./Navbar.css";
 import Logo from "../images/logo.png";
 
@@ -30,12 +31,10 @@ export const Navbar = () => {
   };
 
   useEffect(() => {
-    showMobile();
     isHomePage();
-  }, []);
+  }, [useLocation().pathname]);
 
   //Checks every time the mouse is clicked to apply changes to navbar
-  window.addEventListener("click", isHomePage);
   window.addEventListener("resize", showMobile);
 
   return (
