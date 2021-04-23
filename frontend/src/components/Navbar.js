@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./Navbar.css";
-import logo from "../images/logo.png";
+import Logo from "../images/logo.png";
 
 export const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -41,8 +41,8 @@ export const Navbar = () => {
   return (
     <>
       <nav className={homePage ? "navbar" : "navbar not-home"}>
-        <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
-          <img className="logo" src={logo} />
+        <NavLink to="/" className="navbar-logo" >
+          <img className="logo" src={Logo} />
         </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
@@ -50,6 +50,15 @@ export const Navbar = () => {
         </div>
 
         <ul className={click ? "nav-menu-active" : "nav-menu"}>
+        <NavLink
+            to="/"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
+            Home
+          </NavLink>
           <NavLink
             to="/about"
             className={mobile ? "nav-links-mobile" : "nav-links"}
