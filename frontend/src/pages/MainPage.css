@@ -26,6 +26,7 @@
 .js-loading *:before,
 .js-loading *:after {
   animation-play-state: paused !important;
+  opacity: 0;
 }
 
 /* css to fade in text when loading page*/
