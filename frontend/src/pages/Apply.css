@@ -1,0 +1,8 @@
+.apply-here
+ {
+    background-color: #00843d;
+    border: 0;
+    color: #fff;
+    border-radius: 100px;
+    font-size: min(17px, 4vw);
+}
