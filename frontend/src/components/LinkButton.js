@@ -6,6 +6,33 @@ const STYLES = ["btn--primary", "btn--outline"];
 
 const SIZES = ["btn--medium", "btn--large"];
 
+const InternalButton = ({
+  children,
+  type,
+  onClick,
+  buttonStyle,
+  buttonSize,
+  extraCss,
+  href,
+  target,
+}) => {
+  const checkButtonStyle = STYLES.includes(buttonStyle)
+    ? buttonStyle
+    : STYLES[0];
+
+  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
+
+  return (
+    <button
+      className={`btn ${checkButtonStyle} ${checkButtonSize} ${extraCss}`}
+      onClick={onClick}
+      type={type}
+    >
+      {children}
+    </button>
+  );
+};
+
 export const LinkButton = ({
   children,
   type,
@@ -15,21 +42,42 @@ export const LinkButton = ({
   url,
   extraCss,
 }) => {
-  const checkButtonStyle = STYLES.includes(buttonStyle)
-    ? buttonStyle
-    : STYLES[0];
-
-  const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
-
   return (
     <Link to={url} className="btn-mobile">
-      <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize} ${extraCss}`}
-        onClick={onClick}
+      <InternalButton
+        children={children}
         type={type}
-      >
-        {children}
-      </button>
+        onClick={onClick}
+        buttonStyle={buttonStyle}
+        buttonSize={buttonSize}
+        extraCss={extraCss}
+      />
     </Link>
+  );
+};
+
+export const LinkButtonOutside = ({
+  children,
+  type,
+  onClick,
+  buttonStyle,
+  buttonSize,
+  extraCss,
+  href,
+  target,
+}) => {
+  return (
+    <a href={href} target={target}>
+      <InternalButton
+        children={children}
+        type={type}
+        onClick={onClick}
+        buttonStyle={buttonStyle}
+        buttonSize={buttonSize}
+        extraCss={extraCss}
+        href={href}
+        target={target}
+      />
+    </a>
   );
 };
