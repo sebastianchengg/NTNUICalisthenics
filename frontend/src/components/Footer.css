@@ -15,21 +15,3 @@
   transform: translate(0, -50%);
 }
 
-.social-container {
-  text-align: right;
-  font-size: min(30px, 9vw);
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.url:link,
-.url:visited {
-  text-decoration: none;
-  color: #fff;
-}
-
-.spacing {
-  margin-right: 30px;
-}
