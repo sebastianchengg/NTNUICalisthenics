@@ -2,10 +2,10 @@
   font-family: "Archivo", sans-serif;
   font-weight: 500;
   color: #fff;
-  font-size: 8vh;
+  font-size: max(30px, 3vw);
   z-index: 9;
   position: absolute;
-  top: 35%;
+  top: 40%;
   margin: 0 20%;
   width: 60%;
 }
