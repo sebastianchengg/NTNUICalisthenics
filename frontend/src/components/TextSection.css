@@ -16,5 +16,6 @@
 .text-section-text {
     font-size: min(16px, 2.5vh);
     line-height: 1.5rem;
+    white-space: pre-wrap;
 }
 

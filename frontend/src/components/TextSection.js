@@ -1,12 +1,17 @@
 import React from "react";
 import "./TextSection.css";
 
-export const TextSection = ({ title, text }) => {
+export const TextSection = ({ title, text, children }) => {
   return (
     <>
       <div className="text-section-container">
         <div className="text-section-title">{title}</div>
-        <div className="text-section-text">{text}</div>
+        {text || children ? (
+          <div className="text-section-text">
+            {text}
+            {children}
+          </div>
+        ) : null}
       </div>
     </>
   );
