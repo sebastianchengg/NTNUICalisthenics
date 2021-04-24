@@ -14,6 +14,14 @@
     font-weight: 500;
   }
 
+.contact-social {
+  font-size: 30px;
+}
+
+.contact-social-spacing {
+  margin-right: 10%;
+}
+
 @media screen and (max-width: 960px) {
   .main-text {
     text-align: center;
