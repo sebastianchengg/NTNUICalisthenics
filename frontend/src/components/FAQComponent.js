@@ -5,7 +5,6 @@ import {
   AccordionSummary,
   AccordionDetails,
   Typography,
-  withTheme,
 } from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import "./FAQComponent.css";
