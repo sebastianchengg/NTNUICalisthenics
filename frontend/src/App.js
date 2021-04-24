@@ -12,7 +12,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import "./pages/Apply.css";
 import "./pages/MainPage.css";
-import "./pages/Leaderboard.css";
 import "./components/Navbar.css";
 import "./components/LinkButton.css";
 import "./components/BackgroundPicture.css";
