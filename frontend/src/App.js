@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import 'bootstrap/dist/css/bootstrap.css';
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
@@ -9,6 +9,19 @@ import Leaderboard from "./pages/Leaderboard"
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import "./pages/Apply.css";
+import "./pages/MainPage.css";
+import "./pages/Leaderboard.css";
+import "./components/Navbar.css";
+import "./components/LinkButton.css";
+import "./components/BackgroundPicture.css";
+import "./components/FAQComponent.css";
+import "./components/Footer.css";
+import "./components/TextSection.css";
+import "./components/SocialLogos.css";
+
+
 
 const App = () => {
   return (
