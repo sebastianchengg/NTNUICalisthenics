@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import {InstagramLogo, FacebookLogo} from "./SocialLogos";
+import {InstagramLogo, FacebookLogo, MailLogo} from "./SocialLogos";
 
 export const Footer = () => {
   return (
@@ -9,7 +9,8 @@ export const Footer = () => {
         <div className="social-container">
           <div className="creator-container">2021 — Calisthenics IT-crew</div>
           <InstagramLogo extraCss="spacing"/>
-          <FacebookLogo />
+          <FacebookLogo extraCss="spacing"/>
+          <MailLogo />
         </div>
       </div>
     </>
