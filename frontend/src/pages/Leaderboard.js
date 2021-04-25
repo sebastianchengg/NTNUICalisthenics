@@ -1,7 +1,8 @@
 import React from "react";
 import { HalfPicture } from "../components/BackgroundPicture";
+import { RepLeaderBoard, DurationLeaderboard } from "../components/Tables";
+import {TextSection} from "../components/TextSection";
 import Grid from "@material-ui/core/Grid";
-import Table from "react-bootstrap/Table";
 
 export const Leaderboard = () => {
   return (
@@ -12,93 +13,17 @@ export const Leaderboard = () => {
         titleText="Leaderboard"
       />
       <div className="page">
+        <TextSection title="Leaderboard" text="Every semester our group has a test day for everyone to check their max reps and max holds on different exercises. These are our all-time best results." />
+
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
-            <Table striped variant="dark">
-              <thead>
-                <tr>
-                  <th>Excersise</th>
-                  <th>Name</th>
-                  <th>Reps</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-              </tbody>
-            </Table>
+            <TextSection title="Repetition-based" />
+            <RepLeaderBoard/>
           </Grid>
 
           <Grid item xs={12} sm={6}>
-            <Table striped variant="dark">
-              <thead>
-                <tr>
-                  <th>Excersise</th>
-                  <th>Name</th>
-                  <th>Reps</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-
-                <tr>
-                  <td>Excersise</td>
-                  <td>Name</td>
-                  <td>Reps</td>
-                </tr>
-              </tbody>
-            </Table>
+          <TextSection title="Duration-based" />
+            <DurationLeaderboard/>
           </Grid>
         </Grid>
       </div>
