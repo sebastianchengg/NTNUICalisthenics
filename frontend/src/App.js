@@ -8,6 +8,7 @@ import "./components/Footer.css";
 import "./components/LinkButton.css";
 import "./components/Navbar.css";
 import "./components/SocialLogos.css";
+import "./components/Tables.css";
 import "./components/TextSection.css";
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
