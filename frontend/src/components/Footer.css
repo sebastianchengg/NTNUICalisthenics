@@ -15,3 +15,6 @@
   transform: translate(0, -50%);
 }
 
+.icon-scaling {
+  font-size: min(30px, 7vw);
+}
