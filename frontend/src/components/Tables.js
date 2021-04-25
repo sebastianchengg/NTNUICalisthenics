@@ -2,15 +2,15 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./Tables.css";
 
-const TableHead = () => {
+const TableHead = ({type}) => {
   return (
     <thead>
       <tr>
         <th className="table-separate">Exercise</th>
         <th className="table-separate">Male</th>
-        <th className="table-separate">Reps</th>
+        <th className="table-separate">{type}</th>
         <th className="table-separate">Female</th>
-        <th>Reps</th>
+        <th>{type}</th>
       </tr>
     </thead>
   );
@@ -37,59 +37,59 @@ const TableRow = ({
 export const RepLeaderBoard = () => {
   return (
     <Table striped variant="dark">
-      <TableHead />
+      <TableHead type="Reps"/>
       <tbody>
         <TableRow
-          excersise="Handstand push-ups"
+          exercise="Handstand push-ups"
           maleName="-"
           maleResult="-"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Push-ups"
+          exercise="Push-ups"
           maleName="-"
           maleResult="-"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Muscle-ups"
+          exercise="Muscle-ups"
           maleName="Olav"
           maleResult="7"
           femaleName="Anita"
           femaleResult="5"
         />
         <TableRow
-          excersise="Pull-ups"
+          exercise="Pull-ups"
           maleName="Sebastian"
           maleResult="25"
           femaleName="Anita"
           femaleResult="19"
         />
         <TableRow
-          excersise="Dips"
+          exercise="Dips"
           maleName="Sebastian"
           maleResult="57"
           femaleName="Anita"
           femaleResult="27"
         />
         <TableRow
-          excersise="Dragon flags"
+          exercise="Dragon flags"
           maleName="Kristoffer"
           maleResult="25"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Pistol squats"
+          exercise="Pistol squats"
           maleName="Gulleik"
           maleResult="25"
           femaleName="Anita"
           femaleResult="38"
         />
         <TableRow
-          excersise="Toes to bar"
+          exercise="Toes to bar"
           maleName="-"
           maleResult="-"
           femaleName="-"
@@ -103,45 +103,45 @@ export const RepLeaderBoard = () => {
 export const DurationLeaderboard = () => {
   return (
     <Table striped variant="dark">
-      <TableHead />
+      <TableHead type="Hold time"/>
       <tbody>
         <TableRow
-          excersise="Planche"
+          exercise="Planche"
           maleName="Peder"
           maleResult="5s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Human flag"
+          exercise="Human flag"
           maleName="Daniel"
           maleResult="24s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Front lever"
+          exercise="Front lever"
           maleName="Daniel"
           maleResult="12s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Back lever"
+          exercise="Back lever"
           maleName="Peter"
           maleResult="29s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="Handstand"
+          exercise="Handstand"
           maleName="-"
           maleResult="-"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
-          excersise="L-sit"
+          exercise="L-sit"
           maleName="-"
           maleResult="-"
           femaleName="-"
