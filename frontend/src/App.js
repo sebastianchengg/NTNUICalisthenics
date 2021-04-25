@@ -1,7 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
-import "./pages/Apply.css";
 import "./pages/MainPage.css";
 import "./components/BackgroundPicture.css";
 import "./components/FAQComponent.css";
