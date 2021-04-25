@@ -17,7 +17,7 @@ export const MainPage = () => {
           extraCss="apply-text"
           url="/apply"
           buttonStyle="btn--outline"
-          buttonSize="btn--large"
+          buttonSize="btn--medium"
         >
           Apply now
         </LinkButton>
