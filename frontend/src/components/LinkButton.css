@@ -9,11 +9,11 @@
   border: none;
   cursor: pointer;
   font-family: "Archivo", sans-serif;
-  font-size: 3vh;
+  font-size: min(3vh, 1.5rem);
 }
 
 .btn:focus {
-    box-shadow: none;
+  box-shadow: none;
 }
 
 .btn--primary {
