@@ -12,6 +12,10 @@
   font-size: 3vh;
 }
 
+.btn:focus {
+    box-shadow: none;
+}
+
 .btn--primary {
   background-color: var(--primary);
   color: #242424;
@@ -36,7 +40,16 @@
 
 .btn--medium:hover,
 .btn--large:hover {
+  text-decoration: none;
   background: #fff;
   color: #242424;
   transition: all 0.3s ease-out;
+}
+
+.apply-here {
+  background-color: #00843d;
+  border: 0;
+  color: #fff;
+  border-radius: 100px;
+  font-size: min(17px, 4vw);
 }

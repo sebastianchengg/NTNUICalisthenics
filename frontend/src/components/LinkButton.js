@@ -2,10 +2,6 @@ import React from "react";
 import "./LinkButton.css";
 import { Link } from "react-router-dom";
 
-const STYLES = ["btn--primary", "btn--outline"];
-
-const SIZES = ["btn--medium", "btn--large"];
-
 const InternalButton = ({
   children,
   type,
@@ -16,6 +12,9 @@ const InternalButton = ({
   href,
   target,
 }) => {
+  const STYLES = ["btn--primary", "btn--outline"];
+
+  const SIZES = ["btn--medium", "btn--large"];
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
@@ -27,6 +26,8 @@ const InternalButton = ({
       className={`btn ${checkButtonStyle} ${checkButtonSize} ${extraCss}`}
       onClick={onClick}
       type={type}
+      href={href}
+      target={target}
     >
       {children}
     </button>
