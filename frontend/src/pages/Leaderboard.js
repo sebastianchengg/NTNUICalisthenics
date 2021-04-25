@@ -16,12 +16,12 @@ export const Leaderboard = () => {
         <TextSection title="Leaderboard" text="Every semester our group has a test day for everyone to check their max reps and max holds on different exercises. These are our all-time best results." />
 
         <Grid container spacing={4}>
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
             <TextSection title="Repetition-based" />
             <RepLeaderBoard/>
           </Grid>
 
-          <Grid item xs={12} sm={6}>
+          <Grid item xs={12} md={6}>
           <TextSection title="Duration-based" />
             <DurationLeaderboard/>
           </Grid>

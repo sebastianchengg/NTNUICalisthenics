@@ -36,7 +36,7 @@ const TableRow = ({
 
 export const RepLeaderBoard = () => {
   return (
-    <Table striped variant="dark">
+    <Table striped bordered responsive variant="dark">
       <TableHead type="Reps"/>
       <tbody>
         <TableRow
@@ -102,7 +102,7 @@ export const RepLeaderBoard = () => {
 
 export const DurationLeaderboard = () => {
   return (
-    <Table striped variant="dark">
+    <Table striped bordered responsive variant="dark">
       <TableHead type="Hold time"/>
       <tbody>
         <TableRow
