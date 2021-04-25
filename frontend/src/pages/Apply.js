@@ -3,7 +3,6 @@ import { TextSection } from "../components/TextSection";
 import { HalfPicture } from "../components/BackgroundPicture";
 import { LinkButtonOutside } from "../components/LinkButton";
 import "./../App.css";
-import "./Apply.css";
 
 export const Apply = () => {
   return (
