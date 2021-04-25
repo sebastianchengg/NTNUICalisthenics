@@ -23,5 +23,5 @@
   }
   
   .spacing {
-    margin-right: 30px;
+    margin-right: min(30px, 6vw);
   }
