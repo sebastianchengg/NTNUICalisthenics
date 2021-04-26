@@ -90,7 +90,7 @@ export const Navbar = () => {
             FAQ
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="/contact"
             className={mobile ? "nav-links-mobile" : "nav-links"}
             activeClassName={mobile ? "selected-mobile" : "selected"}
@@ -98,7 +98,7 @@ export const Navbar = () => {
             onClick={closeMobileMenu}
           >
             Contact
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to="/leaderboard"

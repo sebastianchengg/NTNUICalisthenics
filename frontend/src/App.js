@@ -14,7 +14,7 @@ import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
 import FAQ from "./pages/FAQ";
-import Contact from "./pages/Contact";
+// import Contact from "./pages/Contact";
 import Leaderboard from "./pages/Leaderboard";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -30,7 +30,7 @@ const App = () => {
           <Route path="/about" exact component={About} />
           <Route path="/apply" exact component={Apply} />
           <Route path="/faq" exact component={FAQ} />
-          <Route path="/contact" exact component={Contact} />
+          {/* <Route path="/contact" exact component={Contact} /> */}
           <Route path="/leaderboard" exact component={Leaderboard} />
         </Switch>
         <Footer />
