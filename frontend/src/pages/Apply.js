@@ -2,6 +2,7 @@ import React from "react";
 import { TextSection } from "../components/TextSection";
 import { HalfPicture } from "../components/BackgroundPicture";
 import { LinkButtonOutside } from "../components/LinkButton";
+import Grid from "@material-ui/core/Grid";
 import "./../App.css";
 
 export const Apply = () => {
@@ -13,25 +14,44 @@ export const Apply = () => {
         titleText="Apply"
       />
       <div className="page">
-        <TextSection
-          title="Apply for membership"
-          text={
-            "We're always looking for people who are motivated. " +
-            "Each semester we invite new members from total beginners, " +
-            "to people with years of experience. If you want to join one " +
-            "of the best communities NTNUI has to offer and at the same time " +
-            "get stronger, this is the group for you. Send us an application!"
-          }
-        />
-        <LinkButtonOutside
-          buttonStyle="btn-primary"
-          buttonSize="btn-large"
-          extraCss="apply-here"
-          href="https://forms.gle/CZCejMfFd5nSGVAs8"
-          target="_blank"
-        >
-          Apply here
-        </LinkButtonOutside>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6}>
+            <TextSection
+              title="Apply for membership"
+              text={
+                "We're always looking for people who are motivated. " +
+                "Each semester we invite new members from total beginners, " +
+                "to people with years of experience. If you want to join one " +
+                "of the best communities NTNUI has to offer and at the same time " +
+                "get stronger, this is the group for you. Send us an application!"
+              }
+            />
+
+            <LinkButtonOutside
+              buttonStyle="btn-primary"
+              buttonSize="btn-large"
+              extraCss="apply-here"
+              href="https://forms.gle/CZCejMfFd5nSGVAs8"
+              target="_blank"
+            >
+              Apply here
+            </LinkButtonOutside>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextSection
+              title="Important!"
+              text={
+                "Every semester we send an e-mail to everyone on the waiting list to " +
+                "confirm if you want to stay on it not. This mail might end up in you " +
+                "garbage mail so it's extremely important that you check it from " +
+                "time to time. If you don't answer this mail you'll be taken off " +
+                "the waiting list. We recommend that you like our Facebook page " +
+                "where we'll make a post every time such an e-mail is sent, to "+
+                "avoid this from happening."
+              }
+            />
+          </Grid>
+        </Grid>
       </div>
     </>
   );
