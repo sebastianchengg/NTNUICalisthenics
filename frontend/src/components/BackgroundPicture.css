@@ -41,23 +41,28 @@
 }
 
 .url-2 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), no-repeat url("../images/handstand.jpg") center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/handstand.jpg") center center/cover;
 }
 
 .url-3 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), no-repeat url("../images/training-2.jpg") center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/training-2.jpg") center center/cover;
 }
 
 .url-4 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), no-repeat url("../images/handstand2.jpg") bottom center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/handstand2.jpg") bottom center/cover;
 }
 
 .url-5 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), no-repeat url("../images/backflip.jpg") center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/backflip.jpg") center/cover;
   background-position: 0 40%;
 }
 
 .url-6 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.3)), no-repeat url("../images/elbow-lever.jpg") center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/elbow-lever.jpg") center center/cover;
   background-position: 0 40%;
 }
