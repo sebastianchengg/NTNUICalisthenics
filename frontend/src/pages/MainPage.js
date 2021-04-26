@@ -2,7 +2,11 @@ import React from "react";
 import { MainPicture } from "../components/BackgroundPicture";
 import { LinkButton } from "../components/LinkButton";
 import { TextSection } from "../components/TextSection";
-import { InstagramLogo, FacebookLogo, MailLogo } from "../components/SocialLogos";
+import {
+  InstagramLogo,
+  FacebookLogo,
+  MailLogo,
+} from "../components/SocialLogos";
 import Grid from "@material-ui/core/Grid";
 import "./MainPage.css";
 
@@ -16,8 +20,8 @@ export const MainPage = () => {
         <LinkButton
           extraCss="apply-text"
           url="/apply"
-          buttonStyle="btn--outline"
-          buttonSize="btn--medium"
+          buttonStyle="btn-outline"
+          buttonSize="btn-medium"
         >
           Apply now
         </LinkButton>
@@ -35,19 +39,19 @@ export const MainPage = () => {
               }
             />
           </Grid>
+
           <Grid item xs={12} sm={6} md={4}>
             <TextSection
               title="Address"
               text={"Båtsmannsgata 4, 7042 Trondheim"}
             />
           </Grid>
+
           <Grid item xs={12} sm={6} md={4}>
-            <TextSection
-              title="Contact"
-            >
-                <InstagramLogo extraCss="contact-social contact-social-spacing" />
-                <FacebookLogo extraCss="contact-social contact-social-spacing" />
-                <MailLogo extraCss="contact-social"/>
+            <TextSection title="Contact">
+              <InstagramLogo extraCss="contact-social contact-social-spacing" />
+              <FacebookLogo extraCss="contact-social contact-social-spacing" />
+              <MailLogo extraCss="contact-social" />
             </TextSection>
           </Grid>
         </Grid>

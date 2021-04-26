@@ -2,7 +2,8 @@ import React from "react";
 import Table from "react-bootstrap/Table";
 import "./Tables.css";
 
-const TableHead = ({type}) => {
+//Component for a table head
+const TableHead = ({ type }) => {
   return (
     <thead>
       <tr>
@@ -16,6 +17,7 @@ const TableHead = ({type}) => {
   );
 };
 
+//Component for a table row
 const TableRow = ({
   exercise,
   maleName,
@@ -34,10 +36,11 @@ const TableRow = ({
   );
 };
 
+//Component used in leaderboard page
 export const RepLeaderBoard = () => {
   return (
     <Table striped bordered responsive variant="dark">
-      <TableHead type="Reps"/>
+      <TableHead type="Reps" />
       <tbody>
         <TableRow
           exercise="Handstand push-ups"
@@ -100,10 +103,11 @@ export const RepLeaderBoard = () => {
   );
 };
 
+//Component used in leaderboard page
 export const DurationLeaderboard = () => {
   return (
     <Table striped bordered responsive variant="dark">
-      <TableHead type="Hold time"/>
+      <TableHead type="Hold time" />
       <tbody>
         <TableRow
           exercise="Planche"

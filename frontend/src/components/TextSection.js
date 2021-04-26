@@ -1,6 +1,7 @@
 import React from "react";
 import "./TextSection.css";
 
+//Component to use if a section of text is needed
 export const TextSection = ({ title, text, children }) => {
   return (
     <>

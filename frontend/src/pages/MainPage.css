@@ -13,9 +13,9 @@
 }
 
 .apply-text {
-    font-weight: 500;
-    font-size: 50px;
-  }
+  font-weight: 500;
+  font-size: 50px;
+}
 
 .contact-social {
   font-size: 30px;
@@ -25,6 +25,7 @@
   margin-right: 10%;
 }
 
+/* Text in center when on mobile */
 @media screen and (max-width: 960px) {
   .main-text {
     text-align: center;
@@ -33,6 +34,7 @@
   }
 }
 
+/* Page has to finish loading before showing animation */
 .js-loading *,
 .js-loading *:before,
 .js-loading *:after {

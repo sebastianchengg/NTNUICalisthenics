@@ -26,10 +26,10 @@ export const FacebookLogo = ({ extraCss }) => {
 export const MailLogo = ({ extraCss }) => {
   return (
     <a
-    onClick={(e) => {
+      onClick={(e) => {
         window.location = "mailto:calisthenics-leder@ntnui.no";
         e.preventDefault();
-    }}
+      }}
       className={`far fa-envelope url ${extraCss}`}
     />
   );

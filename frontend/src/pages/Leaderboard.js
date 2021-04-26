@@ -1,7 +1,7 @@
 import React from "react";
 import { HalfPicture } from "../components/BackgroundPicture";
 import { RepLeaderBoard, DurationLeaderboard } from "../components/Tables";
-import {TextSection} from "../components/TextSection";
+import { TextSection } from "../components/TextSection";
 import Grid from "@material-ui/core/Grid";
 
 export const Leaderboard = () => {
@@ -13,17 +13,20 @@ export const Leaderboard = () => {
         titleText="Leaderboard"
       />
       <div className="page">
-        <TextSection title="Leaderboard" text="Every semester our group has a test day for everyone to check their max reps and max holds on different exercises. These are our all-time best results." />
+        <TextSection
+          title="Leaderboard"
+          text="Every semester our group has a test day for everyone to check their max reps and max holds on different exercises. These are our all-time best results."
+        />
 
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <TextSection title="Repetition-based" />
-            <RepLeaderBoard/>
+            <RepLeaderBoard />
           </Grid>
 
           <Grid item xs={12} md={6}>
-          <TextSection title="Duration-based" />
-            <DurationLeaderboard/>
+            <TextSection title="Duration-based" />
+            <DurationLeaderboard />
           </Grid>
         </Grid>
       </div>

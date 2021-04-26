@@ -1,27 +1,27 @@
 .social-container {
-    text-align: right;
-    font-size: min(30px, 9vw);
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .url {
-    cursor: pointer;
-    color:#fff;
-  }
-  
-  .url:hover {
-    text-decoration: none;
-    color: rgb(200, 200, 200);
-  }
+  text-align: right;
+  font-size: min(30px, 9vw);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .url:link,
-  .url:visited {
-    text-decoration: none;
-  }
-  
-  .spacing {
-    margin-right: min(30px, 6vw);
-  }
+.url {
+  cursor: pointer;
+  color: #fff;
+}
+
+.url:hover {
+  text-decoration: none;
+  color: rgb(200, 200, 200);
+}
+
+.url:link,
+.url:visited {
+  text-decoration: none;
+}
+
+.spacing {
+  margin-right: min(30px, 6vw);
+}

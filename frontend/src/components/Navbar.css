@@ -1,7 +1,3 @@
-/* 
-align-items: hvordan de plasseres vertikalt
-*/
-
 .navbar {
   background: transparent;
   height: 100px;
@@ -15,6 +11,7 @@ align-items: hvordan de plasseres vertikalt
   padding: 0 40px;
 }
 
+/* Navbar when not on home page */
 .not-home {
   background: #000;
   position: static;
@@ -40,6 +37,7 @@ align-items: hvordan de plasseres vertikalt
   grid-column-gap: 30px;
 }
 
+/* Links to other pages internally */
 .nav-links {
   font-family: "Barlow Condensed";
   margin: 0 0 20px 0;
@@ -67,6 +65,7 @@ align-items: hvordan de plasseres vertikalt
   z-index: 999;
 }
 
+/* styling for smaller screens */
 @media screen and (max-width: 960px) {
   .logo {
     max-height: 70px;

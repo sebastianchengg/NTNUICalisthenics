@@ -1,6 +1,7 @@
 import React from "react";
 import "./BackgroundPicture.css";
 
+//Makes the smooth animation of the title
 export const SmoothAnimation = () => {
   document.body.classList.add("js-loading");
 
@@ -8,12 +9,13 @@ export const SmoothAnimation = () => {
     document.body.classList.remove("js-loading");
   }
 
-  //All eventlisteners needed to aviod all bugs
-  window.addEventListener("load", show, {once: true});
-  window.addEventListener("click", show, {once: true});
-  window.addEventListener("popstate", show, {once: true});
+  //All eventlisteners needed to avoid all bugs
+  window.addEventListener("load", show, { once: true });
+  window.addEventListener("click", show, { once: true });
+  window.addEventListener("popstate", show, { once: true });
 };
 
+//Full size image
 export const MainPicture = ({ url, photographer }) => {
   SmoothAnimation();
 
@@ -26,8 +28,8 @@ export const MainPicture = ({ url, photographer }) => {
   );
 };
 
+//Half sized image
 export const HalfPicture = ({ url, photographer, titleText }) => {
-
   return (
     <>
       <div className={`picture-container half ${url}`}>

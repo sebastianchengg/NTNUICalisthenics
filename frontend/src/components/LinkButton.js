@@ -12,13 +12,16 @@ const InternalButton = ({
   href,
   target,
 }) => {
-  const STYLES = ["btn--primary", "btn--outline"];
+  //Only two possible styles and sizes
+  const STYLES = ["btn-primary", "btn-outline"];
+  const SIZES = ["btn-medium", "btn-large"];
 
-  const SIZES = ["btn--medium", "btn--large"];
+  //"btn-primary" style is default if nothing is specified
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
 
+  //"btn-medium" style is default if nothing is specified
   const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0];
 
   return (
@@ -34,6 +37,7 @@ const InternalButton = ({
   );
 };
 
+//Button to link internally on the site
 export const LinkButton = ({
   children,
   type,
@@ -57,6 +61,7 @@ export const LinkButton = ({
   );
 };
 
+//Button to link to an external site
 export const LinkButtonOutside = ({
   children,
   type,

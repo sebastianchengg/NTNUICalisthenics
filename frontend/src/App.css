@@ -17,6 +17,9 @@ body {
   margin: 0 6vw 3vw 6vw;
 }
 
-html, body, #root, .App {
+html,
+body,
+#root,
+.App {
   height: 100vh;
 }

@@ -41,7 +41,7 @@ export const Navbar = () => {
   return (
     <>
       <nav className={homePage ? "navbar" : "navbar not-home"}>
-        <NavLink to="/" className="navbar-logo" >
+        <NavLink to="/" className="navbar-logo">
           <img className="logo" src={Logo} />
         </NavLink>
 
@@ -50,7 +50,7 @@ export const Navbar = () => {
         </div>
 
         <ul className={click ? "nav-menu-active" : "nav-menu"}>
-        <NavLink
+          <NavLink
             to="/"
             className={mobile ? "nav-links-mobile" : "nav-links"}
             activeClassName={mobile ? "selected-mobile" : "selected"}
@@ -59,6 +59,7 @@ export const Navbar = () => {
           >
             Home
           </NavLink>
+
           <NavLink
             to="/about"
             className={mobile ? "nav-links-mobile" : "nav-links"}
@@ -68,6 +69,7 @@ export const Navbar = () => {
           >
             About
           </NavLink>
+
           <NavLink
             to="/apply"
             className={mobile ? "nav-links-mobile" : "nav-links"}
@@ -77,6 +79,7 @@ export const Navbar = () => {
           >
             Apply
           </NavLink>
+
           <NavLink
             to="/faq"
             className={mobile ? "nav-links-mobile" : "nav-links"}
@@ -86,6 +89,7 @@ export const Navbar = () => {
           >
             FAQ
           </NavLink>
+
           <NavLink
             to="/contact"
             className={mobile ? "nav-links-mobile" : "nav-links"}
@@ -95,6 +99,7 @@ export const Navbar = () => {
           >
             Contact
           </NavLink>
+
           <NavLink
             to="/leaderboard"
             className={mobile ? "nav-links-mobile" : "nav-links"}
