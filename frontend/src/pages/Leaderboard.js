@@ -15,7 +15,7 @@ export const Leaderboard = () => {
       <div className="page">
         <TextSection
           title="Leaderboard"
-          text="Every semester our group has a test day for everyone to check their max reps and max holds on different exercises. These are our all-time best results."
+          text="Every semester our group has one or more test days so everyone can check their max reps and max holds on different exercises. These are our all-time best results."
         />
 
         <Grid container spacing={4}>
