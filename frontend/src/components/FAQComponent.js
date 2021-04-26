@@ -85,6 +85,13 @@ export const FAQComponent = () => {
           }
         />
         <ExpansionPanel
+          question="I have been on the waiting list for a long time, when will I get in?"
+          answer={
+            "The waiting list is currently very long, an estimate to when you'll " +
+            "get in is about 6-18 months depending on the state of the waiting list."
+          }
+        />
+        <ExpansionPanel
           question="Can I just show up on your trainings?"
           answer="No, our trainings are for members only."
         />
@@ -92,7 +99,7 @@ export const FAQComponent = () => {
           question="Do I have to be a student/employee at NTNU to join your group?"
           answer={
             "Yes, you have to be a student/employee at NTNU, or going to " +
-            "become it in the near future to be apply and be a member."
+            "become it in the near future to apply and be a member."
           }
         />
         <ExpansionPanel
