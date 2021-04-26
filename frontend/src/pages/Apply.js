@@ -41,12 +41,12 @@ export const Apply = () => {
             <TextSection
               title="Important!"
               text={
-                "Every semester we send an e-mail to everyone on the waiting list to " +
+                "Every semester we send an email to everyone on the waiting list to " +
                 "confirm if you want to stay on it not. This mail might end up in you " +
                 "garbage mail so it's extremely important that you check it from " +
                 "time to time. If you don't answer this mail you'll be taken off " +
-                "the waiting list. We recommend that you like our Facebook page " +
-                "where we'll make a post every time such an e-mail is sent, to "+
+                "the waiting list. We'll post on our Facebook page every time " +
+                "such an e-mail is sent, so we recommend that you like it to "+
                 "avoid this from happening."
               }
             />
