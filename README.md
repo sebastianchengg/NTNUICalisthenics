@@ -6,4 +6,4 @@ Welcome to this repository!
 
 This repository contains the entire NTNUICalisthenics application. Frontend is written using [React](https://reactjs.org/) and [Javacript](https://www.javascript.com/).
 
- - [Frontend](./sellpoint_frontend/README.md)
+ - [Frontend](./frontend/README.md)
