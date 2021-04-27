@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Roboto, sans-serif;
+  color: #fff;
+}
+
+/* Always shows scrollbar on all pages */
+body {
+  overflow-y: scroll;
+  background-color: #000;
+}
+
+.page {
+  margin: 0 6vw 3vw 6vw;
+}
+
+html,
+body,
+#root,
+.App {
+  height: 100vh;
+}

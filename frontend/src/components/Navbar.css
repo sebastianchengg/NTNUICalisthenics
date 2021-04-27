@@ -1,0 +1,141 @@
+.navbar {
+  background: transparent;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  padding: 0 40px;
+}
+
+/* Navbar when not on home page */
+.not-home {
+  background: #000;
+  position: static;
+}
+
+.navbar-logo {
+  position: absolute;
+  justify-self: left;
+  margin-left: 0px;
+  cursor: pointer;
+  display: flex;
+}
+
+.logo {
+  max-height: 70px;
+  width: auto;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  margin: auto;
+  grid-column-gap: 30px;
+}
+
+/* Links to other pages internally */
+.nav-links {
+  font-family: "Barlow Condensed";
+  margin: 0 0 20px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  height: 60px;
+  line-height: 80px;
+}
+
+.nav-links:hover {
+  color: #fff;
+  border-bottom: 4px solid #fff;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.selected {
+  border-bottom: 4px solid #fff;
+}
+
+.menu-icon {
+  display: none;
+  z-index: 999;
+}
+
+/* styling for smaller screens */
+@media screen and (max-width: 960px) {
+  .logo {
+    max-height: 70px;
+    height: 20vw;
+    width: auto;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    width: 100%;
+    top: 0px;
+    left: -100%;
+    transition: all 0.5s ease;
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .nav-menu-active {
+    flex-direction: column;
+    width: 100%;
+    top: 0px;
+    left: 0;
+    transition: all 0.5s ease;
+    position: absolute;
+    display: flex;
+    background-color: rgba(14, 14, 14, 0.95);
+    transition: all 0.5s ease;
+    z-index: 9999;
+  }
+
+  .nav-links-mobile {
+    background-color: rgba(14, 14, 14, 0.95);
+    font-family: "Barlow Condensed";
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 80px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .nav-links-mobile:hover {
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #242424;
+    text-decoration: none;
+  }
+
+  .selected-mobile {
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.85);
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transform: translate(-100%, 60%);
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 999999;
+  }
+
+  .fa-bars {
+    color: #fff;
+    font-size: 30px;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 35px;
+  }
+}

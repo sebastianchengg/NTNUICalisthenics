@@ -1,0 +1,20 @@
+.footer-container {
+  background-color: #000;
+  height: min(82px, 30vw);
+  padding: 0 6vw;
+  position: sticky;
+  top: 100%;
+}
+
+.creator-container {
+  color: inherit;
+  text-align: left;
+  font-size: min(16px, 4vw);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.icon-scaling {
+  font-size: min(30px, 7vw);
+}

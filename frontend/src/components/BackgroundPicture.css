@@ -1,0 +1,68 @@
+.picture-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+  position: relative;
+}
+
+.half {
+  height: 60vh;
+  max-height: 60vw;
+}
+
+.title {
+  color: #fff;
+  font-size: max(40px, 10vmin);
+  font-family: "Archivo", sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 41%;
+  width: 100%;
+  opacity: 1;
+}
+
+.photographer {
+  font-family: "Barlow Condensed";
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  z-index: 999;
+  color: rgb(170, 170, 170);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+/* URLs for the pictures used */
+.url-1 {
+  background: no-repeat url("../images/training.jpg") center center/cover;
+}
+
+.url-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/handstand.jpg") center center/cover;
+}
+
+.url-3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/training-2.jpg") center center/cover;
+}
+
+.url-4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/handstand2.jpg") bottom center/cover;
+}
+
+.url-5 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/backflip.jpg") center/cover;
+  background-position: 0 40%;
+}
+
+.url-6 {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    no-repeat url("../images/elbow-lever.jpg") center center/cover;
+  background-position: 0 40%;
+}
