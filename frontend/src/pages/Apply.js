@@ -42,7 +42,7 @@ export const Apply = () => {
               title="Important!"
               text={
                 "Every semester we send an email to everyone on the waiting list to " +
-                "confirm if you want to stay on it not. This email might end up in you " +
+                "confirm if you want to stay on it not. This email might end up in your " +
                 "garbage mail so it's extremely important that you check it from " +
                 "time to time. If you don't answer this email you'll be taken off " +
                 "the waiting list. We'll post on our Facebook page every time " +
