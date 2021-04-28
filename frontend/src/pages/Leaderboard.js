@@ -8,14 +8,14 @@ export const Leaderboard = () => {
   return (
     <>
       <HalfPicture
-        url="url-6"
+        url="url-5"
         photographer="Foto: Roland Richter/NTNUI"
         titleText="Leaderboard"
       />
       <div className="page">
         <TextSection
           title="Leaderboard"
-          text="Every semester our group has one or more test days so everyone can check their max reps and max holds on different exercises. These are our all-time best results."
+          text="Every semester our group has one or more test days so everyone can check their max reps and max holds on different exercises."
         />
 
         <Grid container spacing={4}>
