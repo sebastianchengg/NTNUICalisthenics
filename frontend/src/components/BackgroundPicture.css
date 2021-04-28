@@ -58,12 +58,6 @@
 
 .url-5 {
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    no-repeat url("../images/backflip.jpg") center/cover;
-  background-position: 0 40%;
-}
-
-.url-6 {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     no-repeat url("https://i.imgur.com/SEvJXda.jpg") center center/cover;
   background-position: 0 40%;
 }

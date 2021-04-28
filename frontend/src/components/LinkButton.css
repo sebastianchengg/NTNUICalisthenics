@@ -1,7 +1,3 @@
-:root {
-  --primary: #fff;
-}
-
 .btn {
   padding: 8px 20px;
   border-radius: 2px;
@@ -12,21 +8,17 @@
   font-size: min(3vh, 1.5rem);
 }
 
-.btn:focus {
-  box-shadow: none;
-}
-
 .btn-primary {
-  background-color: var(--primary);
+  background-color: #fff;
   color: #242424;
-  border: 1px solid var(--primary);
+  border: 1px solid #fff;
 }
 
 .btn-outline {
   background-color: transparent;
   color: #fff;
   padding: 8px 20px;
-  border: 1px solid var(--primary);
+  border: 1px solid #fff;
   transition: all 0.3s ease-out;
 }
 
@@ -47,10 +39,22 @@
 }
 
 /* for the "apply here" button in apply page */
-.apply-here {
+.apply-here,
+.apply-here:focus {
   background-color: #00843d;
   border: 0;
   color: #fff;
   border-radius: 100px;
   font-size: min(17px, 4vw);
+  text-decoration: none;
+  box-shadow: none;
+  outline: 0;
+}
+
+.apply-here:hover,
+.apply-here:active {
+  text-decoration: none;
+  background: #fff;
+  color: #242424;
+  transition: all 0.3s ease-out;
 }
