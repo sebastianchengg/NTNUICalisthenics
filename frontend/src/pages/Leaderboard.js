@@ -8,7 +8,7 @@ export const Leaderboard = () => {
   return (
     <>
       <HalfPicture
-        url="url-6"
+        url="url-5"
         photographer="Foto: Roland Richter/NTNUI"
         titleText="Leaderboard"
       />
