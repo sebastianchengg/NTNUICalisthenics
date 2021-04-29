@@ -34,13 +34,12 @@
   display: flex;
   list-style: none;
   margin: auto;
-  grid-column-gap: 30px;
 }
 
 /* Links to other pages internally */
 .nav-links {
   font-family: "Barlow Condensed";
-  margin: 0 0 20px 0;
+  margin: 0 15px 20px 15px;
   font-weight: 600;
   text-transform: uppercase;
   color: #fff;
