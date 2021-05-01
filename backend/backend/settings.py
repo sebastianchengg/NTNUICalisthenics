@@ -69,7 +69,10 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = "user.User"
 WSGI_APPLICATION = 'backend.wsgi.application'
+
+DEFAULT_AUTO_FIELD='django.db.models.AutoField' 
 
 
 # Database
