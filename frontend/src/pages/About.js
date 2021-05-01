@@ -36,7 +36,7 @@ export const About = () => {
           title="Social activities"
           text={
             "Every semester we arrange a variety of social activities. " +
-            "We organize get to know eachother parties for new members, " +
+            "We organize get to know each other parties for new members, " +
             "different workshops, out of town activites, general assembly " +
             "parties and lastly our yearly training camp to southern Europe " +
             "in the spring. In addition smaller social happenings throughout " +
