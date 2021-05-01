@@ -17,7 +17,12 @@ import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 const App = () => {
   return (
@@ -30,6 +35,9 @@ const App = () => {
           <Route path="/apply" exact component={Apply} />
           <Route path="/faq" exact component={FAQ} />
           <Route path="/leaderboard" exact component={Leaderboard} />
+          <Route path="/">
+            <Redirect to="/" />
+          </Route>
         </Switch>
         <Footer />
       </Router>
