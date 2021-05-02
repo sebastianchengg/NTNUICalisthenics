@@ -15,6 +15,7 @@ import About from "./pages/About";
 import Apply from "./pages/Apply";
 import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
+import Register from "./pages/Register";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import {
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/apply" exact component={Apply} />
           <Route path="/faq" exact component={FAQ} />
           <Route path="/leaderboard" exact component={Leaderboard} />
+          <Route path="/register" exact component={Register} />
           <Route path="/">
             <Redirect to="/" />
           </Route>
