@@ -2,7 +2,7 @@ import React from "react";
 import "./LinkButton.css";
 import { Link } from "react-router-dom";
 
-const InternalButton = ({
+export const InternalButton = ({
   children,
   type,
   onClick,
