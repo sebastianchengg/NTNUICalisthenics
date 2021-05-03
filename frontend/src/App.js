@@ -15,6 +15,8 @@ import About from "./pages/About";
 import Apply from "./pages/Apply";
 import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -37,6 +39,8 @@ const App = () => {
           <Route path="/faq" exact component={FAQ} />
           <Route path="/leaderboard" exact component={Leaderboard} />
           <Route path="/register" exact component={Register} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/profile" exact component={Profile} />
           <Route path="/">
             <Redirect to="/" />
           </Route>
