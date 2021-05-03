@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import { Button, Col, Form, InputGroup } from "react-bootstrap";
+import { useSessionContext } from "../../context/session";
+import { Col, Form, InputGroup } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
-import AuthenticationService from "../../api/user";
+import AuthenticationService from "../../core/user";
 
 /**
  * A form for registering a new user
@@ -10,6 +11,7 @@ import AuthenticationService from "../../api/user";
  * @param props - The props
  */
 export const RegisterForm = ({ logIn, rememberLogIn }) => {
+  const session = useSessionContext();
   const history = useHistory();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -40,9 +42,22 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
       phone_number: contryCode + phoneNumber,
     };
 
-    console.log(user);
-
-    AuthenticationService.signUp(user, password, logIn, rememberLogIn);
+    AuthenticationService.signUp(user, password, logIn, rememberLogIn)
+      .then(() => {
+        session
+          .updateSelfUser()
+          .then(() =>
+            history.push(logIn ? session.redirectPath ?? "/" : "/login")
+          )
+          .catch((error) => {
+            setPassword("");
+            setConfirmPassword("");
+          });
+      })
+      .catch((error) => {
+        setPassword("");
+        setConfirmPassword("");
+      });
   };
 
   return (
