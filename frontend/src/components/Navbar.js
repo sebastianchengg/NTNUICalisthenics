@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useSessionContext } from "../context/session";
 import "./Navbar.css";
 import Logo from "../images/logo.png";
 
 export const Navbar = () => {
+  const session = useSessionContext();
   const [click, setClick] = useState(false);
   const [mobile, setMobile] = useState();
   const [homePage, setHomePage] = useState(true);
@@ -99,6 +101,17 @@ export const Navbar = () => {
           >
             Leaderboard
           </NavLink>
+
+          <NavLink
+            to={session.user ? "/profile" : "/login"}
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
+            {session.user ? <i className="fas fa-user-circle"></i> : "Login"}
+          </NavLink>
+          
         </ul>
       </nav>
     </>
