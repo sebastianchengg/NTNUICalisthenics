@@ -1,10 +1,14 @@
 import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
+import { InternalButton } from "../LinkButton";
+import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
 import AuthenticationService from "../../core/user";
+import "./LoginForm.css";
 
 export const LoginForm = () => {
   const session = useSessionContext();
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
@@ -23,7 +27,7 @@ export const LoginForm = () => {
 
     AuthenticationService.login(email, password, remember)
       .then((tokens) => {
-        session.updateSelfUser();
+        session.updateSelfUser().then(() => history.push("/profile"));
       })
       .catch((error) => {
         if (error.response.status === 401) {
@@ -37,53 +41,65 @@ export const LoginForm = () => {
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={onSubmit}>
-        <Form.Group controlId="form-login-email">
-          <Form.Label>
-            <p>Email</p>
-          </Form.Label>
-          <Form.Control
-            autoFocus
-            type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Vennligst skriv inn din emailaddresse!
-          </Form.Control.Feedback>
-        </Form.Group>
+      <div className="login-container">
+        <Form noValidate validated={validated} onSubmit={onSubmit}>
+          <Form.Group controlId="form-login-email">
+            <Form.Control
+              size="sm"
+              autoFocus
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please enter your email
+            </Form.Control.Feedback>
+          </Form.Group>
 
-        <Form.Group controlId="form-login-password">
-          <Form.Label>
-            <p>Password</p>
-          </Form.Label>
-          <Form.Control
-            type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <Form.Control.Feedback type="invalid">
-            Vennligst skriv inn ditt passord!
-          </Form.Control.Feedback>
-        </Form.Group>
+          <Form.Group controlId="form-login-password">
+            <Form.Control
+              size="sm"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <Form.Control.Feedback type="invalid">
+              Please enter your password
+            </Form.Control.Feedback>
+          </Form.Group>
 
-        <Form.Group controlId="form-login-remember">
-          <Form.Check
-            type="checkbox"
-            label="Forbli innlogget"
-            onClick={(e) => setRemember(!remember)}
-          />
-        </Form.Group>
+          <Form.Group controlId="form-login-remember">
+            <Form.Check
+              className="checkbox-text"
+              type="checkbox"
+              label="Remember me"
+              onClick={(e) => setRemember(!remember)}
+            />
+          </Form.Group>
 
-        <Button variant="secondary" href="/register">
-          Opprett konto
-        </Button>
-        <Button variant="primary" type="submit">
-          Logg inn
-        </Button>
-      </Form>
+          <InternalButton
+            buttonStyle="btn-primary"
+            buttonSize="btn-medium"
+            extraCss="apply-here"
+            type="submit"
+          >
+            Login
+          </InternalButton>
+
+          <br />
+          <div className="signup-text">
+            Don't have an account? Sign up{" "}
+            {
+              <a className="here-text" href="/register">
+                here
+              </a>
+            }
+          </div>
+
+        </Form>
+      </div>
     </>
   );
 };
