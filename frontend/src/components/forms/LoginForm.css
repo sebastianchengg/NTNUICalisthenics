@@ -1,0 +1,28 @@
+.login-container {
+  width: min(300px, 80%);
+  margin: 6vh auto;
+  background-color: rgb(66, 66, 66);
+  padding: 40px 40px;
+  border-radius: 2px;
+  border: 1.5px solid rgb(88, 88, 88);
+}
+
+.checkbox-text {
+    font-size: 15px;
+}
+
+.signup-text {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.here-text {
+    text-decoration: none;
+    color:#00c45b;
+    font-weight: 550;
+}
+
+.here-text:hover {
+    text-decoration: none;
+    color:#00a54d;
+}
