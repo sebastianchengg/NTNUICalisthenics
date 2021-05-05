@@ -15,7 +15,7 @@ const ProfileLine = ({ heading, info }) => {
           </Grid>
 
           <Grid item xs={12} sm={8} md={7}>
-            <div className="info-text">{info}</div>
+            <div>{info}</div>
           </Grid>
         </Grid>
       </div>
@@ -54,7 +54,7 @@ export const ProfileComponent = ({ user }) => {
         <ProfileLine heading="Phone number" info={user.phone_number} />
         <ProfileLine heading="Date joined" info={date} />
 
-        <br/>
+        <br />
 
         <InternalButton
           buttonStyle="btn-primary"
