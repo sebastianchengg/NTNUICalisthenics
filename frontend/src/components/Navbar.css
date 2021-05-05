@@ -59,6 +59,11 @@
   border-bottom: 4px solid #fff;
 }
 
+.right-side {
+  position: absolute;
+  right: 40px;
+}
+
 .menu-icon {
   display: none;
   z-index: 999;
