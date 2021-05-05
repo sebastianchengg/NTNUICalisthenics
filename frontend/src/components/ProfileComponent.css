@@ -1,0 +1,30 @@
+.profile-container {
+  font-size: min(16px, 2.5vh);
+  width: min(600px, 80%);
+  margin: 6vh auto;
+  background-color: rgb(66, 66, 66);
+  padding: max(20px, min(7vh, 40px)) max(20px, min(6vw, 80px));
+  border-radius: 2px;
+  border: 1.5px solid rgb(88, 88, 88);
+}
+
+.div-inline {
+  display: flex;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.line-container {
+  border-bottom: 2px solid rgb(200, 200, 200);
+  margin-bottom: max(10px, 2.5vh);
+}
+
+.heading-text {
+  font-weight: 600;
+}
+
+.info-text {
+  color: rgb(200, 200, 200);
+}
