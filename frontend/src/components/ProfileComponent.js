@@ -62,7 +62,7 @@ export const ProfileComponent = ({ user }) => {
           extraCss="apply-here"
           onClick={logOut}
         >
-          Logout
+          Log out
         </InternalButton>
       </div>
     </>
