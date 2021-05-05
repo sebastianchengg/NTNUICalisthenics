@@ -32,10 +32,12 @@ export const Navbar = () => {
     }
   };
 
+  const path = useLocation().pathname;
+
   useEffect(() => {
     showMobile();
     isHomePage();
-  }, [useLocation().pathname]);
+  }, [path]);
 
   //Checks every time the mouse is clicked to apply changes to navbar
   window.addEventListener("resize", showMobile);
@@ -104,12 +106,12 @@ export const Navbar = () => {
 
           <NavLink
             to={session.user ? "/profile" : "/login"}
-            className={mobile ? "nav-links-mobile" : "nav-links"}
+            className={mobile ? "nav-links-mobile" : "nav-links right-side"}
             activeClassName={mobile ? "selected-mobile" : "selected"}
             exact
             onClick={closeMobileMenu}
           >
-            {session.user ? <i className="fas fa-user-circle"></i> : "Login"}
+            {session.user ? "Profile" : "Login"}
           </NavLink>
           
         </ul>
