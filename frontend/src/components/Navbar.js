@@ -46,7 +46,7 @@ export const Navbar = () => {
     <>
       <nav className={homePage ? "navbar" : "navbar not-home"}>
         <NavLink to="/" className="navbar-logo">
-          <img className="logo" src={Logo} />
+          <img className="logo" src="https://i.imgur.com/t7N6D8J.png" alt={Logo} />
         </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
