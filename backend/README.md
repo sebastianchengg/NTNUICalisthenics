@@ -1,6 +1,6 @@
-# [SellPoint](../README.md) > Backend
+# [NTNUICalisthenics](../README.md) > Backend
 
-This folder the SellPoint backend. Implemented using Django. Endpoints are outlined [here](./ENDPOINTS.md).
+This folder the NTNUI Calisthenics backend. Implemented using Django.
 
 ## Getting Started
 
@@ -16,11 +16,11 @@ If running Mac use `source env/bin/activate` instead of `env\scripts\activate`. 
 ## Starting App
 
 ```bash
-$ source venv/bin/activate
-$ python manage.py runserver
+env\scripts\activate
+python manage.py runserver
 ```
 
-If running Windows use `venv\bin\activate` instead of `source venv/bin/activate`. Remember to activate 
+If running Mac use `source env/bin/activate` instead of `env\scripts\activate`. Remember to activate 
 
 This will launch the app at [http://localhost:8000](http://localhost:8000). Django admin panel available at [http://localhost:8000/admin](http://localhost:8000/admin).
 
@@ -28,19 +28,19 @@ This will launch the app at [http://localhost:8000](http://localhost:8000). Djan
 
 To apply migrations run
 ```bash
-$ python manage.py migrate
+python manage.py migrate
 ```
 
 To create a superuser (Initial admin account) run
 ```bash
-$ python manage.py createsuperuser
+python manage.py createsuperuser
 ```
 This account can be used to log in to the admin panel for the first time.
 
 If you change or add a model, you have to make and apply migrations. You can do this using
 ```bash
-$ python manage.py makemigrations
-$ python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ## Further Reading
