@@ -85,7 +85,7 @@ export const LoginForm = () => {
             extraCss="apply-here"
             type="submit"
           >
-            Login
+            Log in
           </InternalButton>
 
           <br />
