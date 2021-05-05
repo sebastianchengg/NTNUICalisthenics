@@ -1,5 +1,5 @@
-import client from "./client"
-import Cookies, { CookieSetOptions } from "universal-cookie";
+import client from "./client";
+import Cookies from "universal-cookie";
 
 export const COOKIE_ACCESS_TOKEN = "cali_user_access";
 export const COOKIE_REFRESH_TOKEN = "cali_user_refresh";
@@ -27,12 +27,19 @@ class AuthenticationService {
         return response;
       },
       async (error) => {
-        if (!this.isLoggedIn() || !error.response || error.response.status !== 401) {
+        if (
+          !this.isLoggedIn() ||
+          !error.response ||
+          error.response.status !== 401
+        ) {
           return new Promise((resolve, reject) => reject(error));
         }
 
         // Log out the user if we are forbidden from refreshing or logging in
-        if (error.config.url === "user/token/" || error.config.url === "user/refresh/") {
+        if (
+          error.config.url === "user/token/" ||
+          error.config.url === "user/refresh/"
+        ) {
           this.logOut();
 
           return new Promise((resolve, reject) => reject(error));
@@ -57,11 +64,11 @@ class AuthenticationService {
         } catch (error) {
           return await Promise.reject(error);
         }
-      },
+      }
     );
   }
 
-/**
+  /**
    * Create a new user
    *
    * @param user - The user to create
@@ -91,8 +98,11 @@ class AuthenticationService {
    * @param password - The password of the user
    * @param remember - If we should store the refresh token across sessions
    */
-   async login(email, password, remember) {
-    const response = await client.post("user/token/", { email: email, password: password });
+  async login(email, password, remember) {
+    const response = await client.post("user/token/", {
+      email: email,
+      password: password,
+    });
 
     // Ensure we actually received the tokens. This is not the case if for example the log in is invalid
     if (response.data.refresh && response.data.access) {
@@ -155,9 +165,14 @@ class AuthenticationService {
 
   async refreshAccessToken() {
     const refreshToken = this.getRefreshToken(); // Will verify that we are in fact logged in aswell
-    const response = await client.post("user/refresh/", { refresh: refreshToken });
+    const response = await client.post("user/refresh/", {
+      refresh: refreshToken,
+    });
     if (response.data.access) {
-      this.cookies.set(COOKIE_ACCESS_TOKEN, response.data.access, { path: "/", sameSite: "lax" });
+      this.cookies.set(COOKIE_ACCESS_TOKEN, response.data.access, {
+        path: "/",
+        sameSite: "lax",
+      });
     }
 
     return response.data;
