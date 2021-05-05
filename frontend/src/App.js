@@ -12,6 +12,7 @@ import "./components/SocialLogos.css";
 import "./components/Tables.css";
 import "./components/TextSection.css";
 import "./components/forms/LoginForm.css";
+import "./components/forms/RegisterForm.css";
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
