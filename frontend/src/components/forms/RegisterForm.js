@@ -131,7 +131,7 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
               isInvalid={validated && password !== confirmPassword}
               required
             />
-            <Form.Text>Password has to be at least 8 characters long</Form.Text>
+            <Form.Text>Password has to be at least 8 characters</Form.Text>
           </Grid>
           <br />
           <br />
