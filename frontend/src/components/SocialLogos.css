@@ -25,3 +25,9 @@
 .spacing {
   margin-right: min(30px, 6vw);
 }
+
+.mail-logo {
+  padding: 0;
+  border: none;
+  background: none;
+}

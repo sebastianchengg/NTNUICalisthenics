@@ -7,8 +7,10 @@ export const InstagramLogo = ({ extraCss }) => {
       href="https://www.instagram.com/ntnuicalisthenics/"
       target="_blank"
       rel="noreferrer"
-      className={`fab fa-instagram url ${extraCss}`}
-    />
+      className={extraCss}
+    >
+      <i className="fab fa-instagram url" />
+      </a>
   );
 };
 
@@ -18,19 +20,22 @@ export const FacebookLogo = ({ extraCss }) => {
       href="https://www.facebook.com/ntnuicalisthenics"
       target="_blank"
       rel="noreferrer"
-      className={`fab fa-facebook url ${extraCss}`}
-    />
+      className={extraCss}
+      aria-hidden="true"
+    >
+      <i className="fab fa-facebook url" />
+    </a>
   );
 };
 
 export const MailLogo = ({ extraCss }) => {
   return (
-    <a
+    <button
       onClick={(e) => {
         window.location = "mailto:calisthenics-leder@ntnui.no";
         e.preventDefault();
       }}
-      className={`far fa-envelope url ${extraCss}`}
+      className={`far fa-envelope url mail-logo ${extraCss}`}
     />
   );
 };
