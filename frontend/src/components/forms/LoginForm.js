@@ -4,6 +4,7 @@ import { InternalButton } from "../LinkButton";
 import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
 import AuthenticationService from "../../core/user";
+import { useErrorState } from "../error/ErrorHandler";
 import "./LoginForm.css";
 
 export const LoginForm = () => {
@@ -13,6 +14,12 @@ export const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
   const [validated, setValidated] = useState(false);
+
+  const { error, setError } = useErrorState();
+
+  const noBackground = {
+   backgroundImage: "none",
+  }
 
   const onSubmit = (e) => {
     setValidated(true);
@@ -31,11 +38,11 @@ export const LoginForm = () => {
       })
       .catch((error) => {
         if (error.response.status === 401) {
-          //   setError("Feil brukernavn eller passord!");
+          setError("Feil brukernavn eller passord!");
           return;
         }
 
-        // setError("En uforventet error oppstod!");
+        setError("En uforventet error oppstod!");
       });
   };
 
@@ -51,6 +58,8 @@ export const LoginForm = () => {
               placeholder="Email"
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="input-field"
+              style={noBackground}
             />
             <Form.Control.Feedback type="invalid">
               Please enter your email
@@ -64,6 +73,8 @@ export const LoginForm = () => {
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
               required
+              className="input-field"
+              style={noBackground}
             />
             <Form.Control.Feedback type="invalid">
               Please enter your password
@@ -88,7 +99,8 @@ export const LoginForm = () => {
             Log in
           </InternalButton>
 
-          <br />
+          {error}
+
           <div className="signup-text">
             Don't have an account? Sign up{" "}
             {
@@ -97,7 +109,6 @@ export const LoginForm = () => {
               </a>
             }
           </div>
-
         </Form>
       </div>
     </>
