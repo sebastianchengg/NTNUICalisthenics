@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AuthenticationService from "../core/user";
 import { useSessionContext } from "../context/session";
-import { InternalButton } from "../components/LinkButton";
+import { InternalButton, LinkButton } from "../components/LinkButton";
 import { useHistory } from "react-router";
 import Grid from "@material-ui/core/Grid";
 
@@ -64,6 +64,16 @@ export const ProfileComponent = ({ user }) => {
         >
           Log out
         </InternalButton>
+
+        <LinkButton
+          buttonStyle="btn-primary"
+          buttonSize="btn-medium"
+          extraCss="apply-here"
+          url="/profile/edit"
+        >
+          Edit profile
+        </LinkButton>
+
       </div>
     </>
   );
