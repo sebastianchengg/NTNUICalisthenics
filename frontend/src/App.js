@@ -16,6 +16,7 @@ import "./components/forms/RegisterForm.css";
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
+import EditProfile from "./pages/EditProfile";
 import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
 import Login from "./pages/Login";
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/profile/edit" exact component={EditProfile} />
           <Route path="/">
             <Redirect to="/" />
           </Route>
