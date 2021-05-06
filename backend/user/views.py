@@ -10,6 +10,7 @@ from .serializer import (
     UserSerializer,
 )
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 class RegisterAPIView(generics.GenericAPIView):
     """
@@ -41,8 +42,18 @@ class SelfAPIView(generics.GenericAPIView):
     Supports GET requests and PUT requests.
     """
 
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     def get(self, request, *args, **kwargs):
         user_self = UserSerializer(request.user, read_only=True)
         return Response(user_self.data)
+    
+    def put(self, request, *args, **kwargs):
+        user_to_modify = get_user_model().objects.get(id=request.user.id)
+        print(user_to_modify.first_name)
+
+        serializer = UserSerializer(request.user, data=request.data, partial=True)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+
+        return Response({"user": UserSerializer(request.user).data})
