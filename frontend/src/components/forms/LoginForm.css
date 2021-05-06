@@ -7,6 +7,14 @@
   border: 1.5px solid rgb(88, 88, 88);
 }
 
+.input-field {
+    border: 0;
+  }
+
+  .input-field:invalid:focus {
+      border-color:white;
+  }
+
 .checkbox-text {
     font-size: 15px;
 }
