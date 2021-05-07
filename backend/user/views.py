@@ -8,9 +8,11 @@ from rest_framework.response import Response
 from .serializer import (
     RegisterSerializer,
     UserSerializer,
+    ChangePasswordSerializer,
 )
 from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
+
 
 class RegisterAPIView(generics.GenericAPIView):
     """
@@ -47,13 +49,45 @@ class SelfAPIView(generics.GenericAPIView):
     def get(self, request, *args, **kwargs):
         user_self = UserSerializer(request.user, read_only=True)
         return Response(user_self.data)
-    
+
     def put(self, request, *args, **kwargs):
         user_to_modify = get_user_model().objects.get(id=request.user.id)
         print(user_to_modify.first_name)
 
-        serializer = UserSerializer(request.user, data=request.data, partial=True)
+        serializer = UserSerializer(
+            request.user, data=request.data, partial=True)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
 
         return Response({"user": UserSerializer(request.user).data})
+
+
+class ChangePasswordView(APIView):
+    """
+    An endpoint for changing password.
+    """
+
+    serializer_class = ChangePasswordSerializer
+    model = User
+    permission_classes = (IsAuthenticated,)
+
+    def get_object(self, queryset=None):
+        obj = self.request.user
+        return obj
+
+    def put(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        serializer = ChangePasswordSerializer(data=request.data)
+
+        if serializer.is_valid():
+            # Check old password
+            if not self.object.check_password(serializer.data.get("old_password")):
+                return Response(
+                    {"old_password": ["Wrong password."]},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+            # set_password also hashes the password that the user will get
+            self.object.set_password(serializer.data.get("new_password"))
+            self.object.save()
+            return Response(status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

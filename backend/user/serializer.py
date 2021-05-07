@@ -28,8 +28,10 @@ class RegisterSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         instance.email = validated_data.get("email", instance.email)
         instance.password = validated_data.get("password", instance.password)
-        instance.first_name = validated_data.get("first_name", instance.first_name)
-        instance.last_name = validated_data.get("last_name", instance.last_name)
+        instance.first_name = validated_data.get(
+            "first_name", instance.first_name)
+        instance.last_name = validated_data.get(
+            "last_name", instance.last_name)
         instance.phone_number = validated_data.get(
             "phone_number", instance.phone_number
         )
@@ -91,3 +93,25 @@ class UserSerializer(serializers.ModelSerializer):
             "is_staff",
             "id",
         )
+
+
+class ChangePasswordSerializer(serializers.Serializer):
+
+    """
+    Serializer for password change endpoint.
+    """
+
+    old_password = serializers.CharField(required=True)
+    new_password = serializers.CharField(required=True)
+
+    def validate(self, validated_data):
+        password = validated_data.get("new_password")
+        errors = dict()
+        try:
+            validators.validate_password(password=password)
+        except exceptions.ValidationError as e:
+            errors["password"] = list(e.messages)
+        if errors:
+            raise serializers.ValidationError(errors)
+
+        return super(ChangePasswordSerializer, self).validate(validated_data)
