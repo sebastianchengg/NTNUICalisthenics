@@ -7,6 +7,10 @@ import AuthenticationService from "../../core/user";
 import { useErrorState } from "../error/ErrorHandler";
 import "./LoginForm.css";
 
+export const noBackground = {
+  backgroundImage: "none",
+};
+
 export const LoginForm = () => {
   const session = useSessionContext();
   const history = useHistory();
@@ -16,10 +20,6 @@ export const LoginForm = () => {
   const [validated, setValidated] = useState(false);
 
   const { error, setError } = useErrorState();
-
-  const noBackground = {
-   backgroundImage: "none",
-  }
 
   const onSubmit = (e) => {
     setValidated(true);
