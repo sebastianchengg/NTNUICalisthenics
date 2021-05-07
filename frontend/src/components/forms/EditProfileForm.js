@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import { Button, Form, InputGroup } from "react-bootstrap";
+import { Form, InputGroup } from "react-bootstrap";
+import { InternalButton, LinkButton } from "../LinkButton";
 import { useHistory } from "react-router";
 import UserAPI from "../../api/UserAPI";
 import { readDjangoError } from "../../core/client";
 import { useSessionContext } from "../../context/session";
 import Grid from "@material-ui/core/Grid";
 import "./EditProfileForm.css";
+import "../ProfileComponent.css";
 import "./RegisterForm.css";
 
 /**
@@ -134,12 +136,14 @@ export const EditProfileForm = ({ setError, user }) => {
           <br />
         </Grid>
 
-        <Button variant="primary" type="submit">
+        <InternalButton buttonStyle="btn-primary" buttonSize="btn-medium" extraCss="apply-here profile-button" type="submit">
           Save changes
-        </Button>
-        <Button variant="outline-info" href={"/editpassword"}>
-          Rediger passord
-        </Button>
+        </InternalButton>
+
+
+        <LinkButton url="/profile/edit-password" buttonStyle="btn-primary" buttonSize="btn-medium" extraCss="apply-here profile-button">
+          Change password
+        </LinkButton>
       </Form>
     </div>
   );
