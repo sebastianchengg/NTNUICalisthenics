@@ -6,6 +6,7 @@
   padding: max(20px, min(7vh, 40px)) max(20px, min(8vw, 80px));
   border-radius: 2px;
   border: 1.5px solid rgb(88, 88, 88);
+  position: relative;
 }
 
 .div-inline {
@@ -16,9 +17,25 @@
   clear: both;
 }
 
+.profile-button {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.edit-button {
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+}
+
+.edit-button:hover {
+  color: rgb(201, 201, 201);
+}
+
 .line-container {
-  border-bottom: 2px solid rgb(200, 200, 200);
-  margin-bottom: max(10px, 2.5vh);
+  margin-bottom: max(10px, min(15px, 2.5vh));
 }
 
 .heading-text {

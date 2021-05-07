@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import AuthenticationService from "../core/user";
 import { useSessionContext } from "../context/session";
-import { InternalButton, LinkButton } from "../components/LinkButton";
+import { InternalButton } from "../components/LinkButton";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 
 const ProfileLine = ({ heading, info }) => {
@@ -46,6 +47,10 @@ export const ProfileComponent = ({ user }) => {
   return (
     <>
       <div className="profile-container">
+      <Link to="/profile/edit">
+        <i className="fas fa-edit edit-button"></i>
+        </Link>
+
         <ProfileLine
           heading="Name"
           info={`${user.first_name} ${user.last_name}`}
@@ -54,25 +59,17 @@ export const ProfileComponent = ({ user }) => {
         <ProfileLine heading="Phone number" info={user.phone_number} />
         <ProfileLine heading="Date joined" info={date} />
 
-        <br />
-
+        
+        
+        
         <InternalButton
           buttonStyle="btn-primary"
           buttonSize="btn-medium"
-          extraCss="apply-here"
+          extraCss="apply-here profile-button"
           onClick={logOut}
         >
           Log out
         </InternalButton>
-
-        <LinkButton
-          buttonStyle="btn-primary"
-          buttonSize="btn-medium"
-          extraCss="apply-here"
-          url="/profile/edit"
-        >
-          Edit profile
-        </LinkButton>
 
       </div>
     </>
