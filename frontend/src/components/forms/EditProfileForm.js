@@ -136,12 +136,21 @@ export const EditProfileForm = ({ setError, user }) => {
           <br />
         </Grid>
 
-        <InternalButton buttonStyle="btn-primary" buttonSize="btn-medium" extraCss="apply-here profile-button" type="submit">
+        <InternalButton
+          buttonStyle="btn-primary"
+          buttonSize="btn-medium"
+          extraCss="apply-here profile-button"
+          type="submit"
+        >
           Save changes
         </InternalButton>
 
-
-        <LinkButton url="/profile/edit-password" buttonStyle="btn-primary" buttonSize="btn-medium" extraCss="apply-here profile-button">
+        <LinkButton
+          url="/profile/edit-password"
+          buttonStyle="btn-primary"
+          buttonSize="btn-medium"
+          extraCss="apply-here profile-button"
+        >
           Change password
         </LinkButton>
       </Form>
