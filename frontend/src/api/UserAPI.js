@@ -28,6 +28,14 @@ class UserAPI {
     });
     return userResponse.data;
   }
+
+  async editPassword(oldPassword, newPassword) {
+    const passwordResponse = await client.put("user/change/password/", {
+      old_password: oldPassword,
+      new_password: newPassword,
+    });
+    return passwordResponse.data;
+  }
 }
 
 export default new UserAPI();
