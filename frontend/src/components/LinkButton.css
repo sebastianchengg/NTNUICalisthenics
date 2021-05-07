@@ -1,5 +1,4 @@
 .btn {
-  padding: 8px 20px;
   border-radius: 2px;
   outline: none;
   border: none;
@@ -23,15 +22,17 @@
 }
 
 .btn-medium {
-  padding: 8px 20px;
+  padding: 6px 15px;
 }
 
 .btn-large {
-  padding: 12px 26px;
+  padding: 10px 20px;
 }
 
 .btn-medium:hover,
-.btn-large:hover {
+.btn-large:hover,
+.btn-medium:active,
+.btn-large:active {
   text-decoration: none;
   background: #fff;
   color: #242424;
@@ -40,21 +41,14 @@
 
 /* for the "apply here" button in apply page */
 .apply-here,
-.apply-here:focus {
+.apply-here:focus,
+.apply-here:active
+ {
+  border: 1px solid rgb(0, 167, 28);
   background-color: #00843d;
-  border: 0;
   color: #fff;
-  border-radius: 100px;
-  font-size: min(17px, 4vw);
+  border-radius: 5px;
   text-decoration: none;
   box-shadow: none;
   outline: 0;
-}
-
-.apply-here:hover,
-.apply-here:active {
-  text-decoration: none;
-  background: #fff;
-  color: #242424;
-  transition: all 0.3s ease-out;
 }

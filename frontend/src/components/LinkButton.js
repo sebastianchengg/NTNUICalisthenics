@@ -48,7 +48,7 @@ export const LinkButton = ({
   extraCss,
 }) => {
   return (
-    <Link to={url} className="btn-mobile">
+    <Link to={url}>
       <InternalButton
         children={children}
         type={type}
