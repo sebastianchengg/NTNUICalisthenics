@@ -93,7 +93,7 @@ export const LoginForm = () => {
           <InternalButton
             buttonStyle="btn-primary"
             buttonSize="btn-medium"
-            extraCss="apply-here"
+            extraCss="apply-here login-button"
             type="submit"
           >
             Log in
