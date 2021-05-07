@@ -4,7 +4,7 @@
   border: none;
   cursor: pointer;
   font-family: "Archivo", sans-serif;
-  font-size: min(3vh, 1.5rem);
+  font-size: 18px;
 }
 
 .btn-primary {
