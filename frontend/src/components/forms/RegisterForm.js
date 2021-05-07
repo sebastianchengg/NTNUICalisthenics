@@ -193,11 +193,11 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
 
         <InternalButton
           buttonStyle="btn-primary"
-          buttonSize="btn-large"
-          extraCss="apply-here"
+          buttonSize="btn-medium"
+          extraCss="apply-here profile-button"
           type="submit"
         >
-          Registrer
+          Register
         </InternalButton>
       </Form>
     </div>
