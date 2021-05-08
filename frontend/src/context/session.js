@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
-import AuthenticationService from "../core/user";
+import AuthenticationService from "../core/auth";
 import UserAPI from "../api/UserAPI";
 
 /**
@@ -9,7 +9,7 @@ import UserAPI from "../api/UserAPI";
  */
 export const useProviderValue = () => {
   const [user, setUser] = useState(undefined);
-  const [redirectPath, setRedirectPathState] = useState("/");
+  const [redirectPath, setRedirectPathState] = useState("/profile");
 
   const updateSelfUser = () =>
     new Promise((resolve, reject) => {

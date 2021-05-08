@@ -1,28 +1,8 @@
-import React, { useEffect } from "react";
-import { useHistory } from "react-router";
-import { useSessionContext } from "../context/session";
+import React from "react";
+import { useAuthenticationPage } from "../core/auth";
 import { RegisterForm } from "../components/forms/RegisterForm";
 import { TextSection } from "../components/TextSection";
 import "./../App.css";
-
-/**
- * Utility function for authentication pages. Automatically redirects
- * a user to `/` or the set redirect path if they are already authenticated,
- * and attempt to load this user, or the user is loaded while they are on
- * this page.
- */
-const useAuthenticationPage = () => {
-  const session = useSessionContext();
-  const history = useHistory();
-
-  useEffect(() => {
-    if (session.user) {
-      const redirect = session.redirectPath ?? "/";
-      history.push(redirect);
-      session.setRedirectPath("/");
-    }
-  }, [history, session]);
-};
 
 export const Register = () => {
   useAuthenticationPage();
