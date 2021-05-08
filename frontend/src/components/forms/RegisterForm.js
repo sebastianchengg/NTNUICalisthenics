@@ -5,7 +5,7 @@ import { Form, InputGroup } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
 import { noBackground } from "./LoginForm";
 import { useErrorState } from "../error/ErrorHandler";
-import AuthenticationService from "../../core/user";
+import AuthenticationService from "../../core/auth";
 import Grid from "@material-ui/core/Grid";
 import "./RegisterForm.css";
 
@@ -59,13 +59,7 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
 
     AuthenticationService.signUp(user, password, logIn, rememberLogIn)
       .then(() => {
-        session
-          .updateSelfUser()
-          .then(() => history.push("/profile"))
-          .catch((error) => {
-            setPassword("");
-            setConfirmPassword("");
-          });
+        session.updateSelfUser().then(() => history.push("/profile"));
       })
       .catch((error) => {
         setPassword("");

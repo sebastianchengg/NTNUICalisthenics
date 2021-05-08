@@ -3,7 +3,7 @@ import { Form } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
 import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
-import AuthenticationService from "../../core/user";
+import AuthenticationService from "../../core/auth";
 import { useErrorState } from "../error/ErrorHandler";
 import "./LoginForm.css";
 

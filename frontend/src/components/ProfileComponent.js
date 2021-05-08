@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import AuthenticationService from "../core/user";
+import AuthenticationService from "../core/auth";
 import { useSessionContext } from "../context/session";
 import { InternalButton } from "../components/LinkButton";
 import { useHistory } from "react-router";

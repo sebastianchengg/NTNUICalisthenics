@@ -1,3 +1,6 @@
+import {useEffect} from "react";
+import { useSessionContext } from "../context/session";
+import { useHistory } from "react-router";
 import client from "./client";
 import Cookies from "universal-cookie";
 
@@ -78,7 +81,7 @@ class AuthenticationService {
    * @param remember - If logIn is set to true, and we successfully log in,
    * should the user stay logged in across sessions
    */
-  async signUp(user, password, logIn = false, remember = false) {
+  async signUp(user, password, logIn = true, remember = false) {
     await client.post("user/register/", {
       ...user,
       password: password,
@@ -178,5 +181,24 @@ class AuthenticationService {
     return response.data;
   }
 }
+
+/**
+ * Utility function for authentication pages. Automatically redirects
+ * a user to `/` or the set redirect path if they are already authenticated,
+ * and attempt to load this user, or the user is loaded while they are on
+ * this page.
+ */
+export const useAuthenticationPage = () => {
+  const session = useSessionContext();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (session.user) {
+      const redirect = session.redirectPath ?? "/profile";
+      history.push(redirect);
+      session.setRedirectPath("/profile");
+    }
+  }, [history, session]);
+};
 
 export default new AuthenticationService();
