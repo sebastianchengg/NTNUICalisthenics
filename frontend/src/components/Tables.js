@@ -44,42 +44,49 @@ export const RepLeaderBoard = () => {
       <tbody>
         <TableRow
           exercise="Handstand push-ups"
-          maleName="-"
-          maleResult="-"
+          maleName="Sven"
+          maleResult="11"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Push-ups"
-          maleName="-"
-          maleResult="-"
-          femaleName="-"
-          femaleResult="-"
+          maleName="Erlend"
+          maleResult="60"
+          femaleName="Amaleen"
+          femaleResult="49"
         />
         <TableRow
-          exercise="Muscle-ups"
-          maleName="Olav"
-          maleResult="7"
-          femaleName="Anita"
-          femaleResult="5"
+          exercise="Muscle-ups bar"
+          maleName="Sebastian"
+          maleResult="10"
+          femaleName="Louise"
+          femaleResult="4"
+        />
+        <TableRow
+          exercise="Muscle-ups rings"
+          maleName="Aleksander"
+          maleResult="9"
+          femaleName="Amaleen"
+          femaleResult="6"
         />
         <TableRow
           exercise="Pull-ups"
           maleName="Sebastian"
-          maleResult="25"
+          maleResult="27"
           femaleName="Anita"
           femaleResult="19"
         />
         <TableRow
           exercise="Dips"
           maleName="Sebastian"
-          maleResult="57"
+          maleResult="65"
           femaleName="Anita"
           femaleResult="27"
         />
         <TableRow
           exercise="Dragon flags"
-          maleName="Kristoffer"
+          maleName="Kristoffer S."
           maleResult="25"
           femaleName="-"
           femaleResult="-"
@@ -88,15 +95,15 @@ export const RepLeaderBoard = () => {
           exercise="Pistol squats"
           maleName="Gulleik"
           maleResult="25"
-          femaleName="Anita"
-          femaleResult="38"
+          femaleName="Rebekka"
+          femaleResult="45"
         />
         <TableRow
           exercise="Toes to bar"
-          maleName="-"
-          maleResult="-"
-          femaleName="-"
-          femaleResult="-"
+          maleName="Kristoffer L."
+          maleResult="20"
+          femaleName="Emilie"
+          femaleResult="10"
         />
       </tbody>
     </Table>
@@ -111,21 +118,21 @@ export const DurationLeaderboard = () => {
       <tbody>
         <TableRow
           exercise="Planche"
-          maleName="Peder"
-          maleResult="5s"
+          maleName="Sven"
+          maleResult="10s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Human flag"
-          maleName="Daniel"
+          maleName="Daniel O."
           maleResult="24s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Front lever"
-          maleName="Daniel"
+          maleName="Daniel O."
           maleResult="12s"
           femaleName="-"
           femaleResult="-"
@@ -139,17 +146,24 @@ export const DurationLeaderboard = () => {
         />
         <TableRow
           exercise="Handstand"
-          maleName="-"
-          maleResult="-"
-          femaleName="-"
-          femaleResult="-"
+          maleName="Einar"
+          maleResult="1m 38s"
+          femaleName="Ellen"
+          femaleResult="43s"
         />
         <TableRow
           exercise="L-sit"
-          maleName="-"
-          maleResult="-"
-          femaleName="-"
-          femaleResult="-"
+          maleName="Jostein"
+          maleResult="1m 1s"
+          femaleName="Frida"
+          femaleResult="18s"
+        />
+        <TableRow
+          exercise="Dead hang"
+          maleName="Einar"
+          maleResult="2m 11s"
+          femaleName="Ellen"
+          femaleResult="2m 12s"
         />
       </tbody>
     </Table>
