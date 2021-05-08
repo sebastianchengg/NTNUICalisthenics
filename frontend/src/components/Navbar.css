@@ -80,6 +80,7 @@
     transition: all 0.5s ease;
     position: absolute;
     z-index: 9999;
+    opacity: 0.9;
   }
 
   .nav-menu-active {
@@ -93,6 +94,7 @@
     background-color: rgba(14, 14, 14, 0.95);
     transition: all 0.5s ease;
     z-index: 9999;
+    opacity: 0.9;
   }
 
   .nav-links-mobile {
