@@ -34,7 +34,7 @@ export const Register = () => {
           title="Register"
           text="Register an account to be able to sign up for trainings."
         />
-        <RegisterForm logIn rememberLogIn />
+        <RegisterForm logIn={true} />
       </div>
     </>
   );

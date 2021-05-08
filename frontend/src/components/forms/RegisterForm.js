@@ -3,6 +3,8 @@ import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
 import { Form, InputGroup } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
+import { noBackground } from "./LoginForm";
+import { useErrorState } from "../error/ErrorHandler";
 import AuthenticationService from "../../core/user";
 import Grid from "@material-ui/core/Grid";
 import "./RegisterForm.css";
@@ -22,7 +24,10 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [contryCode, setCountryCode] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [secretCode, setSecretCode] = useState("");
   const [validated, setValidated] = useState(false);
+
+  const { error, setError } = useErrorState();
 
   const onSubmit = (e) => {
     // We use a state for this so that validation doesn't display
@@ -32,8 +37,16 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
     e.preventDefault();
 
     const form = e.target;
-    if (!form.checkValidity() || password !== confirmPassword) {
+    if (
+      !form.checkValidity() ||
+      password !== confirmPassword ||
+      secretCode !== "NTNUICalisthenics"
+    ) {
       e.stopPropagation();
+
+      if (secretCode !== "NTNUICalisthenics") {
+        setError("The secret code is wrong");
+      }
       return;
     }
 
@@ -48,9 +61,7 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
       .then(() => {
         session
           .updateSelfUser()
-          .then(() =>
-            history.push(logIn ? session.redirectPath ?? "/" : "/login")
-          )
+          .then(() => history.push("/profile"))
           .catch((error) => {
             setPassword("");
             setConfirmPassword("");
@@ -186,9 +197,29 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
                 required
               />
             </Grid>
-            <br />
-            <br />
           </Grid>
+          <br />
+          <br />
+
+          <Grid item xs={12} sm={4} md={5}>
+            <Form.Label>Secret code: </Form.Label>
+          </Grid>
+          <Grid item xs={12} sm={8} md={7}>
+            <Form.Control
+              size="sm"
+              type="text"
+              pattern="^[a-zA-Z\p{L}]+$"
+              minLength={2}
+              placeholder="Secret code"
+              onChange={(e) => setSecretCode(e.target.value)}
+              required
+              style={noBackground}
+            />
+          </Grid>
+
+          {error}
+          <br />
+          <br />
         </Grid>
 
         <InternalButton
