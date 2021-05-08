@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
     fontSize: "min(16px, 4.5vw)",
     font: "inherit",
     opacity: "0.95",
+    color: "rgb(200, 200, 200)",
   },
   container: {
     background: "rgb(66, 66, 66)",
@@ -74,7 +75,7 @@ export const FAQComponent = () => {
         />
         <ExpansionPanel
           question="Do you have trainings/tryouts for non-members?"
-          answer="We don't currently have any trainings/tryouts for non-members."
+          answer="We currently don't have any trainings/tryouts for non-members."
         />
         <ExpansionPanel
           question="Do I need any prior knowledge or skills in calisthenics?"
@@ -88,7 +89,8 @@ export const FAQComponent = () => {
           question="I have been on the waiting list for a long time, when will I get in?"
           answer={
             "The waiting list is currently very long, an estimate to when you'll " +
-            "get in is about 6-18 months depending on the state of the waiting list."
+            "get in is about 6-18 months from when you applied. This depends on the " + 
+            "state of the waiting list at the time you signed up."
           }
         />
         <ExpansionPanel
