@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 import { useSessionContext } from "../context/session";
 import { useHistory } from "react-router";
 import client from "./client";
@@ -182,9 +182,11 @@ class AuthenticationService {
   }
 }
 
+export default new AuthenticationService();
+
 /**
  * Utility function for authentication pages. Automatically redirects
- * a user to `/` or the set redirect path if they are already authenticated,
+ * a user to `/profile` or the set redirect path if they are already authenticated,
  * and attempt to load this user, or the user is loaded while they are on
  * this page.
  */
@@ -201,4 +203,15 @@ export const useAuthenticationPage = () => {
   }, [history, session]);
 };
 
-export default new AuthenticationService();
+// Function that redirects a user to "/login" if not logged in. Use on pages
+// that shouldn't be accessed without a user logged in
+export const useLoggedInPage = () => {
+  const session = useSessionContext();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!session.user) {
+      history.push("/login");
+    }
+  }, [history, session]);
+}
