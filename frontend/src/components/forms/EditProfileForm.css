@@ -1,0 +1,8 @@
+.edit-profile-container {
+  width: min(600px, 95%);
+  margin: 6vh auto;
+  background-color: rgb(66, 66, 66);
+  padding: max(15px, min(5vw, 40px)) max(15px, min(5vw, 80px));
+  border-radius: 2px;
+  border: 1.5px solid rgb(88, 88, 88);
+}
