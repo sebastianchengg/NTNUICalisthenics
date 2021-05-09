@@ -111,7 +111,7 @@ export const Navbar = () => {
             exact
             onClick={closeMobileMenu}
           >
-            {session.user ? "Profile" : "Login"}
+            {session.user ? "Profile" : "Log in"}
           </NavLink>
           
         </ul>
