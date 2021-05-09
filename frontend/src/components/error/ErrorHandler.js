@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 
 const warningStyle = {
-    fontSize: "12px",
-    padding: "5px 5px",
-    width: "inherit",
+  fontSize: "12px",
+  padding: "5px 5px",
+  width: "inherit",
   margin: "10px auto",
   textAlign: "center",
-  };
-  
+};
 
 /**
  * A state for making simple error handling components. Supports
@@ -26,7 +25,9 @@ export const useErrorState = () => {
 
     return (
       <>
-        <Alert variant="warning" style={warningStyle}>{error}</Alert>
+        <Alert variant="warning" style={warningStyle}>
+          {error}
+        </Alert>
       </>
     );
   };
