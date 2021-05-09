@@ -1,0 +1,4 @@
+.register-page-container {
+    width: min(600px, 100%);
+    margin: auto;
+}
