@@ -26,6 +26,7 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [secretCode, setSecretCode] = useState("");
   const [validated, setValidated] = useState(false);
+  const sc = "NTNUICalisthenics";
 
   const { error, setError } = useErrorState();
 
@@ -40,11 +41,11 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
     if (
       !form.checkValidity() ||
       password !== confirmPassword ||
-      secretCode !== "NTNUICalisthenics"
+      secretCode !== sc
     ) {
       e.stopPropagation();
 
-      if (secretCode !== "NTNUICalisthenics") {
+      if (secretCode !== sc) {
         setError("The secret code is wrong");
       }
       return;
