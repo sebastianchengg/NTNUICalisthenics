@@ -3,9 +3,11 @@ import { Form, InputGroup } from "react-bootstrap";
 import { InternalButton, LinkButton } from "../LinkButton";
 import { useHistory } from "react-router";
 import UserAPI from "../../api/UserAPI";
-import { readDjangoError } from "../../core/client";
 import { useSessionContext } from "../../context/session";
 import Grid from "@material-ui/core/Grid";
+import { noBackground } from "./LoginForm";
+import { useErrorState } from "../error/ErrorHandler";
+import { readDjangoError } from "../../core/client";
 import "./EditProfileForm.css";
 import "../ProfileComponent.css";
 import "./RegisterForm.css";
@@ -15,7 +17,7 @@ import "./RegisterForm.css";
  *
  * @param props - The props
  */
-export const EditProfileForm = ({ setError, user }) => {
+export const EditProfileForm = ({ user }) => {
   const history = useHistory();
   const session = useSessionContext();
   const [firstName, setFirstName] = useState(user.first_name);
@@ -23,6 +25,8 @@ export const EditProfileForm = ({ setError, user }) => {
   const [email, setEmail] = useState(user.email);
   const [phoneNumber, setPhoneNumber] = useState(user.phone_number);
   const [validated, setValidated] = useState(false);
+
+  const { error, setError } = useErrorState();
 
   const onSubmit = (e) => {
     // We use a state for this so that validation doesn't display
@@ -43,22 +47,23 @@ export const EditProfileForm = ({ setError, user }) => {
       phone_number: phoneNumber,
     };
 
-    UserAPI.editUser(user).then(() => {
-      session
-        .updateSelfUser()
-        .then(() => history.push("/profile"))
-        .catch((error) => {
+    UserAPI.editUser(user)
+      .then(() => {
+        session.updateSelfUser().then(() => history.push("/profile"));
+      })
+      .catch((error) => {
           setError(
             error.response
               ? readDjangoError(error.response)
-              : "En uforventet error oppstod!"
+              : "An unexpected error occured"
           );
-        });
-    });
+          return;
+
+      });
   };
 
   return (
-    <div className="register-container">
+    <div className="edit-profile-container">
       <Form noValidate validated={validated} onSubmit={onSubmit}>
         <Grid container spacing={0} justify="center">
           <Grid item xs={12} sm={4} md={5}>
@@ -74,6 +79,7 @@ export const EditProfileForm = ({ setError, user }) => {
               minLength={2}
               onChange={(e) => setFirstName(e.target.value)}
               required
+              style={noBackground}
             />
           </Grid>
           <br />
@@ -91,6 +97,7 @@ export const EditProfileForm = ({ setError, user }) => {
               minLength={2}
               onChange={(e) => setLastName(e.target.value)}
               required
+              style={noBackground}
             />
           </Grid>
           <br />
@@ -107,6 +114,7 @@ export const EditProfileForm = ({ setError, user }) => {
               minLength={7}
               onChange={(e) => setEmail(e.target.value)}
               required
+              style={noBackground}
             />
           </Grid>
           <br />
@@ -129,6 +137,7 @@ export const EditProfileForm = ({ setError, user }) => {
                 maxLength={17}
                 onChange={(e) => setPhoneNumber("+" + e.target.value)}
                 required
+                style={noBackground}
               />
             </InputGroup>
           </Grid>
@@ -153,6 +162,8 @@ export const EditProfileForm = ({ setError, user }) => {
         >
           Change password
         </LinkButton>
+
+        {error}
       </Form>
     </div>
   );

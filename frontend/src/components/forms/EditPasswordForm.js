@@ -37,23 +37,21 @@ export const EditPasswordForm = () => {
     if (!form.checkValidity() || newPassword !== confirmNewPassword) {
       e.stopPropagation();
       if (newPassword !== confirmNewPassword)
-        setError("The new passwords didn't match");
+        setError("Your new passwords don't match");
       return;
     }
 
-    UserAPI.editPassword(oldPassword, newPassword).then(() => {
-      session
-        .updateSelfUser()
-        .then(() => history.push("/profile"))
-        .catch((error) => {
-          setOldPassword("");
-          setError(
-            error.response
-              ? readDjangoError(error.response)
-              : "En uforventet error oppstod!"
-          );
-        });
-    });
+    UserAPI.editPassword(oldPassword, newPassword)
+      .then(() => {
+        session.updateSelfUser().then(() => history.push("/profile"));
+      })
+      .catch((error) => {
+        setError(
+          error.response
+            ? readDjangoError(error.response)
+            : "An unexpected error occured"
+        );
+      });
   };
 
   return (
@@ -124,7 +122,6 @@ export const EditPasswordForm = () => {
             />
           </Grid>
 
-          {error}
           <br />
           <br />
         </Grid>
@@ -137,6 +134,9 @@ export const EditPasswordForm = () => {
         >
           Save changes
         </InternalButton>
+
+        {error}
+
       </Form>
     </div>
   );

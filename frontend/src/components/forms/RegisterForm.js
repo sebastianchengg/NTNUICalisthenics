@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
+import { readDjangoError } from "../../core/client";
 import { Form, InputGroup } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
 import { noBackground } from "./LoginForm";
@@ -65,6 +66,11 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
       .catch((error) => {
         setPassword("");
         setConfirmPassword("");
+        setError(
+          error.response
+            ? readDjangoError(error.response)
+            : "An unexpected error occured"
+        );
       });
   };
 
@@ -212,7 +218,6 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
             />
           </Grid>
 
-          {error}
           <br />
           <br />
         </Grid>
@@ -225,6 +230,8 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
         >
           Register
         </InternalButton>
+
+        {error}
       </Form>
     </div>
   );

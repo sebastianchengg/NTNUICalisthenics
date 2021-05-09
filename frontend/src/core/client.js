@@ -9,7 +9,7 @@ export function readDjangoError(response) {
     }
   
     if (errors.length === 0) {
-      return "En uforventet error oppstod";
+      return "An unexpected error occured";
     }
   
     if (errors.length === 1) {

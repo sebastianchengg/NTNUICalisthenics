@@ -41,11 +41,11 @@ export const LoginForm = () => {
       })
       .catch((error) => {
         if (error.response.status === 401) {
-          setError("Feil brukernavn eller passord!");
+          setError("Wrong email or password");
           return;
         }
 
-        setError("En uforventet error oppstod!");
+        setError("An unexpected error occured");
       });
   };
 
