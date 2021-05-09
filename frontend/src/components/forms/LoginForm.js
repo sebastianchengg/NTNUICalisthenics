@@ -24,6 +24,9 @@ export const LoginForm = () => {
   const onSubmit = (e) => {
     setValidated(true);
 
+    // Makes the error reappear to give user feedback if wrong input 
+    setError("");
+
     e.preventDefault();
     e.stopPropagation();
 
