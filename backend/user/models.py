@@ -3,6 +3,9 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.core.validators import RegexValidator
 from django.utils.translation import ugettext_lazy as _
 from django.utils import timezone
+from django.dispatch import receiver
+from django_rest_passwordreset.signals import reset_password_token_created
+from django.core.mail import send_mail
 from .user_manager import UserManager
 
 # Simple regex validator for validating a phone number
@@ -58,3 +61,23 @@ class User(AbstractBaseUser, PermissionsMixin):
     EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ["first_name", "last_name"]
+
+
+# Sends reset password email to user
+@receiver(reset_password_token_created)
+def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
+
+    # Have to change this to https://ntnuicalisthenics.no/
+    email_plaintext_message = "{}{}token={}".format("http://localhost:3000/", "reset-password-confirm/",
+                                                    reset_password_token.key)
+
+    send_mail(
+        # title:
+        "Password Reset for {title}".format(title="Some website title"),
+        # message:
+        email_plaintext_message,
+        # from:
+        "ntnuicalisthenics@gmail.com",
+        # to:
+        [reset_password_token.user.email]
+    )
