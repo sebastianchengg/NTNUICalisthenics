@@ -136,7 +136,6 @@ export const EditPasswordForm = () => {
         </InternalButton>
 
         {error}
-
       </Form>
     </div>
   );
