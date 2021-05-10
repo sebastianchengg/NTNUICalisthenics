@@ -23,6 +23,8 @@ import Leaderboard from "./pages/Leaderboard";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
+import ResetPasswordConfirm from "./pages/ResetPasswordConfirm";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import {
@@ -48,6 +50,8 @@ const App = () => {
           <Route path="/profile" exact component={Profile} />
           <Route path="/profile/edit" exact component={EditProfile} />
           <Route path="/profile/edit-password" exact component={EditPassword} />
+          <Route path="/reset-password" exact component={ResetPassword} />
+          <Route path="/reset-password-confirm/token=:token" exact component={ResetPasswordConfirm} />
           <Route path="/">
             <Redirect to="/" />
           </Route>
