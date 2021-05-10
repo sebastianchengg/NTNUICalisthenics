@@ -9,7 +9,7 @@ export const ResetPassword = () => {
       <div className="reset-password-container">
         <TextSection
           title="Forgot password"
-          text="Enter your email that you log in with."
+          text="Enter the email that you log in with."
         />
         <ResetPasswordForm />
       </div>
