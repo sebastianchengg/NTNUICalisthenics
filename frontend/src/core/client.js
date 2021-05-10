@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios";
+import "./client.css";
 
 export function readDjangoError(response) {
     let errors = [];
@@ -17,11 +18,11 @@ export function readDjangoError(response) {
     }
   
     return (
-      <ul>
+      <div>
         {errors.map((error, idx) => (
-          <li key={idx}>{error}</li>
+          <div className="error-text" key={idx}>{error}</div>
         ))}
-      </ul>
+      </div>
     );
   }
 
