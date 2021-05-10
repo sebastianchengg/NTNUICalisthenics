@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { Form } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
 import { useHistory } from "react-router";
-import { useSessionContext } from "../../context/session";
+import { readDjangoError } from "../../core/client";
 import { useErrorState } from "../error/ErrorHandler";
 import Grid from "@material-ui/core/Grid";
 import UserAPI from "../../api/UserAPI";
-import "./LoginForm.css";
+import "./ResetPasswordConfirmForm.css";
 
-export const ResetPasswordConfirmForm = ({token}) => {
-  const session = useSessionContext();
+export const ResetPasswordConfirmForm = ({ token }) => {
   const history = useHistory();
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
@@ -31,12 +30,20 @@ export const ResetPasswordConfirmForm = ({token}) => {
       return;
     }
 
-    UserAPI.resetPasswordConfirm(newPassword, token);
+    UserAPI.resetPasswordConfirm(newPassword, token).then(() => {
+      history.push("/login");
+    }).catch((error) => {
+      setError(
+        error.response
+          ? readDjangoError(error.response)
+          : "An unexpected error occured"
+      );
+    });
   };
 
   return (
     <>
-      <div className="edit-profile-container">
+      <div className="reset-password-confirm-form-container">
         <Form noValidate validated={validated} onSubmit={onSubmit}>
           <Grid container spacing={0} justify="center">
             <Grid item xs={12} sm={4} md={5}>
@@ -89,7 +96,7 @@ export const ResetPasswordConfirmForm = ({token}) => {
             extraCss="apply-here profile-button"
             type="submit"
           >
-            Save changes
+            Reset password
           </InternalButton>
 
           {error}
