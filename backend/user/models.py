@@ -68,12 +68,12 @@ class User(AbstractBaseUser, PermissionsMixin):
 def password_reset_token_created(sender, instance, reset_password_token, *args, **kwargs):
 
     # Have to change this to https://ntnuicalisthenics.no/
-    email_plaintext_message = "{}{}token={}".format("http://localhost:3000/", "reset-password-confirm/",
-                                                    reset_password_token.key)
+    email_plaintext_message = "You're receiving this email because you requested a password reset for your user account at https://ntnuicalisthenics.no/\n\nPlease go to the following page and choose a new password:\n\n{}{}token={}\n\nThe Calisthenics IT-crew".format("http://localhost:3000/", "reset-password-confirm/",
+                                                                                                                                                                                                                                                                           reset_password_token.key)
 
     send_mail(
         # title:
-        "Password Reset for {title}".format(title="Some website title"),
+        "NTNUI Calisthenics - Reset password",
         # message:
         email_plaintext_message,
         # from:
