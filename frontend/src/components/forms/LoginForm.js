@@ -111,7 +111,7 @@ export const LoginForm = () => {
           </div>
 
           <div className="signup-text">
-            Forgot your password? Reset password{" "}
+            Forgot your password? Reset{" "}
             {
               <a className="here-text" href="/reset-password">
                 here
