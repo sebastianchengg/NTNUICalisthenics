@@ -5,7 +5,7 @@ import { readDjangoError } from "../../core/client";
 import { useSessionContext } from "../../context/session";
 import { useErrorState } from "../error/ErrorHandler";
 import { InternalButton } from "../LinkButton";
-import { noBackground } from "./LoginForm";
+import { noInputIcon } from "./styled";
 import UserAPI from "../../api/UserAPI";
 import Grid from "@material-ui/core/Grid";
 import "./EditPasswordForm.css";
@@ -74,7 +74,7 @@ export const EditPasswordForm = () => {
               }}
               isInvalid={validated}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
           <br />
@@ -96,7 +96,7 @@ export const EditPasswordForm = () => {
               }}
               isInvalid={validated && newPassword !== confirmNewPassword}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
           <br />
@@ -118,7 +118,7 @@ export const EditPasswordForm = () => {
               }}
               isInvalid={validated && newPassword !== confirmNewPassword}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
 

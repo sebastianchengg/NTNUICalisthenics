@@ -4,7 +4,7 @@ import { useSessionContext } from "../../context/session";
 import { readDjangoError } from "../../core/client";
 import { Form, InputGroup } from "react-bootstrap";
 import { InternalButton } from "../LinkButton";
-import { noBackground } from "./LoginForm";
+import { noInputIcon } from "./styled";
 import { useErrorState } from "../error/ErrorHandler";
 import AuthenticationService from "../../core/auth";
 import Grid from "@material-ui/core/Grid";
@@ -214,7 +214,7 @@ export const RegisterForm = ({ logIn, rememberLogIn }) => {
               placeholder="Secret code"
               onChange={(e) => setSecretCode(e.target.value)}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
 

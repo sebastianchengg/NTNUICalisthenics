@@ -5,11 +5,8 @@ import { useHistory } from "react-router";
 import { useSessionContext } from "../../context/session";
 import AuthenticationService from "../../core/auth";
 import { useErrorState } from "../error/ErrorHandler";
+import { noInputIcon } from "./styled";
 import "./LoginForm.css";
-
-export const noBackground = {
-  backgroundImage: "none",
-};
 
 export const LoginForm = () => {
   const session = useSessionContext();
@@ -24,7 +21,7 @@ export const LoginForm = () => {
   const onSubmit = (e) => {
     setValidated(true);
 
-    // Makes the error reappear to give user feedback if wrong input 
+    // Makes the error reappear to give user feedback if wrong input
     setError("");
 
     e.preventDefault();
@@ -62,7 +59,7 @@ export const LoginForm = () => {
               onChange={(e) => setEmail(e.target.value)}
               required
               className="input-field"
-              style={noBackground}
+              style={noInputIcon}
             />
             <Form.Control.Feedback type="invalid">
               Please enter your email
@@ -77,7 +74,7 @@ export const LoginForm = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
               className="input-field"
-              style={noBackground}
+              style={noInputIcon}
             />
             <Form.Control.Feedback type="invalid">
               Please enter your password
@@ -108,6 +105,15 @@ export const LoginForm = () => {
             Don't have an account? Sign up{" "}
             {
               <a className="here-text" href="/register">
+                here
+              </a>
+            }
+          </div>
+
+          <div className="signup-text">
+            Forgot your password? Reset password{" "}
+            {
+              <a className="here-text" href="/reset-password">
                 here
               </a>
             }

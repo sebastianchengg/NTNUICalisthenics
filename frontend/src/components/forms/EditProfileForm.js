@@ -5,7 +5,7 @@ import { useHistory } from "react-router";
 import UserAPI from "../../api/UserAPI";
 import { useSessionContext } from "../../context/session";
 import Grid from "@material-ui/core/Grid";
-import { noBackground } from "./LoginForm";
+import { noInputIcon } from "./styled";
 import { useErrorState } from "../error/ErrorHandler";
 import { readDjangoError } from "../../core/client";
 import "./EditProfileForm.css";
@@ -52,13 +52,12 @@ export const EditProfileForm = ({ user }) => {
         session.updateSelfUser().then(() => history.push("/profile"));
       })
       .catch((error) => {
-          setError(
-            error.response
-              ? readDjangoError(error.response)
-              : "An unexpected error occured"
-          );
-          return;
-
+        setError(
+          error.response
+            ? readDjangoError(error.response)
+            : "An unexpected error occured"
+        );
+        return;
       });
   };
 
@@ -79,7 +78,7 @@ export const EditProfileForm = ({ user }) => {
               minLength={2}
               onChange={(e) => setFirstName(e.target.value)}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
           <br />
@@ -97,7 +96,7 @@ export const EditProfileForm = ({ user }) => {
               minLength={2}
               onChange={(e) => setLastName(e.target.value)}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
           <br />
@@ -114,7 +113,7 @@ export const EditProfileForm = ({ user }) => {
               minLength={7}
               onChange={(e) => setEmail(e.target.value)}
               required
-              style={noBackground}
+              style={noInputIcon}
             />
           </Grid>
           <br />
@@ -137,7 +136,7 @@ export const EditProfileForm = ({ user }) => {
                 maxLength={17}
                 onChange={(e) => setPhoneNumber("+" + e.target.value)}
                 required
-                style={noBackground}
+                style={noInputIcon}
               />
             </InputGroup>
           </Grid>
