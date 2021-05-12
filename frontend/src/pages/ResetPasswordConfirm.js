@@ -4,15 +4,15 @@ import { ResetPasswordConfirmForm } from "../components/forms/ResetPasswordConfi
 import { TextSection } from "../components/TextSection";
 import "./ResetPasswordConfirm.css";
 
-export const ResetPasswordConfirm = () => {
+export const ResetPasswordConfirm = ({ setSuccess }) => {
   const { token } = useParams();
 
   return (
     <>
       <div className="reset-password-confirm-container">
-        <TextSection title="Reset password" text="Set your new password."/>
-        
-        <ResetPasswordConfirmForm token={token} />
+        <TextSection title="Reset password" text="Set your new password." />
+
+        <ResetPasswordConfirmForm token={token} setSuccess={setSuccess} />
       </div>
     </>
   );

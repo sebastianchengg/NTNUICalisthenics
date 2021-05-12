@@ -1,0 +1,17 @@
+.success-container {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 25px;
+  z-index: 1000;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  opacity: 0.95;
+}
+
+.toast-text {
+  padding: 10px 20px;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}

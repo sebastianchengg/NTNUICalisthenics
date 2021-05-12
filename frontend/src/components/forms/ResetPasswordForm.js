@@ -6,13 +6,14 @@ import UserAPI from "../../api/UserAPI";
 import { readDjangoError } from "../../core/client";
 import "./ResetPasswordForm.css";
 
-export const ResetPasswordForm = () => {
+export const ResetPasswordForm = ({ setSuccess }) => {
   const [email, setEmail] = useState("");
   const [validated, setValidated] = useState(false);
 
   const { error, setError } = useErrorState();
 
   const onSubmit = (e) => {
+    setError();
     setValidated(true);
 
     e.preventDefault();
@@ -23,19 +24,21 @@ export const ResetPasswordForm = () => {
       return;
     }
 
-    UserAPI.resetPassword(email).catch((error) => {
-      if (error.response.status === 400) {
-        setError("No active user with this email");
-        return;
-      } else {
-        setError(
-          error.response
-            ? readDjangoError(error.response)
-            : "An unexpected error occured"
-        );
-        return;
-      }
-    });
+    UserAPI.resetPassword(email)
+      .then(() => setSuccess("An email to set a new password has been sent"))
+      .catch((error) => {
+        if (error.response.status === 400) {
+          setError("No active user with this email");
+          return;
+        } else {
+          setError(
+            error.response
+              ? readDjangoError(error.response)
+              : "An unexpected error occured"
+          );
+          return;
+        }
+      });
   };
 
   return (

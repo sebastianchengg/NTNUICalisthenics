@@ -33,10 +33,14 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { Success } from "./components/error/Success";
 
 const App = () => {
+  const { success, setSuccess } = Success();
+
   return (
     <>
+      {success}
       <Router>
         <Navbar />
         <Switch>
@@ -48,10 +52,26 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
           <Route path="/profile" exact component={Profile} />
-          <Route path="/profile/edit" exact component={EditProfile} />
-          <Route path="/profile/edit-password" exact component={EditPassword} />
-          <Route path="/reset-password" exact component={ResetPassword} />
-          <Route path="/reset-password-confirm/token=:token" exact component={ResetPasswordConfirm} />
+          <Route
+            path="/profile/edit"
+            exact
+            render={(props) => <EditProfile setSuccess={setSuccess} />}
+          />
+          <Route
+            path="/profile/edit-password"
+            exact
+            render={(props) => <EditPassword setSuccess={setSuccess} />}
+          />
+          <Route
+            path="/reset-password"
+            exact
+            render={(props) => <ResetPassword setSuccess={setSuccess} />}
+          />
+          <Route
+            path="/reset-password-confirm/token=:token"
+            exact
+            render={(props) => <ResetPasswordConfirm setSuccess={setSuccess} />}
+          />
           <Route path="/">
             <Redirect to="/" />
           </Route>

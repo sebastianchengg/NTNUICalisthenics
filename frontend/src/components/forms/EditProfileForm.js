@@ -17,7 +17,7 @@ import "./RegisterForm.css";
  *
  * @param props - The props
  */
-export const EditProfileForm = ({ user }) => {
+export const EditProfileForm = ({ user, setSuccess }) => {
   const history = useHistory();
   const session = useSessionContext();
   const [firstName, setFirstName] = useState(user.first_name);
@@ -47,18 +47,34 @@ export const EditProfileForm = ({ user }) => {
       phone_number: phoneNumber,
     };
 
-    UserAPI.editUser(user)
-      .then(() => {
-        session.updateSelfUser().then(() => history.push("/profile"));
-      })
-      .catch((error) => {
-        setError(
-          error.response
-            ? readDjangoError(error.response)
-            : "An unexpected error occured"
-        );
-        return;
-      });
+    // PUT request doesn't get sent if nothing changes
+    var changed = true;
+    if (
+      email === session.user.email &&
+      firstName === session.user.first_name &&
+      lastName === session.user.last_name &&
+      phoneNumber === session.user.phone_number
+    ) {
+      changed = false;
+    }
+
+    if (changed) {
+      UserAPI.editUser(user)
+        .then(() => {
+          session.updateSelfUser().then(() => history.push("/profile"));
+          setSuccess("Profile updated successfully");
+        })
+        .catch((error) => {
+          setError(
+            error.response
+              ? readDjangoError(error.response)
+              : "An unexpected error occured"
+          );
+          return;
+        });
+    } else {
+      history.push("/profile");
+    }
   };
 
   return (

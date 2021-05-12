@@ -3,7 +3,7 @@ import { ResetPasswordForm } from "../components/forms/ResetPasswordForm";
 import { TextSection } from "../components/TextSection";
 import "./ResetPassword.css";
 
-export const ResetPassword = () => {
+export const ResetPassword = ({ setSuccess }) => {
   return (
     <>
       <div className="reset-password-container">
@@ -11,7 +11,7 @@ export const ResetPassword = () => {
           title="Forgot password"
           text="Enter the email that you log in with."
         />
-        <ResetPasswordForm />
+        <ResetPasswordForm setSuccess={setSuccess} />
       </div>
     </>
   );

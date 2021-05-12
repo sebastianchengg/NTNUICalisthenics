@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import UserAPI from "../../api/UserAPI";
 import "./ResetPasswordConfirmForm.css";
 
-export const ResetPasswordConfirmForm = ({ token }) => {
+export const ResetPasswordConfirmForm = ({ token, setSuccess }) => {
   const history = useHistory();
   const [newPassword, setNewPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
@@ -30,15 +30,18 @@ export const ResetPasswordConfirmForm = ({ token }) => {
       return;
     }
 
-    UserAPI.resetPasswordConfirm(newPassword, token).then(() => {
-      history.push("/login");
-    }).catch((error) => {
-      setError(
-        error.response
-          ? readDjangoError(error.response)
-          : "An unexpected error occured"
-      );
-    });
+    UserAPI.resetPasswordConfirm(newPassword, token)
+      .then(() => {
+        setSuccess("Password reset successfully");
+        history.push("/login");
+      })
+      .catch((error) => {
+        setError(
+          error.response
+            ? readDjangoError(error.response)
+            : "An unexpected error occured"
+        );
+      });
   };
 
   return (

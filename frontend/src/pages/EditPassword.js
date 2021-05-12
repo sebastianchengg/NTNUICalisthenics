@@ -2,12 +2,12 @@ import React from "react";
 import { EditPasswordForm } from "../components/forms/EditPasswordForm";
 import { useLoggedInPage } from "../core/auth";
 
-export const EditPassword = () => {
+export const EditPassword = ({ setSuccess }) => {
   useLoggedInPage();
 
   return (
     <>
-      <EditPasswordForm />
+      <EditPasswordForm setSuccess={setSuccess} />
     </>
   );
 };

@@ -15,7 +15,7 @@ import "./EditPasswordForm.css";
  *
  * @param props - The props
  */
-export const EditPasswordForm = () => {
+export const EditPasswordForm = ({ setSuccess }) => {
   const history = useHistory();
   const session = useSessionContext();
   const [oldPassword, setOldPassword] = useState("");
@@ -44,6 +44,7 @@ export const EditPasswordForm = () => {
     UserAPI.editPassword(oldPassword, newPassword)
       .then(() => {
         session.updateSelfUser().then(() => history.push("/profile"));
+        setSuccess("Password updated successfully");
       })
       .catch((error) => {
         setError(
