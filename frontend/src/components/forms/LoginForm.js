@@ -33,7 +33,7 @@ export const LoginForm = () => {
     }
 
     AuthenticationService.login(email, password, remember)
-      .then((tokens) => {
+      .then(() => {
         session.updateSelfUser().then(() => history.push("/profile"));
       })
       .catch((error) => {
