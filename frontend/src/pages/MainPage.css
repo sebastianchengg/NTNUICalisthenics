@@ -14,7 +14,7 @@
 
 .apply-text {
   font-weight: 500;
-  font-size: 50px;
+  font-size: max(17px, 1.4vw);
 }
 
 .contact-social {
