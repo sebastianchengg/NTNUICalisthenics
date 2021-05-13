@@ -83,12 +83,12 @@ export const LoginForm = () => {
 
           <Form.Group controlId="form-login-remember">
             <Form.Check
-              className="checkbox-text"
+              className="checkbox-container"
               type="checkbox"
-              label="Remember me"
               onClick={(e) => setRemember(!remember)}
             />
           </Form.Group>
+          <div className="checkbox-text">Remember me</div>
 
           <InternalButton
             buttonStyle="btn-primary"
