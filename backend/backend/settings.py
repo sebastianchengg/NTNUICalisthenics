@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user.apps.UserConfig',
+    'training.apps.TrainingConfig',
     'rest_framework',
     'corsheaders',
     'django_rest_passwordreset',
