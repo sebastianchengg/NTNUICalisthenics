@@ -6,7 +6,7 @@ This folder the NTNUI Calisthenics backend. Implemented using Django.
 
 Set up environment
 ```bash
-python3 -m venv env
+python -m venv env
 env\scripts\activate
 pip install -r requirements.txt
 ```
