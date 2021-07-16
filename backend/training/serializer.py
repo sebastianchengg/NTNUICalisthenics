@@ -39,3 +39,13 @@ class UserRegisterTrainingCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserRegisterTraining
         fields = ("user", "training", "status",)
+
+
+class UserRegisterTrainingSerializer(serializers.ModelSerializer):
+    """
+    Serializer for all user training relations
+    """
+
+    class Meta:
+        model = UserRegisterTraining
+        fields = "__all__"

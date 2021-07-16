@@ -1,10 +1,12 @@
 from .serializer import (WeekCreateSerializer,
                          TrainingCreateSerializer,
                          TrainingSerializer,
-                         UserRegisterTrainingCreateSerializer)
-from .models import Training
+                         UserRegisterTrainingCreateSerializer,
+                         UserRegisterTrainingSerializer,)
+from .models import Training, UserRegisterTraining
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from rest_framework import generics, status, mixins
 
 
@@ -54,3 +56,10 @@ class UserRegisterTrainingCreateAPIView(generics.CreateAPIView):
             UserRegisterTrainingCreateSerializer(
                 user_register_training, context=self.get_serializer_context()).data
         )
+
+@api_view(["GET"])
+def training_register_detail(request, pk):
+
+    user =  UserRegisterTraining.objects.filter(training=pk).all()
+    serializer = UserRegisterTrainingSerializer(user, many=True)
+    return Response(serializer.data)
