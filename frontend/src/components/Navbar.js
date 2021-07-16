@@ -46,7 +46,11 @@ export const Navbar = () => {
     <>
       <nav className={homePage ? "navbar" : "navbar not-home"}>
         <NavLink to="/" className="navbar-logo">
-          <img className="logo" src="https://i.imgur.com/t7N6D8J.png" alt={Logo} />
+          <img
+            className="logo"
+            src="https://i.imgur.com/t7N6D8J.png"
+            alt={Logo}
+          />
         </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
@@ -104,16 +108,27 @@ export const Navbar = () => {
             Leaderboard
           </NavLink>
 
-          <NavLink
-            to={session.user ? "/profile" : "/login"}
-            className={mobile ? "nav-links-mobile" : "nav-links right-side"}
-            activeClassName={mobile ? "selected-mobile" : "selected"}
-            exact
-            onClick={closeMobileMenu}
-          >
-            {session.user ? "Profile" : "Log in"}
-          </NavLink>
-          
+          <div className="logged-in">
+            <NavLink
+              to="/book"
+              className={mobile ? "nav-links-mobile" : "nav-links"}
+              activeClassName={mobile ? "selected-mobile" : "selected"}
+              exact
+              onClick={closeMobileMenu}
+            >
+              Book
+            </NavLink>
+
+            <NavLink
+              to={session.user ? "/profile" : "/login"}
+              className={mobile ? "nav-links-mobile" : "nav-links"}
+              activeClassName={mobile ? "selected-mobile" : "selected"}
+              exact
+              onClick={closeMobileMenu}
+            >
+              {session.user ? "Profile" : "Log in"}
+            </NavLink>
+          </div>
         </ul>
       </nav>
     </>

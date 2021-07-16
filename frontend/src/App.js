@@ -13,6 +13,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
 import ResetPasswordConfirm from "./pages/ResetPasswordConfirm";
+import Book from "./pages/Book";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import {
@@ -40,6 +41,7 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/book" exact component={Book} />
           <Route
             path="/profile/edit"
             exact
