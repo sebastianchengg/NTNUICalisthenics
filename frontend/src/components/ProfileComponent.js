@@ -10,7 +10,7 @@ const ProfileLine = ({ heading, info }) => {
   return (
     <>
       <div className="line-container">
-        <Grid container spacing={0} justify="center">
+        <Grid container spacing={0} justifyContent="center">
           <Grid item xs={12} sm={4} md={5}>
             <div className="heading-text">{heading}:</div>
           </Grid>
