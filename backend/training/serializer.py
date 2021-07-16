@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Training, Week
+from .models import Training, Week, UserRegisterTraining
 
 
 class WeekCreateSerializer(serializers.ModelSerializer):
@@ -33,3 +33,9 @@ class TrainingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Training
         fields = "__all__"
+
+
+class UserRegisterTrainingCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserRegisterTraining
+        fields = ("user", "training", "status",)

@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.deletion import CASCADE
 from django.utils.translation import ugettext_lazy as _
 from user.models import User
 from datetime import datetime, date
@@ -15,6 +16,9 @@ class Week(models.Model):
         verbose_name = _("Week")
         unique_together = (("week_number", "year"),)
 
+    def __str__(self):
+        return self.week_number
+
 
 class Training(models.Model):
 
@@ -22,26 +26,28 @@ class Training(models.Model):
     name = models.CharField(null=False, blank=False, max_length=127)
     trainer = models.CharField(
         null=False, blank=False, max_length=127, default='-')
-    registered = models.ManyToManyField(User, _("registered"), blank=True)
-    waiting_list = models.ManyToManyField(User, _("waiting_list"), blank=True)
     max_registered = models.PositiveSmallIntegerField()
     starting_time = models.DateTimeField(auto_now_add=False, auto_now=False)
     finishing_time = models.DateTimeField(auto_now_add=False, auto_now=False)
     week = models.ForeignKey(Week, on_delete=models.CASCADE, null=True)
 
-    def save(self, *args, **kwargs):
-        super(Training, self).save(*args, **kwargs)
-        if self.registered.count() > self.max_registered:
-            # append waiting list
-            self.waiting_list.add(self.registered.last())
-            # drop last registered
-            self.registered.remove(self.registered.last())
-
-        elif self.registered.count() < self.max_registered and self.waiting_list.count() > 0:
-            self.registered.add(self.waiting_list.first())
-            self.waiting_list.remove(self.waiting_list.first())
-
-        super(Training, self).save(*args, **kwargs)
-
     class Meta:
         verbose_name = _("Training")
+
+    def __str__(self):
+        return str(self.starting_time.strftime('%b %d'))
+
+
+class UserRegisterTraining(models.Model):
+
+    class TrainingStatus(models.TextChoices):
+        REG = "REGISTERED"
+        WAIT = "WAITINGLIST"
+
+    user = models.ForeignKey(User, on_delete=CASCADE)
+    training = models.ForeignKey(Training, on_delete=CASCADE)
+    status = models.CharField(
+        max_length=15, choices=TrainingStatus.choices, default=TrainingStatus.WAIT)
+
+    class Meta:
+        unique_together = (("user", "training"),)
