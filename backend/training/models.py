@@ -5,21 +5,6 @@ from user.models import User
 from datetime import datetime, date
 
 
-class Week(models.Model):
-
-    id = models.AutoField(primary_key=True)
-    week_number = models.PositiveSmallIntegerField()
-    year = models.PositiveSmallIntegerField(null=True)
-    release_training = models.DateTimeField(auto_now_add=False, auto_now=False)
-
-    class Meta:
-        verbose_name = _("Week")
-        unique_together = (("week_number", "year"),)
-
-    def __str__(self):
-        return self.week_number
-
-
 class Training(models.Model):
 
     id = models.AutoField(primary_key=True)
@@ -29,13 +14,13 @@ class Training(models.Model):
     max_registered = models.PositiveSmallIntegerField()
     starting_time = models.DateTimeField(auto_now_add=False, auto_now=False)
     finishing_time = models.DateTimeField(auto_now_add=False, auto_now=False)
-    week = models.ForeignKey(Week, on_delete=models.CASCADE, null=True)
+    show_time = models.DateTimeField(auto_now_add=False, auto_now=False)
 
     class Meta:
         verbose_name = _("Training")
 
     def __str__(self):
-        return str(self.starting_time.strftime('%b %d'))
+        return str(self.starting_time.strftime('%d/%m/%Y')) + ", " + self.name
 
 
 class UserRegisterTraining(models.Model):

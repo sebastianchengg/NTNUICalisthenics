@@ -1,17 +1,5 @@
 from rest_framework import serializers
-from .models import Training, Week, UserRegisterTraining
-
-
-class WeekCreateSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Week
-        fields = ("week_number",
-                  "year",
-                  "release_training",
-                  )
-
-    def create(self, validated_data):
-        return Week.objects.create(**validated_data)
+from .models import Training, UserRegisterTraining
 
 
 class TrainingCreateSerializer(serializers.ModelSerializer):
@@ -22,7 +10,7 @@ class TrainingCreateSerializer(serializers.ModelSerializer):
                   "max_registered",
                   "starting_time",
                   "finishing_time",
-                  "week",)
+                  "show_time",)
 
     def create(self, validated_data):
         return Training.objects.create(**validated_data)
