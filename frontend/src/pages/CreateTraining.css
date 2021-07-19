@@ -1,0 +1,24 @@
+.add-training-container {
+  border: 2px solid rgb(90, 90, 90);
+  margin: 20px;
+}
+
+.add-training-container:hover {
+  background: rgb(29, 29, 29);
+  transition: all 0.1s ease-out;
+  cursor: pointer;
+}
+
+.add-training {
+  display: table;
+  margin: 0 auto;
+  line-height: 582px;
+  font-size: min(30px, 7vw);
+}
+
+.mobile-add-training {
+  display: table;
+  margin: 0 auto;
+  line-height: 30vw;
+  font-size: min(25px, 6vw);
+}

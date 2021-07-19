@@ -4,6 +4,7 @@ import "./App.css";
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
+import Book from "./pages/Book";
 import EditPassword from "./pages/EditPassword";
 import EditProfile from "./pages/EditProfile";
 import FAQ from "./pages/FAQ";
@@ -13,7 +14,7 @@ import Profile from "./pages/Profile";
 import Register from "./pages/Register";
 import ResetPassword from "./pages/ResetPassword";
 import ResetPasswordConfirm from "./pages/ResetPasswordConfirm";
-import Book from "./pages/Book";
+import CreateTraining from "./pages/CreateTraining";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import {
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/login" exact component={Login} />
           <Route path="/profile" exact component={Profile} />
+          <Route path="/create-training" exact component={CreateTraining} />
           <Route path="/book" exact component={Book} />
           <Route
             path="/profile/edit"
