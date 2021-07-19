@@ -61,7 +61,6 @@ export const CreateTrainingForm = () => {
               <Form.Control
                 size="sm"
                 type="text"
-                pattern="^[a-zA-Z\p{L}]+$"
                 minLength={2}
                 placeholder="Name of training"
                 onChange={(e) => setName(e.target.value)}
@@ -77,7 +76,6 @@ export const CreateTrainingForm = () => {
               <Form.Control
                 size="sm"
                 type="text"
-                pattern="^[a-zA-Z\p{L}]+$"
                 minLength={2}
                 placeholder="Trainer"
                 onChange={(e) => setTrainer(e.target.value)}
@@ -108,7 +106,6 @@ export const CreateTrainingForm = () => {
               <Form.Control
                 size="sm"
                 type="datetime-local"
-                placeholder=""
                 onChange={(e) => setStartingTime(e.target.value)}
                 required
               />
@@ -122,7 +119,6 @@ export const CreateTrainingForm = () => {
               <Form.Control
                 size="sm"
                 type="datetime-local"
-                placeholder=""
                 onChange={(e) => setFinishingTime(e.target.value)}
                 required
               />
@@ -143,14 +139,6 @@ export const CreateTrainingForm = () => {
             </Grid>
             <br />
 
-            <InternalButton
-          buttonStyle="btn-primary"
-          buttonSize="btn-medium"
-          extraCss="apply-here profile-button"
-          type="submit"
-        >
-          Register
-        </InternalButton>
           </Form>
         </div>
       </Grid>
