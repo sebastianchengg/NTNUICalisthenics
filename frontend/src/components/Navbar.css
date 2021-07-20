@@ -135,12 +135,12 @@
     z-index: 999999;
   }
 
-  .fa-bars {
+  .open-menu {
     color: #fff;
     font-size: 30px;
   }
 
-  .fa-times {
+  .close-menu {
     color: #fff;
     font-size: 35px;
   }

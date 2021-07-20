@@ -54,7 +54,7 @@ export const Navbar = () => {
         </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          <i className={click ? "fas fa-times close-menu" : "fas fa-bars open-menu"} />
         </div>
 
         <ul className={click ? "nav-menu-active" : "nav-menu"}>
