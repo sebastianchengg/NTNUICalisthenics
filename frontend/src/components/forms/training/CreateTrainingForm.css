@@ -1,5 +1,22 @@
 .create-training-container {
-    background-color: rgb(66, 66, 66);
-    padding: 30px;
-    margin: 20px;
+  background-color: rgb(66, 66, 66);
+  padding: 30px;
+  margin: 20px;
+  position: relative;
+}
+
+.delete-container {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+}
+
+.delete:hover {
+  cursor: pointer;
+  color: rgb(201, 201, 201);
+}
+
+.delete {
+  font-size: 22px;
+  padding: 15px;
 }

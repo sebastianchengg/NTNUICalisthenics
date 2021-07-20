@@ -47,8 +47,8 @@ export const ProfileComponent = ({ user }) => {
   return (
     <>
       <div className="profile-container">
-      <Link to="/profile/edit">
-        <i className="fas fa-edit edit-button"></i>
+        <Link to="/profile/edit">
+          <i className="fas fa-edit edit-button" />
         </Link>
 
         <ProfileLine
@@ -59,9 +59,6 @@ export const ProfileComponent = ({ user }) => {
         <ProfileLine heading="Phone number" info={user.phone_number} />
         <ProfileLine heading="Date joined" info={date} />
 
-        
-        
-        
         <InternalButton
           buttonStyle="btn-primary"
           buttonSize="btn-medium"
@@ -70,7 +67,6 @@ export const ProfileComponent = ({ user }) => {
         >
           Log out
         </InternalButton>
-
       </div>
     </>
   );

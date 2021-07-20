@@ -8,7 +8,7 @@ import { useSessionContext } from "../../../context/session";
 import "./CreateTrainingForm.css";
 import { string } from "prop-types";
 
-export const CreateTrainingForm = () => {
+export const CreateTrainingForm = ({ identifier, remove }) => {
   const session = useSessionContext();
   const history = useHistory();
   const [name, setName] = useState("");
@@ -20,8 +20,8 @@ export const CreateTrainingForm = () => {
   const [validated, setValidated] = useState(false);
 
   const formatDateTime = (dateTime) => {
-      return dateTime.replace("T", " ")
-  }
+    return dateTime.replace("T", " ");
+  };
 
   const onSubmit = (e) => {
     setValidated(true);
@@ -42,7 +42,7 @@ export const CreateTrainingForm = () => {
       show_time: formatDateTime(showTime),
     };
 
-    console.log(training)
+    console.log(training);
 
     TrainingAPI.createTraining(training).then(() => {
       session.updateSelfUser().then(() => history.push("/profile"));
@@ -50,9 +50,11 @@ export const CreateTrainingForm = () => {
   };
 
   return (
-    <>
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <div className="create-training-container">
+          <button className="delete-container" onClick={() => remove(identifier)}>
+            <i className="fas fa-times delete" />
+          </button>
           <Form noValidate validated={validated} onSubmit={onSubmit}>
             <Grid item>
               <Form.Label>Name of training: </Form.Label>
@@ -138,11 +140,9 @@ export const CreateTrainingForm = () => {
               />
             </Grid>
             <br />
-
           </Form>
         </div>
       </Grid>
-    </>
   );
 };
 
