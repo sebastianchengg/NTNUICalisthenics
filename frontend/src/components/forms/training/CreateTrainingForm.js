@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import { Form, InputGroup } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import TrainingAPI from "../../../api/TrainingAPI";
 import Grid from "@material-ui/core/Grid";
-import { InternalButton } from "../../LinkButton";
 import { useHistory } from "react-router";
 import { useSessionContext } from "../../../context/session";
 import "./CreateTrainingForm.css";
-import { string } from "prop-types";
 
 export const CreateTrainingForm = ({ identifier, remove }) => {
   const session = useSessionContext();
@@ -44,105 +42,105 @@ export const CreateTrainingForm = ({ identifier, remove }) => {
 
     console.log(training);
 
-    TrainingAPI.createTraining(training).then(() => {
-      session.updateSelfUser().then(() => history.push("/profile"));
-    });
+    TrainingAPI.createTraining(training).then(() => history.push("/profile"));
   };
 
+
   return (
-      <Grid item xs={12} sm={6} md={4} lg={3}>
-        <div className="create-training-container">
-          <button className="delete-container" onClick={() => remove(identifier)}>
-            <i className="fas fa-times delete" />
-          </button>
-          <Form noValidate validated={validated} onSubmit={onSubmit}>
-            <Grid item>
-              <Form.Label>Name of training: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="text"
-                minLength={2}
-                placeholder="Name of training"
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-
-            <Grid item>
-              <Form.Label>Trainer: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="text"
-                minLength={2}
-                placeholder="Trainer"
-                onChange={(e) => setTrainer(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-
-            <Grid item>
-              <Form.Label>Max participants: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="number"
-                minLength={2}
-                placeholder="Max participants"
-                onChange={(e) => setMaxRegistered(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-
-            <Grid item>
-              <Form.Label>Starting time: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="datetime-local"
-                onChange={(e) => setStartingTime(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-
-            <Grid item>
-              <Form.Label>Finishing time: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="datetime-local"
-                onChange={(e) => setFinishingTime(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-
-            <Grid item>
-              <Form.Label>Show at: </Form.Label>
-            </Grid>
-            <Grid item>
-              <Form.Control
-                size="sm"
-                type="datetime-local"
-                placeholder=""
-                onChange={(e) => setShowTime(e.target.value)}
-                required
-              />
-            </Grid>
-            <br />
-          </Form>
+    <Grid item xs={12} sm={6} md={4} lg={3}>
+      <div className="create-training-container">
+        <div className="delete-container" onClick={() => remove(identifier)}>
+          <i className="fas fa-times delete" />
         </div>
-      </Grid>
+        <Form noValidate validated={validated} onSubmit={onSubmit}>
+          <Grid item>
+            <Form.Label>Name of training: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="text"
+              minLength={2}
+              placeholder="Name of training"
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+          <Grid item>
+            <Form.Label>Trainer: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="text"
+              minLength={2}
+              placeholder="Trainer"
+              onChange={(e) => setTrainer(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+          <Grid item>
+            <Form.Label>Max participants: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="number"
+              minLength={2}
+              placeholder="Max participants"
+              onChange={(e) => setMaxRegistered(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+          <Grid item>
+            <Form.Label>Starting time: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="datetime-local"
+              onChange={(e) => setStartingTime(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+          <Grid item>
+            <Form.Label>Finishing time: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="datetime-local"
+              onChange={(e) => setFinishingTime(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+          <Grid item>
+            <Form.Label>Show at: </Form.Label>
+          </Grid>
+          <Grid item>
+            <Form.Control
+              size="sm"
+              type="datetime-local"
+              placeholder=""
+              onChange={(e) => setShowTime(e.target.value)}
+              required
+            />
+          </Grid>
+          <br />
+
+        </Form>
+      </div>
+    </Grid>
   );
 };
 
