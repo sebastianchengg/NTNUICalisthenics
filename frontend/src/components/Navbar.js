@@ -39,6 +39,32 @@ export const Navbar = () => {
     isHomePage();
   }, [path]);
 
+  const navbarRight = () => {
+    return (
+      <>
+        <NavLink
+          to="/book"
+          className={mobile ? "nav-links-mobile" : "nav-links"}
+          activeClassName={mobile ? "selected-mobile" : "selected"}
+          exact
+          onClick={closeMobileMenu}
+        >
+          Book
+        </NavLink>
+
+        <NavLink
+          to={session.user ? "/profile" : "/login"}
+          className={mobile ? "nav-links-mobile" : "nav-links"}
+          activeClassName={mobile ? "selected-mobile" : "selected"}
+          exact
+          onClick={closeMobileMenu}
+        >
+          {session.user ? "Profile" : "Log in"}
+        </NavLink>
+      </>
+    );
+  };
+
   //Checks every time the mouse is clicked to apply changes to navbar
   window.addEventListener("resize", showMobile);
 
@@ -54,7 +80,11 @@ export const Navbar = () => {
         </NavLink>
 
         <div className="menu-icon" onClick={handleClick}>
-          <i className={click ? "fas fa-times close-menu" : "fas fa-bars open-menu"} />
+          <i
+            className={
+              click ? "fas fa-times close-menu" : "fas fa-bars open-menu"
+            }
+          />
         </div>
 
         <ul className={click ? "nav-menu-active" : "nav-menu"}>
@@ -108,27 +138,11 @@ export const Navbar = () => {
             Leaderboard
           </NavLink>
 
-          <div className="logged-in">
-            <NavLink
-              to="/book"
-              className={mobile ? "nav-links-mobile" : "nav-links"}
-              activeClassName={mobile ? "selected-mobile" : "selected"}
-              exact
-              onClick={closeMobileMenu}
-            >
-              Book
-            </NavLink>
-
-            <NavLink
-              to={session.user ? "/profile" : "/login"}
-              className={mobile ? "nav-links-mobile" : "nav-links"}
-              activeClassName={mobile ? "selected-mobile" : "selected"}
-              exact
-              onClick={closeMobileMenu}
-            >
-              {session.user ? "Profile" : "Log in"}
-            </NavLink>
-          </div>
+          {mobile ? (
+            navbarRight()
+          ) : (
+            <div className="logged-in">{navbarRight()}</div>
+          )}
         </ul>
       </nav>
     </>
