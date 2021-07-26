@@ -22,6 +22,15 @@ class TrainingAPI {
     const response = await client.get(`training/${id}/`);
     return response.data;
   }
+
+  async createUserTrainingRelation(relation) {
+    const relationResponse = await client.post("training/create-register/", {
+      user: relation.user,
+      training: relation.training,
+      status: relation.status,
+    });
+    return relationResponse
+  }
 }
 
 export default new TrainingAPI();

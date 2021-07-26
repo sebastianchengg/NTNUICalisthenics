@@ -30,6 +30,7 @@ export const Training = ({
   const finish = new Date(finishing_time);
 
   const session = useSessionContext();
+  const [isRegistered, setIsRegistered] = useState();
   const [participants, setParticipants] = useState([]);
   const day = days[start.getDay()];
   const date =
@@ -43,47 +44,62 @@ export const Training = ({
   const finishTime =
     checkTime(finish.getHours()) + ":" + checkTime(finish.getMinutes());
 
+  const handleRegister = () => {
+    const numberRegistered = participants.filter(
+      (participant) => participant.status === "REGISTERED"
+    ).length;
+    let status = "REGISTERED";
+
+    if (numberRegistered >= max_registered) {
+      status = "WAITINGLIST";
+    }
+
+    const relation = { user: session.user.id, training: id, status: status };
+
+    TrainingAPI.createUserTrainingRelation(relation);
+    setIsRegistered(true);
+  };
+
   useEffect(() => {
     TrainingAPI.getTrainingparticipants(id).then((users) =>
       setParticipants(users.map((user) => user))
     );
   }, [id]);
 
-  const IsRegistered = () => {
+  useEffect(() => {
     if (participants.some((e) => e.user === session.user.id)) {
-      return true;
+      setIsRegistered(true);
+    } else {
+      setIsRegistered(false);
     }
-    return false;
-  };
+  }, [id, participants, session.user]);
 
+  const makeRegisterButton = () => {
+      return isRegistered ? <InternalButton
+      buttonStyle="btn-primary"
+      buttonSize="btn-medium"
+      extraCss="apply-here profile-button"
+    >
+      Unregister
+    </InternalButton> : <InternalButton
+              buttonStyle="btn-primary"
+              buttonSize="btn-medium"
+              extraCss="apply-here profile-button"
+              onClick={handleRegister}
+            >
+              Register
+            </InternalButton>
+  }
   return (
     <>
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <div className="training-container">
           <div className="training-heading">{name}</div>
-          <div className="info">
-            {`${day}, ${date}`}
-          </div>
+          <div className="info">{`${day}, ${date}`}</div>
           <div className="info">{`${startTime} - ${finishTime}`}</div>
           <div className="info">{`Trainer: ${trainer}`}</div>
 
-          {IsRegistered() ? (
-            <InternalButton
-              buttonStyle="btn-primary"
-              buttonSize="btn-medium"
-              extraCss="apply-here profile-button"
-            >
-              Unregister
-            </InternalButton>
-          ) : (
-            <InternalButton
-              buttonStyle="btn-primary"
-              buttonSize="btn-medium"
-              extraCss="apply-here profile-button"
-            >
-              Register
-            </InternalButton>
-          )}
+          {makeRegisterButton()}
         </div>
       </Grid>
     </>
