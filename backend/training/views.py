@@ -8,6 +8,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics, status, mixins
+from datetime import datetime
 
 
 class TrainingCreateAPIView(generics.CreateAPIView):
@@ -48,3 +49,13 @@ def training_register_detail(request, pk):
     user = UserRegisterTraining.objects.filter(training=pk).all()
     serializer = UserRegisterTrainingSerializer(user, many=True)
     return Response(serializer.data)
+
+class RegisterableTrainingView(generics.ListAPIView):
+    """
+    Fetches all trainings where you are able to register
+    """
+
+    queryset = Training.objects.all().filter(show_time__lte=datetime.now(), finishing_time__gte=datetime.now())
+    serializer_class = TrainingSerializer
+
+
