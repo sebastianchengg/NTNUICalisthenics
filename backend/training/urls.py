@@ -3,6 +3,7 @@ from .views import (
     TrainingCreateAPIView,
     UserRegisterTrainingCreateAPIView,
     training_register_detail,
+    RegisterableTrainingView
 )
 
 urlpatterns = [
@@ -10,4 +11,5 @@ urlpatterns = [
     path("create-register/", UserRegisterTrainingCreateAPIView.as_view(),
          name="create-register"),
     path("<str:pk>/", training_register_detail, name="training-register"),
+    path("list/registerable/", RegisterableTrainingView.as_view(), name="training-registerable"),
 ]
