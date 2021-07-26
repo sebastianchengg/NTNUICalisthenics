@@ -12,6 +12,11 @@ class TrainingAPI {
     });
     return trainingResponse;
   }
+
+  async getRegisterableTraining() {
+    const response = await client.get("training/list/registerable/");
+    return response.data;
+  }
 }
 
 export default new TrainingAPI();
