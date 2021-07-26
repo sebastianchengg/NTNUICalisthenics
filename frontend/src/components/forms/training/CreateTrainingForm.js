@@ -3,11 +3,9 @@ import { Form } from "react-bootstrap";
 import TrainingAPI from "../../../api/TrainingAPI";
 import Grid from "@material-ui/core/Grid";
 import { useHistory } from "react-router";
-import { useSessionContext } from "../../../context/session";
 import "./CreateTrainingForm.css";
 
 export const CreateTrainingForm = ({ identifier, remove }) => {
-  const session = useSessionContext();
   const history = useHistory();
   const [name, setName] = useState("");
   const [trainer, setTrainer] = useState("");
