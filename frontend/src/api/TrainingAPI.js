@@ -17,6 +17,11 @@ class TrainingAPI {
     const response = await client.get("training/list/registerable/");
     return response.data;
   }
+
+  async getTrainingparticipants(id) {
+    const response = await client.get(`training/${id}/`);
+    return response.data;
+  }
 }
 
 export default new TrainingAPI();
