@@ -1,0 +1,10 @@
+.training-container {
+  background-color: rgb(66, 66, 66);
+  padding: 30px;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.training-heading {
+  font-size: 25px;
+}
