@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import { InternalButton } from "./LinkButton";
+import TrainingAPI from "../api/TrainingAPI";
+import { useSessionContext } from "../context/session";
 import "./Training.css";
 
 export const Training = ({
+  id,
   name,
   trainer,
   max_registered,
@@ -26,11 +29,32 @@ export const Training = ({
   const start = new Date(starting_time);
   const finish = new Date(finishing_time);
 
+  const session = useSessionContext();
+  const [participants, setParticipants] = useState([]);
   const day = days[start.getDay()];
+  const date =
+    start.getDate().toString() +
+    "/" +
+    start.getMonth().toString() +
+    "/" +
+    start.getFullYear().toString();
   const startTime =
     checkTime(start.getHours()) + ":" + checkTime(start.getMinutes());
   const finishTime =
     checkTime(finish.getHours()) + ":" + checkTime(finish.getMinutes());
+
+  useEffect(() => {
+    TrainingAPI.getTrainingparticipants(id).then((users) =>
+      setParticipants(users.map((user) => user))
+    );
+  }, [id]);
+
+  const IsRegistered = () => {
+    if (participants.some((e) => e.user === session.user.id)) {
+      return true;
+    }
+    return false;
+  };
 
   return (
     <>
@@ -38,19 +62,28 @@ export const Training = ({
         <div className="training-container">
           <div className="training-heading">{name}</div>
           <div className="info">
-            {day} {startTime + "-" + finishTime}
+            {`${day}, ${date}`}
           </div>
-          <div className="info">{trainer}</div>
-          
-          
-          <InternalButton
-            buttonStyle="btn-primary"
-            buttonSize="btn-medium"
-            extraCss="apply-here profile-button"
-            type="submit"
-          >
-            Submit
-          </InternalButton>
+          <div className="info">{`${startTime} - ${finishTime}`}</div>
+          <div className="info">{`Trainer: ${trainer}`}</div>
+
+          {IsRegistered() ? (
+            <InternalButton
+              buttonStyle="btn-primary"
+              buttonSize="btn-medium"
+              extraCss="apply-here profile-button"
+            >
+              Unregister
+            </InternalButton>
+          ) : (
+            <InternalButton
+              buttonStyle="btn-primary"
+              buttonSize="btn-medium"
+              extraCss="apply-here profile-button"
+            >
+              Register
+            </InternalButton>
+          )}
         </div>
       </Grid>
     </>
