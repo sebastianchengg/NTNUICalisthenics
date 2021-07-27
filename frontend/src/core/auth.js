@@ -214,4 +214,17 @@ export const useLoggedInPage = () => {
       history.push("/login");
     }
   }, [history, session]);
-}
+};
+
+export const useStaffAccessPage = () => {
+  const session = useSessionContext();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (!session.user) {
+      history.push("/login");
+    } else if (!session.user.is_staff) {
+      history.push("/profile");
+    }
+  }, [history, session]);
+};

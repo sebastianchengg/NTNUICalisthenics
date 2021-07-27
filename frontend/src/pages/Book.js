@@ -3,8 +3,13 @@ import { LinkButton } from "../components/LinkButton";
 import TrainingAPI from "../api/TrainingAPI";
 import { Training } from "../components/Training";
 import Grid from "@material-ui/core/Grid";
+import { useLoggedInPage } from "../core/auth";
+import { useSessionContext } from "../context/session";
 
 export const Book = () => {
+  useLoggedInPage();
+
+  const session = useSessionContext();
   const [trainings, setTrainings] = useState([]);
 
   useEffect(() => {
@@ -19,18 +24,22 @@ export const Book = () => {
     ));
   };
 
+  const renderCreateTrainingButton = () => {
+    return session.user ? (
+      session.user.is_staff ? (
+        <LinkButton url="/create-training">Create training</LinkButton>
+      ) : null
+    ) : null;
+  };
+
   return (
     <>
       <div className="page">
-        <Grid
-          container
-          spacing={0}
-          justifyContent="center"
-        >
+        <Grid container spacing={0} justifyContent="center">
           {renderTrainings()}
         </Grid>
 
-        <LinkButton url="/create-training">Create training</LinkButton>
+        {renderCreateTrainingButton()}
       </div>
     </>
   );

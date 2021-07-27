@@ -3,9 +3,12 @@ import { InternalButton } from "../components/LinkButton";
 import { CreateTrainingForm } from "../components/forms/training/CreateTrainingForm";
 import Grid from "@material-ui/core/Grid";
 import { v4 as uuidv4 } from "uuid";
+import { useStaffAccessPage } from "../core/auth";
 import "./CreateTraining.css";
 
-export const Book = () => {
+export const CreateTraining = () => {
+  useStaffAccessPage();
+
   const [mobile, setMobile] = useState();
   const [trainingForm, setTrainingForm] = useState([
     { key: uuidv4() },
@@ -74,4 +77,4 @@ export const Book = () => {
   );
 };
 
-export default Book;
+export default CreateTraining;

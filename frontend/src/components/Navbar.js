@@ -42,15 +42,17 @@ export const Navbar = () => {
   const navbarRight = () => {
     return (
       <>
-        <NavLink
-          to="/book"
-          className={mobile ? "nav-links-mobile" : "nav-links"}
-          activeClassName={mobile ? "selected-mobile" : "selected"}
-          exact
-          onClick={closeMobileMenu}
-        >
-          Book
-        </NavLink>
+        {session.user ? (
+          <NavLink
+            to="/book"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
+            Book
+          </NavLink>
+        ) : null}
 
         <NavLink
           to={session.user ? "/profile" : "/login"}
