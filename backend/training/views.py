@@ -44,9 +44,23 @@ class UserRegisterTrainingCreateAPIView(generics.CreateAPIView):
         )
 
 
+class TrainingrelationUpdateAPIView(generics.GenericAPIView):
+    serializer_class = UserRegisterTrainingSerializer
+
+    def put(self, request, user_id, training_id):
+        trainingrelation = UserRegisterTraining.objects.get(
+            user=user_id, training=training_id)
+        serializer = UserRegisterTrainingCreateSerializer(
+            trainingrelation, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(UserRegisterTrainingCreateSerializer(trainingrelation, context=self.get_serializer_context()).data)
+
+
 @api_view(["DELETE"])
 def trainingrelation_delete(request, user_id, training_id):
-    trainingrelation = UserRegisterTraining.objects.get(user=user_id, training=training_id)
+    trainingrelation = UserRegisterTraining.objects.get(
+        user=user_id, training=training_id)
     trainingrelation.delete()
     return Response("Item successfully deleted!")
 

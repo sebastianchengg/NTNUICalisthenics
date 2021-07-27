@@ -32,6 +32,18 @@ class TrainingAPI {
     return relationResponse;
   }
 
+  async updateUserTrainingRelation(relation) {
+    const relationResponse = await client.put(
+      `training/update-relation/${relation.user}-${relation.training}/`,
+      {
+        user: relation.user,
+        training: relation.training,
+        status: relation.status,
+      }
+    );
+    return relationResponse;
+  }
+
   async deleteUserTrainingRelation(relation) {
     await client.delete(
       `training/relation/delete/${relation.user}-${relation.training}/`

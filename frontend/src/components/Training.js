@@ -61,10 +61,31 @@ export const Training = ({
   };
 
   const handleUnregister = () => {
-    const relation = { user: session.user.id, training: id };
+    const participantToUnregister = participants.find(
+      (participant) =>
+        participant.user === session.user.id && participant.training === id
+    );
 
+    const relation = { user: session.user.id, training: id };
     TrainingAPI.deleteUserTrainingRelation(relation);
     setIsRegistered(false);
+
+    const numberRegistered = participants.filter(
+      (participant) => participant.status === "REGISTERED"
+    ).length;
+
+    if (numberRegistered >= max_registered && participantToUnregister.status === "REGISTERED") {
+        const firstOnWaitinglist = participants.find(participant => participant.status === "WAITINGLIST")
+        
+        const nextParticipant = {
+            user: firstOnWaitinglist.user,
+            training: firstOnWaitinglist.training,
+            status: "REGISTERED",
+        }
+        TrainingAPI.updateUserTrainingRelation(nextParticipant)
+        // Should fire an action that sends SMS/Mail to the one who goes from
+        // the waiting list, to registered
+    }
   };
 
   useEffect(() => {
