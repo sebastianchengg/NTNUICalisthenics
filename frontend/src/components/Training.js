@@ -60,6 +60,13 @@ export const Training = ({
     setIsRegistered(true);
   };
 
+  const handleUnregister = () => {
+    const relation = { user: session.user.id, training: id };
+
+    TrainingAPI.deleteUserTrainingRelation(relation);
+    setIsRegistered(false);
+  };
+
   useEffect(() => {
     TrainingAPI.getTrainingparticipants(id).then((users) =>
       setParticipants(users.map((user) => user))
@@ -75,21 +82,26 @@ export const Training = ({
   }, [id, participants, session.user]);
 
   const makeRegisterButton = () => {
-      return isRegistered ? <InternalButton
-      buttonStyle="btn-primary"
-      buttonSize="btn-medium"
-      extraCss="apply-here profile-button"
-    >
-      Unregister
-    </InternalButton> : <InternalButton
-              buttonStyle="btn-primary"
-              buttonSize="btn-medium"
-              extraCss="apply-here profile-button"
-              onClick={handleRegister}
-            >
-              Register
-            </InternalButton>
-  }
+    return isRegistered ? (
+      <InternalButton
+        buttonStyle="btn-primary"
+        buttonSize="btn-medium"
+        extraCss="apply-here profile-button"
+        onClick={handleUnregister}
+      >
+        Unregister
+      </InternalButton>
+    ) : (
+      <InternalButton
+        buttonStyle="btn-primary"
+        buttonSize="btn-medium"
+        extraCss="apply-here profile-button"
+        onClick={handleRegister}
+      >
+        Register
+      </InternalButton>
+    );
+  };
   return (
     <>
       <Grid item xs={12} sm={6} md={4} lg={3}>

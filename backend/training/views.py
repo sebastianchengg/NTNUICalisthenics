@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import generics, status, mixins
 from datetime import datetime
+from django.utils import timezone
 
 
 class TrainingCreateAPIView(generics.CreateAPIView):
@@ -43,6 +44,13 @@ class UserRegisterTrainingCreateAPIView(generics.CreateAPIView):
         )
 
 
+@api_view(["DELETE"])
+def trainingrelation_delete(request, user_id, training_id):
+    trainingrelation = UserRegisterTraining.objects.get(user=user_id, training=training_id)
+    trainingrelation.delete()
+    return Response("Item successfully deleted!")
+
+
 @api_view(["GET"])
 def training_register_detail(request, pk):
 
@@ -50,12 +58,12 @@ def training_register_detail(request, pk):
     serializer = UserRegisterTrainingSerializer(user, many=True)
     return Response(serializer.data)
 
+
 class RegisterableTrainingView(generics.ListAPIView):
     """
     Fetches all trainings where you are able to register
     """
 
-    queryset = Training.objects.all().filter(show_time__lte=datetime.now(), finishing_time__gte=datetime.now())
+    queryset = Training.objects.all().filter(show_time__lte=timezone.now(),
+                                             finishing_time__gte=timezone.now())
     serializer_class = TrainingSerializer
-
-

@@ -29,7 +29,13 @@ class TrainingAPI {
       training: relation.training,
       status: relation.status,
     });
-    return relationResponse
+    return relationResponse;
+  }
+
+  async deleteUserTrainingRelation(relation) {
+    await client.delete(
+      `training/relation/delete/${relation.user}-${relation.training}/`
+    );
   }
 }
 
