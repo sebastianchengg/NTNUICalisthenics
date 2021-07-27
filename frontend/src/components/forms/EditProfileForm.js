@@ -80,7 +80,7 @@ export const EditProfileForm = ({ user, setSuccess }) => {
   return (
     <div className="edit-profile-container">
       <Form noValidate validated={validated} onSubmit={onSubmit}>
-        <Grid container spacing={0} justify="center">
+        <Grid container spacing={0} justifyContent="center">
           <Grid item xs={12} sm={4} md={5}>
             <Form.Label>First name: </Form.Label>
           </Grid>
