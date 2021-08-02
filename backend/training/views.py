@@ -28,6 +28,27 @@ class TrainingCreateAPIView(generics.CreateAPIView):
         )
 
 
+class TrainingUpdateAPIView(generics.GenericAPIView):
+    serializer_class = TrainingSerializer
+
+    def put(self, request, training_id):
+        training = Training.objects.get(
+            id=training_id)
+        serializer = TrainingCreateSerializer(
+            training, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(TrainingCreateSerializer(training, context=self.get_serializer_context()).data)
+
+
+@api_view(["GET"])
+def training_detail(request, pk):
+
+    training = Training.objects.get(id=pk)
+    serializer = TrainingSerializer(training)
+    return Response(serializer.data)
+
+
 class UserRegisterTrainingCreateAPIView(generics.CreateAPIView):
     serializer_class = UserRegisterTrainingCreateSerializer
     # permission_classes = (IsAuthenticated,)
