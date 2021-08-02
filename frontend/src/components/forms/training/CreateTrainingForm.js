@@ -32,10 +32,10 @@ export const CreateTrainingForm = ({ identifier, remove }) => {
     const training = {
       name: name,
       trainer: trainer,
-      max_registered: parseInt(maxRegistered),
-      starting_time: formatDateTime(startingTime),
-      finishing_time: formatDateTime(finishingTime),
-      show_time: formatDateTime(showTime),
+      maxRegistered: parseInt(maxRegistered),
+      startingTime: formatDateTime(startingTime),
+      finishingTime: formatDateTime(finishingTime),
+      showTime: formatDateTime(showTime),
     };
 
     console.log(training);
