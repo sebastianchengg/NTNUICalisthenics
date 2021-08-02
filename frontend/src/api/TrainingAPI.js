@@ -5,12 +5,32 @@ class TrainingAPI {
     const trainingResponse = await client.post("training/create-training/", {
       name: training.name,
       trainer: training.trainer,
-      max_registered: training.max_registered,
-      starting_time: training.starting_time,
-      finishing_time: training.finishing_time,
-      show_time: training.show_time,
+      max_registered: training.maxRegistered,
+      starting_time: training.startingTime,
+      finishing_time: training.finishingTime,
+      show_time: training.showTime,
     });
     return trainingResponse;
+  }
+
+  async updateTraining(training) {
+    const trainingResponse = await client.put(
+      `training/update/${training.id}/`,
+      {
+        name: training.name,
+        trainer: training.trainer,
+        max_registered: training.maxRegistered,
+        starting_time: training.startingTime,
+        finishing_time: training.finishingTime,
+        show_time: training.showTime,
+      }
+    );
+    return trainingResponse;
+  }
+
+  async getTraining(id) {
+    const response = await client.get(`training/${id}/`);
+    return response.data;
   }
 
   async getRegisterableTraining() {
@@ -19,7 +39,7 @@ class TrainingAPI {
   }
 
   async getTrainingparticipants(id) {
-    const response = await client.get(`training/${id}/`);
+    const response = await client.get(`training/registered/${id}/`);
     return response.data;
   }
 
