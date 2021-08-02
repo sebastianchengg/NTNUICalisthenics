@@ -7,6 +7,7 @@ import Apply from "./pages/Apply";
 import Book from "./pages/Book";
 import EditPassword from "./pages/EditPassword";
 import EditProfile from "./pages/EditProfile";
+import EditTraining from "./pages/EditTraining";
 import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
 import Login from "./pages/Login";
@@ -53,6 +54,11 @@ const App = () => {
             path="/profile/edit-password"
             exact
             render={(props) => <EditPassword setSuccess={setSuccess} />}
+          />
+          <Route
+            path="/edit/:id"
+            exact
+            render={(props) => <EditTraining setSuccess={setSuccess} />}
           />
           <Route
             path="/reset-password"
