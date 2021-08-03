@@ -23,7 +23,7 @@ export const Navbar = () => {
     }
   };
 
-  //sets variable to define backgroundcolor transparent/black
+  // Sets variable to define backgroundcolor transparent/black
   const isHomePage = () => {
     if (window.location.pathname === "/") {
       setHomePage(true);
@@ -39,9 +39,24 @@ export const Navbar = () => {
     isHomePage();
   }, [path]);
 
+  // Elements on the right side of the navbar
   const navbarRight = () => {
     return (
       <>
+        {session.user ? (
+          session.user.is_staff ? (
+            <NavLink
+              to="/create-training"
+              className={mobile ? "nav-links-mobile" : "nav-links"}
+              activeClassName={mobile ? "selected-mobile" : "selected"}
+              exact
+              onClick={closeMobileMenu}
+            >
+              Create training
+            </NavLink>
+          ) : null
+        ) : null}
+
         {session.user ? (
           <NavLink
             to="/book"
