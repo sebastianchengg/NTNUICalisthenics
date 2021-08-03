@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import { InternalButton } from "./LinkButton";
 import TrainingAPI from "../api/TrainingAPI";
 import { useSessionContext } from "../context/session";
+import { Link } from "react-router-dom";
 import "./Training.css";
 
 export const Training = ({
@@ -44,6 +45,7 @@ export const Training = ({
   const finishTime =
     checkTime(finish.getHours()) + ":" + checkTime(finish.getMinutes());
 
+  // Handles if the user is registered or put on waitinglist
   const handleRegister = () => {
     const numberRegistered = participants.filter(
       (participant) => participant.status === "REGISTERED"
@@ -60,6 +62,8 @@ export const Training = ({
     setIsRegistered(true);
   };
 
+  // Handles if user unregisters and puts first user on registered if there
+  // is a waitinglist and the user unregistering was registered
   const handleUnregister = () => {
     const participantToUnregister = participants.find(
       (participant) =>
@@ -74,17 +78,22 @@ export const Training = ({
       (participant) => participant.status === "REGISTERED"
     ).length;
 
-    if (numberRegistered >= max_registered && participantToUnregister.status === "REGISTERED") {
-        const firstOnWaitinglist = participants.find(participant => participant.status === "WAITINGLIST")
-        
-        const nextParticipant = {
-            user: firstOnWaitinglist.user,
-            training: firstOnWaitinglist.training,
-            status: "REGISTERED",
-        }
-        TrainingAPI.updateUserTrainingRelation(nextParticipant)
-        // Should fire an action that sends SMS/Mail to the one who goes from
-        // the waiting list, to registered
+    if (
+      numberRegistered >= max_registered &&
+      participantToUnregister.status === "REGISTERED"
+    ) {
+      const firstOnWaitinglist = participants.find(
+        (participant) => participant.status === "WAITINGLIST"
+      );
+
+      const nextParticipant = {
+        user: firstOnWaitinglist.user,
+        training: firstOnWaitinglist.training,
+        status: "REGISTERED",
+      };
+      TrainingAPI.updateUserTrainingRelation(nextParticipant);
+      // Should fire an action that sends SMS/Mail to the one who goes from
+      // the waiting list, to registered
     }
   };
 
@@ -127,6 +136,11 @@ export const Training = ({
     <>
       <Grid item xs={12} sm={6} md={4} lg={3}>
         <div className="training-container">
+          {session.user.is_staff ? (
+            <Link to={`/edit/${id}`}>
+              <i className="fas fa-edit edit-button" />
+            </Link>
+          ) : null}
           <div className="training-heading">{name}</div>
           <div className="info">{`${day}, ${date}`}</div>
           <div className="info">{`${startTime} - ${finishTime}`}</div>
