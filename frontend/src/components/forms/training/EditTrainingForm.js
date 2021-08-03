@@ -32,17 +32,13 @@ export const EditTrainingForm = ({ id }) => {
 
   useEffect(() => {
     if (trainingDetail) {
-      console.log(trainingDetail)
-      console.log(formatDefaultDateTime(trainingDetail.starting_time))
-
       setName(trainingDetail.name);
       setTrainer(trainingDetail.trainer);
       setMaxRegistered(trainingDetail.max_registered);
-      setStartingTime(formatDefaultDateTime(trainingDetail.starting_time))
-      setFinishingTime(formatDefaultDateTime(trainingDetail.finishing_time))
-      setShowTime(formatDefaultDateTime(trainingDetail.show_time))
+      setStartingTime(formatDefaultDateTime(trainingDetail.starting_time));
+      setFinishingTime(formatDefaultDateTime(trainingDetail.finishing_time));
+      setShowTime(formatDefaultDateTime(trainingDetail.show_time));
     }
-
   }, [trainingDetail]);
 
   const onSubmit = (e) => {
@@ -64,8 +60,6 @@ export const EditTrainingForm = ({ id }) => {
       finishingTime: formatDateTime(finishingTime),
       showTime: formatDateTime(showTime),
     };
-
-    console.log(training);
 
     TrainingAPI.updateTraining(training).then(() => history.push("/book"));
   };
@@ -117,9 +111,7 @@ export const EditTrainingForm = ({ id }) => {
               placeholder="Max participants"
               onChange={(e) => setMaxRegistered(e.target.value)}
               required
-              defaultValue={
-                maxRegistered
-              }
+              defaultValue={maxRegistered}
             />
           </Grid>
           <br />
