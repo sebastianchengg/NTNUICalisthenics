@@ -13,12 +13,12 @@ export const About = () => {
       />
       <div className="page">
         <TextSection
-          title="What is calisthenics?"
+          title="What is Calisthenics?"
           text={
             'Calisthenics, also known as "street workout", is a form of ' +
-            "strength training consisting of only bodyweight excersises. " +
+            "strength training consisting of only bodyweight exercises. " +
             "There's no need for fancy or expensive equipment, we do all our " +
-            "excersises with just our bodyweight as resistance."
+            "exercises with just our bodyweight as resistance."
           }
         />
         <TextSection
