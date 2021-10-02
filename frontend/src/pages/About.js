@@ -25,7 +25,7 @@ export const About = () => {
           title="Who are we?"
           text={
             "We are a group for students and employees at NTNU that loves " +
-            "strength training and wants to practice calisthenics with " +
+            "strength training and wants to practice Calisthenics with " +
             "like-minded people. If you're looking for a group that loves " +
             "strength training and having fun at the same time, this group " +
             "is perfect for you. We set up our workouts so that people at " +
