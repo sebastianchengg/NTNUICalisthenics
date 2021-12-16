@@ -44,51 +44,51 @@ export const RepLeaderBoard = () => {
       <tbody>
         <TableRow
           exercise="Handstand push-ups"
-          maleName="Sven"
+          maleName="Sven T."
           maleResult="11"
-          femaleName="Ellen"
+          femaleName="Ellen A."
           femaleResult="1"
         />
         <TableRow
           exercise="π/2 Handstand push-ups"
-          maleName="Sven"
+          maleName="Sven T."
           maleResult="5"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Push-ups"
-          maleName="Sebastian"
-          maleResult="100"
-          femaleName="Amaleen"
-          femaleResult="49"
+          maleName="Sebastian C."
+          maleResult="104"
+          femaleName="Anita H."
+          femaleResult="62"
         />
         <TableRow
           exercise="Muscle-ups bar"
-          maleName="Elek"
+          maleName="Elek B."
           maleResult="12"
-          femaleName="Louise"
+          femaleName="Louise B."
           femaleResult="4"
         />
         <TableRow
           exercise="Muscle-ups rings"
-          maleName="Aleksander"
+          maleName="Aleksander V."
           maleResult="9"
-          femaleName="Amaleen"
+          femaleName="Amaleen J."
           femaleResult="6"
         />
         <TableRow
           exercise="Pull-ups"
-          maleName="Sebastian"
+          maleName="Sebastian C."
           maleResult="32"
-          femaleName="Louise"
-          femaleResult="20"
+          femaleName="Anita H."
+          femaleResult="22"
         />
         <TableRow
           exercise="Dips"
-          maleName="Sebastian"
+          maleName="Sebastian C."
           maleResult="65"
-          femaleName="Louise"
+          femaleName="Louise B."
           femaleResult="31"
         />
         <TableRow
@@ -100,16 +100,16 @@ export const RepLeaderBoard = () => {
         />
         <TableRow
           exercise="Pistol squats"
-          maleName="Peter"
+          maleName="Peter H."
           maleResult="69"
-          femaleName="Rebekka"
-          femaleResult="45"
+          femaleName="Anita H."
+          femaleResult="83"
         />
         <TableRow
           exercise="Toes to bar"
-          maleName="Andreas"
+          maleName="Andreas K."
           maleResult="34"
-          femaleName="Solveig"
+          femaleName="Solveig B."
           femaleResult="34"
         />
       </tbody>
@@ -125,7 +125,7 @@ export const DurationLeaderboard = () => {
       <tbody>
         <TableRow
           exercise="Planche"
-          maleName="Sven"
+          maleName="Sven T."
           maleResult="10s"
           femaleName="-"
           femaleResult="-"
@@ -139,38 +139,38 @@ export const DurationLeaderboard = () => {
         />
         <TableRow
           exercise="Front lever"
-          maleName="Sven"
+          maleName="Sven T."
           maleResult="13s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Back lever"
-          maleName="Elek"
+          maleName="Elek B."
           maleResult="34s"
-          femaleName="Anita"
-          femaleResult="8"
+          femaleName="Anita H."
+          femaleResult="8s"
         />
         <TableRow
           exercise="Handstand"
-          maleName="Einar"
+          maleName="Einar L."
           maleResult="1m 38s"
-          femaleName="Solveig"
-          femaleResult="1m 13s"
+          femaleName="Solveig B."
+          femaleResult="1m 37s"
         />
         <TableRow
           exercise="L-sit"
-          maleName="Jostein"
+          maleName="Jostein L."
           maleResult="1m 3s"
-          femaleName="Frida"
-          femaleResult="18s"
+          femaleName="Anita H."
+          femaleResult="46s"
         />
         <TableRow
           exercise="Dead hang"
-          maleName="Nikolai"
+          maleName="Nikolai D."
           maleResult="2m 59s"
-          femaleName="Ellen"
-          femaleResult="2m 12s"
+          femaleName="Solveig B."
+          femaleResult="3m 01s"
         />
       </tbody>
     </Table>
