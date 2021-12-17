@@ -13,6 +13,7 @@ import "./components/TextSection.css";
 import MainPage from "./pages/MainPage";
 import About from "./pages/About";
 import Apply from "./pages/Apply";
+import Board from "./pages/Board";
 import FAQ from "./pages/FAQ";
 import Leaderboard from "./pages/Leaderboard";
 import { Navbar } from "./components/Navbar";
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/" exact component={MainPage} />
           <Route path="/about" exact component={About} />
           <Route path="/apply" exact component={Apply} />
+          <Route path="/board" exact component={Board} />
           <Route path="/faq" exact component={FAQ} />
           <Route path="/leaderboard" exact component={Leaderboard} />
           <Route path="/">

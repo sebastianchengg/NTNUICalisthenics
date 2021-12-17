@@ -71,6 +71,16 @@ export const Navbar = () => {
           </NavLink>
 
           <NavLink
+            to="/board"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
+            Board
+          </NavLink>
+
+          <NavLink
             to="/apply"
             className={mobile ? "nav-links-mobile" : "nav-links"}
             activeClassName={mobile ? "selected-mobile" : "selected"}

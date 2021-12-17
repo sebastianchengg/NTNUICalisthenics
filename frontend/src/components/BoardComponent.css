@@ -1,0 +1,17 @@
+.board-image {
+  height: max(40vw, 500px);
+}
+
+.scroll {
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+.scroll.scrolled {
+  opacity: 1;
+}
+
+.image-leader {
+  background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
+    center/cover;
+}
