@@ -3,7 +3,6 @@ import "./BackgroundPicture.css";
 
 //Makes the smooth animation of the title
 export const SmoothAnimation = () => {
-  document.body.classList.add("js-loading");
 
   function show() {
     document.body.classList.remove("js-loading");
