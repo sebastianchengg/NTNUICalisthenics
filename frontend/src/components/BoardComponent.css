@@ -19,6 +19,8 @@
 .name {
   font-size: max(2vw, 30px);
   margin-bottom: max(1.5vw, 10px);
+  border-bottom: 2px solid #00843d;
+  display: inline-block;
 }
 
 .board-title {
