@@ -1,14 +1,14 @@
 import React from "react";
 import { HalfPicture } from "../components/BackgroundPicture";
 import { Boardcomponent } from "../components/BoardComponent";
-import "./Board.css";
+import "./Fade.css";
 import "../App.css";
 
 export const Board = () => {
   return (
     <>
       <HalfPicture url="url-2" titleText="The Board" />
-      <div className="page board">
+      <div className="page overflow">
         <Boardcomponent
           url="image-leader"
           direction={"right"}
