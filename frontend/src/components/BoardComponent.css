@@ -1,8 +1,65 @@
+.profile-container {
+  margin: 30px 0;
+  overflow: auto;
+}
+
 .board-image {
-  height: max(40vw, 500px);
+  height: max(38vw, 500px);
+  border-radius: 8px;
+}
+
+.info-container {
+  margin: 5px 30px;
+}
+
+.info-container-mobile {
+  margin: 5px 0;
+}
+
+.name {
+  font-size: max(2vw, 30px);
+  margin-bottom: max(1.5vw, 10px);
+}
+
+.board-title {
+  font-size: max(1.5vw, 25px);
+  margin-bottom: max(2vw, 15px);
+}
+
+.about {
+  font-size: max(1vw, 15px);
+  margin-bottom: max(2vw, 25px);
+}
+
+.favorite-exercise {
+  font-size: max(1vw, 15px);
+}
+
+.favorite-text {
+  font-weight: 600;
 }
 
 .image-leader {
+  background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
+    center/cover;
+}
+
+.image-deputy {
+  background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
+    center/cover;
+}
+
+.image-treasurer {
+  background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
+    center/cover;
+}
+
+.image-social-responsible-1 {
+  background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
+    center/cover;
+}
+
+.image-social-responsible-2 {
   background: no-repeat url("https://i.imgur.com/XNgyK92.jpg") center
     center/cover;
 }

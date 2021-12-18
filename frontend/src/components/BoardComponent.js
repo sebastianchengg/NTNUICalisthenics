@@ -10,29 +10,53 @@ export const Boardcomponent = ({
   boardTitle,
   about,
   favoriteExercise,
-  direction
+  direction,
 }) => {
-    const [side, setSide] = useState("");
+  const [side, setSide] = useState("");
+  const [mobile, setMobile] = useState();
 
-    useEffect(() => {
-        if (direction == "left"){
-            setSide("-reverse")
-        }
-        Aos.init({ duration: 1000})
-    }, [])
+  //sets variable to define if mobile-layout is needed
+  const showMobile = () => {
+    if (window.innerWidth < 600) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    showMobile();
+    if (direction === "left") {
+      setSide("-reverse");
+    }
+    Aos.init({ duration: 1000 });
+  }, [direction]);
+
+  window.addEventListener("resize", showMobile);
 
   return (
     <>
-      <div data-aos={`fade-${direction}`} data-aos-once="true">
-        <Grid container direction={`row${side}`}>
+      <div
+        className="profile-container"
+        data-aos={`fade-${direction}`}
+        data-aos-once="true"
+      >
+        <Grid container direction={`row${side}`} justifyContent="center">
           <Grid item xs={12} sm={6} md={5} lg={4}>
             <div className={`board-image ${url}`} />
           </Grid>
           <Grid item xs={12} sm={6} md={5} lg={5}>
-            <div>{name}</div>
-            <div>{boardTitle}</div>
-            <div>{about}</div>
-            <div>{favoriteExercise}</div>
+            <div
+              className={mobile ? "info-container-mobile" : "info-container"}
+            >
+              <p className="name">{name}</p>
+              <p className="board-title">{boardTitle}</p>
+              <p className="about">{about}</p>
+              <p className="favorite-exercise">
+                <span className="favorite-text">Favorite exercise: </span>
+                {favoriteExercise}
+              </p>
+            </div>
           </Grid>
         </Grid>
       </div>
