@@ -15,7 +15,7 @@ export const Boardcomponent = ({
   const [side, setSide] = useState("");
   const [mobile, setMobile] = useState();
 
-  //sets variable to define if mobile-layout is needed
+  //Sets variable to define if mobile-layout is needed
   const showMobile = () => {
     if (window.innerWidth < 600) {
       setMobile(true);
@@ -38,7 +38,7 @@ export const Boardcomponent = ({
     <>
       <div
         className="profile-container"
-        data-aos={`fade-${direction}`}
+        data-aos={mobile ? "fade-right" : `fade-${direction}`}
         data-aos-once="true"
       >
         <Grid container direction={`row${side}`} justifyContent="center">
