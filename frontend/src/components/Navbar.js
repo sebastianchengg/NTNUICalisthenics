@@ -21,7 +21,7 @@ export const Navbar = () => {
     }
   };
 
-  //sets variable to define backgroundcolor transparent/black
+  //sets variable to define backgroundcolor transparent/black for homepage/other page
   const isHomePage = () => {
     if (window.location.pathname === "/") {
       setHomePage(true);

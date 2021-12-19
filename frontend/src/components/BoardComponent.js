@@ -4,6 +4,7 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import "./BoardComponent.css";
 
+//Component used for board members
 export const Boardcomponent = ({
   url,
   name,
@@ -24,6 +25,7 @@ export const Boardcomponent = ({
     }
   };
 
+  //Decides the order of the image and text and sets the animation duration
   useEffect(() => {
     showMobile();
     if (direction === "left") {

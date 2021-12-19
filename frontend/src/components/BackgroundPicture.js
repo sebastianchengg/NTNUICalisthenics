@@ -14,7 +14,7 @@ export const SmoothAnimation = () => {
   window.addEventListener("popstate", show, { once: true });
 };
 
-//Full size image
+//Full size image used on the main page
 export const MainPicture = ({ url, photographer }) => {
   SmoothAnimation();
 
