@@ -44,72 +44,72 @@ export const RepLeaderBoard = () => {
       <tbody>
         <TableRow
           exercise="Handstand push-ups"
-          maleName="Sven T."
-          maleResult="11"
-          femaleName="Ellen A."
+          maleName="Sondre"
+          maleResult="18"
+          femaleName="Ellen"
           femaleResult="1"
         />
         <TableRow
           exercise="π/2 Handstand push-ups"
-          maleName="Sven T."
-          maleResult="5"
+          maleName="Sondre"
+          maleResult="9"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Push-ups"
-          maleName="Sebastian C."
+          maleName="Sebastian"
           maleResult="104"
-          femaleName="Anita H."
+          femaleName="Anita"
           femaleResult="62"
         />
         <TableRow
           exercise="Muscle-ups bar"
-          maleName="Elek B."
+          maleName="Elek"
           maleResult="12"
-          femaleName="Louise B."
-          femaleResult="4"
+          femaleName="Anita"
+          femaleResult="5"
         />
         <TableRow
           exercise="Muscle-ups rings"
-          maleName="Aleksander V."
+          maleName="Aleksander"
           maleResult="9"
-          femaleName="Amaleen J."
+          femaleName="Amaleen"
           femaleResult="6"
         />
         <TableRow
           exercise="Pull-ups"
-          maleName="Sebastian C."
+          maleName="Sebastian"
           maleResult="32"
-          femaleName="Anita H."
+          femaleName="Anita"
           femaleResult="22"
         />
         <TableRow
           exercise="Dips"
-          maleName="Sebastian C."
+          maleName="Sebastian"
           maleResult="65"
-          femaleName="Louise B."
+          femaleName="Louise"
           femaleResult="31"
         />
         <TableRow
           exercise="Dragon flags"
           maleName="Kristoffer S."
           maleResult="25"
-          femaleName="-"
-          femaleResult="-"
+          femaleName="Gunhild"
+          femaleResult="1"
         />
         <TableRow
           exercise="Pistol squats"
-          maleName="Peter H."
+          maleName="Peter"
           maleResult="69"
-          femaleName="Anita H."
+          femaleName="Anita"
           femaleResult="83"
         />
         <TableRow
           exercise="Toes to bar"
-          maleName="Andreas K."
+          maleName="Andreas"
           maleResult="34"
-          femaleName="Solveig B."
+          femaleName="Solveig"
           femaleResult="34"
         />
       </tbody>
@@ -125,7 +125,7 @@ export const DurationLeaderboard = () => {
       <tbody>
         <TableRow
           exercise="Planche"
-          maleName="Sven T."
+          maleName="Sven"
           maleResult="10s"
           femaleName="-"
           femaleResult="-"
@@ -139,38 +139,38 @@ export const DurationLeaderboard = () => {
         />
         <TableRow
           exercise="Front lever"
-          maleName="Sven T."
+          maleName="Sven"
           maleResult="13s"
           femaleName="-"
           femaleResult="-"
         />
         <TableRow
           exercise="Back lever"
-          maleName="Elek B."
+          maleName="Elek"
           maleResult="34s"
-          femaleName="Anita H."
+          femaleName="Anita"
           femaleResult="8s"
         />
         <TableRow
           exercise="Handstand"
-          maleName="Einar L."
+          maleName="Einar"
           maleResult="1m 38s"
-          femaleName="Solveig B."
+          femaleName="Solveig"
           femaleResult="1m 37s"
         />
         <TableRow
           exercise="L-sit"
-          maleName="Jostein L."
+          maleName="Jostein"
           maleResult="1m 3s"
-          femaleName="Anita H."
+          femaleName="Anita"
           femaleResult="46s"
         />
         <TableRow
           exercise="Dead hang"
-          maleName="Nikolai D."
-          maleResult="2m 59s"
-          femaleName="Solveig B."
-          femaleResult="3m 01s"
+          maleName="Nikolai"
+          maleResult="3m 15s"
+          femaleName="Solveig"
+          femaleResult="3m 1s"
         />
       </tbody>
     </Table>
