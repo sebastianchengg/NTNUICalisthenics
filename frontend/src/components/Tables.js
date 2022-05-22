@@ -61,7 +61,7 @@ export const RepLeaderBoard = () => {
           maleName="Sebastian"
           maleResult="104"
           femaleName="Anita"
-          femaleResult="62"
+          femaleResult="70"
         />
         <TableRow
           exercise="Muscle-ups bar"
