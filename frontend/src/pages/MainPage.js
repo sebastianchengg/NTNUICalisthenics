@@ -33,10 +33,10 @@ export const MainPage = () => {
               title="Training hours"
               text={
                 "(Trainings are for members only)\n\n" +
-                "Tuesday:\t\t 14:00 - 16:00\n" +
-                "Wednesday:\t 20:30 - 22:30\n" +
+                "Tuesday:\t\t 12:30 - 14:30\n" +
+                "Thursday:\t 21:00 - 22:30\n" +
                 "Friday:\t\t 19:30 - 21:30\n" +
-                "Sunday:\t\t 19:15 - 21:00"
+                "Sunday:\t\t 19:00 - 21:00"
               }
             />
           </Grid>
