@@ -3,7 +3,6 @@ import "./BackgroundPicture.css";
 
 //Makes the smooth animation of the title
 export const SmoothAnimation = () => {
-  document.body.classList.add("js-loading");
 
   function show() {
     document.body.classList.remove("js-loading");
@@ -15,7 +14,7 @@ export const SmoothAnimation = () => {
   window.addEventListener("popstate", show, { once: true });
 };
 
-//Full size image
+//Full size image used on the main page
 export const MainPicture = ({ url, photographer }) => {
   SmoothAnimation();
 
