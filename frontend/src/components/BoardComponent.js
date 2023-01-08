@@ -53,11 +53,13 @@ export const Boardcomponent = ({
             >
               <p className="name">{name}</p>
               <p className="board-title">{boardTitle}</p>
-              <p className="about">{about}</p>
-              <p className="favorite-exercise">
-                <span className="favorite-text">Favorite exercise: </span>
-                {favoriteExercise}
-              </p>
+              {about && <p className="about">{about}</p>}
+              {favoriteExercise && (
+                <p className="favorite-exercise">
+                  <span className="favorite-text">Favorite exercise: </span>
+                  {favoriteExercise}
+                </p>
+              )}
             </div>
           </Grid>
         </Grid>

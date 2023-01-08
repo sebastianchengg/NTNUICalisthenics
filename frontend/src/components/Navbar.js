@@ -70,7 +70,7 @@ export const Navbar = () => {
             About
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="/board"
             className={mobile ? "nav-links-mobile" : "nav-links"}
             activeClassName={mobile ? "selected-mobile" : "selected"}
@@ -78,7 +78,7 @@ export const Navbar = () => {
             onClick={closeMobileMenu}
           >
             Board
-          </NavLink>
+          </NavLink> */}
 
           <NavLink
             to="/apply"

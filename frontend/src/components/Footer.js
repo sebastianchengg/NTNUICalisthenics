@@ -7,7 +7,7 @@ export const Footer = () => {
     <>
       <div className="footer-container">
         <div className="social-container">
-          <div className="creator-container">2022 — Calisthenics IT-crew</div>
+          <div className="creator-container">2023 — Calisthenics IT-crew</div>
           <InstagramLogo extraCss="spacing icon-scaling" />
           <FacebookLogo extraCss="spacing icon-scaling" />
           <MailLogo extraCss="icon-scaling" />

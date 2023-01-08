@@ -18,11 +18,11 @@
 }
 
 .contact-social {
-  font-size: 30px;
+  font-size: max(40px, 1.5vw);
 }
 
 .contact-social-spacing {
-  margin-right: 10%;
+  margin-right: min(50px, 10%);
 }
 
 /* Text in center when on mobile */
