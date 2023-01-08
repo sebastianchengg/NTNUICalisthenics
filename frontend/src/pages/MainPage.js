@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { MainPicture } from "../components/BackgroundPicture";
 import { LinkButton } from "../components/LinkButton";
 import { TextSection } from "../components/TextSection";
@@ -8,9 +8,33 @@ import {
   MailLogo,
 } from "../components/SocialLogos";
 import Grid from "@material-ui/core/Grid";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import "./Fade.css";
 import "./MainPage.css";
 
 export const MainPage = () => {
+  const [mobile, setMobile] = useState();
+
+  //Sets variable to define how many textsections are next to each other
+  //to determine what animation to use
+  const showMobile = () => {
+    if (window.innerWidth < 600) {
+      setMobile(1);
+    } else if (window.innerWidth < 960) {
+      setMobile(2);
+    } else {
+      setMobile(3);
+    }
+  };
+
+  useEffect(() => {
+    showMobile();
+    Aos.init({ duration: 1000 });
+  }, []);
+
+  window.addEventListener("resize", showMobile);
+
   return (
     <>
       <MainPicture url="url-1" photographer="Foto: Nils Dittrich/NTNUI" />
@@ -26,9 +50,16 @@ export const MainPage = () => {
           Apply now
         </LinkButton>
       </div>
-      <div className="page">
+      <div className="page overflow">
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            data-aos="fade-right"
+            data-aos-once="true"
+          >
             <TextSection
               title="Training hours"
               text={
@@ -41,14 +72,34 @@ export const MainPage = () => {
             />
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            data-aos={
+              mobile === 3
+                ? "fade-up"
+                : mobile === 2
+                ? "fade-left"
+                : "fade-right"
+            }
+            data-aos-once="true"
+          >
             <TextSection
               title="Address"
               text={"Båtsmannsgata 4, 7042 Trondheim"}
             />
           </Grid>
 
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            data-aos={mobile === 3 ? "fade-left" : "fade-right"}
+            data-aos-once="true"
+          >
             <TextSection title="Contact">
               <InstagramLogo extraCss="contact-social contact-social-spacing" />
               <FacebookLogo extraCss="contact-social contact-social-spacing" />

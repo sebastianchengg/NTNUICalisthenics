@@ -21,7 +21,7 @@ export const Navbar = () => {
     }
   };
 
-  //sets variable to define backgroundcolor transparent/black
+  //sets variable to define backgroundcolor transparent/black for homepage/other page
   const isHomePage = () => {
     if (window.location.pathname === "/") {
       setHomePage(true);
@@ -68,6 +68,16 @@ export const Navbar = () => {
             onClick={closeMobileMenu}
           >
             About
+          </NavLink>
+
+          <NavLink
+            to="/board"
+            className={mobile ? "nav-links-mobile" : "nav-links"}
+            activeClassName={mobile ? "selected-mobile" : "selected"}
+            exact
+            onClick={closeMobileMenu}
+          >
+            Board
           </NavLink>
 
           <NavLink
