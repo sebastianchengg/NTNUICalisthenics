@@ -10,7 +10,7 @@
 /* Always shows scrollbar on all pages */
 body {
   overflow-y: scroll;
-  background-color: #000;
+  background-color: #030303;
 }
 
 .page {

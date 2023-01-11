@@ -23,14 +23,17 @@ export const FacebookLogo = ({ extraCss }) => {
   );
 };
 
-export const MailLogo = ({ extraCss }) => {
-  return (
-    <a
-      onClick={(e) => {
-        window.location = "mailto:calisthenics-leder@ntnui.no";
-        e.preventDefault();
-      }}
-      className={`far fa-envelope url ${extraCss}`}
-    />
-  );
+export const MailLogo = ({ extraCss, eMail }) => {
+  if (eMail) {
+    return (
+      <a
+        onClick={(e) => {
+          window.location = `mailto:${eMail}`;
+          e.preventDefault();
+        }}
+        className={`far fa-envelope url ${extraCss}`}
+      />
+    );
+  }
+  return <></>;
 };

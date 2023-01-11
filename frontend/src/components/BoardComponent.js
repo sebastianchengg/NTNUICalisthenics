@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import "./BoardComponent.css";
+import { MailLogo } from "./SocialLogos";
 
 //Component used for board members
 export const Boardcomponent = ({
@@ -11,6 +12,7 @@ export const Boardcomponent = ({
   boardTitle,
   about,
   favoriteExercise,
+  eMail,
   direction,
 }) => {
   const [side, setSide] = useState("");
@@ -60,6 +62,7 @@ export const Boardcomponent = ({
                   {favoriteExercise}
                 </p>
               )}
+              {eMail && <MailLogo extraCss="contact-social" eMail={eMail} />}
             </div>
           </Grid>
         </Grid>

@@ -103,7 +103,10 @@ export const MainPage = () => {
             <TextSection title="Contact">
               <InstagramLogo extraCss="contact-social contact-social-spacing" />
               <FacebookLogo extraCss="contact-social contact-social-spacing" />
-              <MailLogo extraCss="contact-social" />
+              <MailLogo
+                extraCss="contact-social"
+                eMail={"calisthenics-leder@ntnui.no"}
+              />
             </TextSection>
           </Grid>
         </Grid>

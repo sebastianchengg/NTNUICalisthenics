@@ -10,7 +10,10 @@ export const Footer = () => {
           <div className="creator-container">2023 — Calisthenics IT-crew</div>
           <InstagramLogo extraCss="spacing icon-scaling" />
           <FacebookLogo extraCss="spacing icon-scaling" />
-          <MailLogo extraCss="icon-scaling" />
+          <MailLogo
+            extraCss="icon-scaling"
+            eMail={"calisthenics-leder@ntnui.no"}
+          />
         </div>
       </div>
     </>
