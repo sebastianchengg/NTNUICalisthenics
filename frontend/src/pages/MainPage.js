@@ -7,6 +7,7 @@ import {
   FacebookLogo,
   MailLogo,
 } from "../components/SocialLogos";
+import { getTrainingtimes } from "../api/training";
 import Grid from "@material-ui/core/Grid";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -15,6 +16,7 @@ import "./MainPage.css";
 
 export const MainPage = () => {
   const [mobile, setMobile] = useState();
+  const [trainingtimes, setTrainingtimes] = useState();
 
   //Sets variable to define how many textsections are next to each other
   //to determine what animation to use
@@ -32,6 +34,12 @@ export const MainPage = () => {
     showMobile();
     Aos.init({ duration: 1000 });
   }, []);
+
+  useEffect(() => {
+    getTrainingtimes().then((response) => setTrainingtimes(response));
+  }, []);
+
+  console.log(trainingtimes);
 
   window.addEventListener("resize", showMobile);
 
