@@ -16,7 +16,7 @@ import "./MainPage.css";
 
 export const MainPage = () => {
   const [mobile, setMobile] = useState();
-  const [trainingtimes, setTrainingtimes] = useState();
+  const [trainingHours, setTrainingHours] = useState();
 
   //Sets variable to define how many textsections are next to each other
   //to determine what animation to use
@@ -36,10 +36,21 @@ export const MainPage = () => {
   }, []);
 
   useEffect(() => {
-    getTrainingtimes().then((response) => setTrainingtimes(response));
+    getTrainingtimes().then((res) => setTrainingHours(res.trainingHours));
   }, []);
 
-  console.log(trainingtimes);
+  console.log(trainingHours);
+
+  const convertTrainingHoursToString = () => {
+    let trainingString = "";
+    if (trainingHours) {
+      trainingHours.map(
+        (trainingHour) =>
+          (trainingString += `${trainingHour.day}: ${trainingHour.time}\n`)
+      );
+    }
+    return trainingString;
+  };
 
   window.addEventListener("resize", showMobile);
 
@@ -72,10 +83,7 @@ export const MainPage = () => {
               title="Training hours"
               text={
                 "(Trainings are for members only)\n\n" +
-                "Tuesday:\t\t 14:00 - 16:00\n" +
-                "Wednesday:\t 21:00 - 22:30\n" +
-                "Friday:\t\t 19:30 - 21:30\n" +
-                "Sunday:\t\t 19:15 - 21:00"
+                convertTrainingHoursToString()
               }
             />
           </Grid>
