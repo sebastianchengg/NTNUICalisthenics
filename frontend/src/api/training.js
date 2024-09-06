@@ -8,6 +8,13 @@ export const getTrainingtimes = async () => {
   return response.data;
 };
 
+export const getAddress = async () => {
+  const response = await axios.get(
+    `https://gist.githubusercontent.com/sebastianchengg/260a8d496d17ecc43972df1830582451/raw/caliAddress.json`
+  );
+  return response.data;
+};
+
 export const getLeaderboardRepetitions = async () => {
   const response = await axios.get(
     `https://gist.githubusercontent.com/sebastianchengg/d9cba7f6020e32a025c6235e8a14cd30/raw/leaderboardRepetition.json`
@@ -21,3 +28,11 @@ export const getLeaderboardDuration = async () => {
   );
   return response.data;
 };
+
+export const getFAQ = async () => {
+  const response = await axios.get(
+    `https://gist.githubusercontent.com/sebastianchengg/bd6a9a4dad319b707cf79a73131b7fab/raw/FAQ.json`
+  );
+  return response.data;
+};
+

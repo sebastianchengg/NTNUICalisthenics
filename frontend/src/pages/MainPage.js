@@ -7,7 +7,7 @@ import {
   FacebookLogo,
   MailLogo,
 } from "../components/SocialLogos";
-import { getTrainingtimes } from "../api/training";
+import { getTrainingtimes, getAddress } from "../api/training";
 import Grid from "@material-ui/core/Grid";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -17,6 +17,7 @@ import "./MainPage.css";
 export const MainPage = () => {
   const [mobile, setMobile] = useState();
   const [trainingHours, setTrainingHours] = useState();
+  const [address, setAddress] = useState();
 
   //Sets variable to define how many textsections are next to each other
   //to determine what animation to use
@@ -39,7 +40,9 @@ export const MainPage = () => {
     getTrainingtimes().then((res) => setTrainingHours(res.trainingHours));
   }, []);
 
-  console.log(trainingHours);
+  useEffect(() => {
+    getAddress().then((res) => setAddress(res.address));
+  }, []);
 
   const convertTrainingHoursToString = () => {
     let trainingString = "";
@@ -104,7 +107,7 @@ export const MainPage = () => {
           >
             <TextSection
               title="Address"
-              text={"Båtsmannsgata 4, 7042 Trondheim"}
+              text={address}
             />
           </Grid>
 
